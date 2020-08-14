@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  
+  <url>
+    <loc>monksterfx.github.io/</loc>
+    <lastmod>2020-07-13T19:23:49+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>monksterfx.github.io/blog/</loc>
+    <lastmod>2020-07-13T19:23:49+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>monksterfx.github.io/blog/test/nutch-start-01/</loc>
+    <lastmod>2020-07-13T19:23:49+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>monksterfx.github.io/blog/micropython/tutorial/introduction/</loc>
+    <lastmod>2020-07-13T19:23:49+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>monksterfx.github.io/tags/micropython/</loc>
+    <lastmod>2020-07-13T19:23:49+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>monksterfx.github.io/tags/nutch/</loc>
+    <lastmod>2020-07-13T19:23:49+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>monksterfx.github.io/tags/</loc>
+    <lastmod>2020-07-13T19:23:49+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>monksterfx.github.io/tags/tutorial/</loc>
+    <lastmod>2020-07-13T19:23:49+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>monksterfx.github.io/categories/</loc>
+  </url>
+  
+</urlset>
