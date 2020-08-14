@@ -3,47 +3,47 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>mrmonk.dev/</loc>
+    <loc>/</loc>
     <lastmod>2020-07-13T19:23:49+02:00</lastmod>
   </url>
   
   <url>
-    <loc>mrmonk.dev/blog/</loc>
+    <loc>/blog/</loc>
     <lastmod>2020-07-13T19:23:49+02:00</lastmod>
   </url>
   
   <url>
-    <loc>mrmonk.dev/blog/test/nutch-start-01/</loc>
+    <loc>/blog/test/nutch-start-01/</loc>
     <lastmod>2020-07-13T19:23:49+02:00</lastmod>
   </url>
   
   <url>
-    <loc>mrmonk.dev/blog/micropython/tutorial/introduction/</loc>
+    <loc>/blog/micropython/tutorial/introduction/</loc>
     <lastmod>2020-07-13T19:23:49+02:00</lastmod>
   </url>
   
   <url>
-    <loc>mrmonk.dev/tags/micropython/</loc>
+    <loc>/tags/micropython/</loc>
     <lastmod>2020-07-13T19:23:49+02:00</lastmod>
   </url>
   
   <url>
-    <loc>mrmonk.dev/tags/nutch/</loc>
+    <loc>/tags/nutch/</loc>
     <lastmod>2020-07-13T19:23:49+02:00</lastmod>
   </url>
   
   <url>
-    <loc>mrmonk.dev/tags/</loc>
+    <loc>/tags/</loc>
     <lastmod>2020-07-13T19:23:49+02:00</lastmod>
   </url>
   
   <url>
-    <loc>mrmonk.dev/tags/tutorial/</loc>
+    <loc>/tags/tutorial/</loc>
     <lastmod>2020-07-13T19:23:49+02:00</lastmod>
   </url>
   
   <url>
-    <loc>mrmonk.dev/categories/</loc>
+    <loc>/categories/</loc>
   </url>
   
 </urlset>
