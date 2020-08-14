@@ -2,32 +2,32 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Blogs on moench.dev</title>
-    <link>monksterfx.github.io/blog/</link>
+    <link>mrmonk.dev/blog/</link>
     <description>Recent content in Blogs on moench.dev</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>© {year}</copyright>
     <lastBuildDate>Mon, 13 Jul 2020 19:23:49 +0200</lastBuildDate>
     
-	<atom:link href="monksterfx.github.io/blog/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="mrmonk.dev/blog/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>getting started with nutch on localhost</title>
-      <link>monksterfx.github.io/blog/test/nutch-start-01/</link>
+      <link>mrmonk.dev/blog/test/nutch-start-01/</link>
       <pubDate>Mon, 13 Jul 2020 19:23:49 +0200</pubDate>
       
-      <guid>monksterfx.github.io/blog/test/nutch-start-01/</guid>
+      <guid>mrmonk.dev/blog/test/nutch-start-01/</guid>
       <description>Test h1 Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry&amp;rsquo;s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book
 Test h2 Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry&amp;rsquo;s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book</description>
     </item>
     
     <item>
       <title>introduction to micropython</title>
-      <link>monksterfx.github.io/blog/micropython/tutorial/introduction/</link>
+      <link>mrmonk.dev/blog/micropython/tutorial/introduction/</link>
       <pubDate>Mon, 13 Jul 2020 19:23:49 +0200</pubDate>
       
-      <guid>monksterfx.github.io/blog/micropython/tutorial/introduction/</guid>
+      <guid>mrmonk.dev/blog/micropython/tutorial/introduction/</guid>
       <description>what is micropython Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry&amp;rsquo;s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book
 examples print(&amp;quot;Hello World!&amp;quot;)  more informations </description>
     </item>

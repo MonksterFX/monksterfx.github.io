@@ -2,40 +2,40 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on moench.dev</title>
-    <link>monksterfx.github.io/tags/</link>
+    <link>mrmonk.dev/tags/</link>
     <description>Recent content in Tags on moench.dev</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>© {year}</copyright>
     <lastBuildDate>Mon, 13 Jul 2020 19:23:49 +0200</lastBuildDate>
     
-	<atom:link href="monksterfx.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="mrmonk.dev/tags/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>micropython</title>
-      <link>monksterfx.github.io/tags/micropython/</link>
+      <link>mrmonk.dev/tags/micropython/</link>
       <pubDate>Mon, 13 Jul 2020 19:23:49 +0200</pubDate>
       
-      <guid>monksterfx.github.io/tags/micropython/</guid>
+      <guid>mrmonk.dev/tags/micropython/</guid>
       <description></description>
     </item>
     
     <item>
       <title>nutch</title>
-      <link>monksterfx.github.io/tags/nutch/</link>
+      <link>mrmonk.dev/tags/nutch/</link>
       <pubDate>Mon, 13 Jul 2020 19:23:49 +0200</pubDate>
       
-      <guid>monksterfx.github.io/tags/nutch/</guid>
+      <guid>mrmonk.dev/tags/nutch/</guid>
       <description></description>
     </item>
     
     <item>
       <title>tutorial</title>
-      <link>monksterfx.github.io/tags/tutorial/</link>
+      <link>mrmonk.dev/tags/tutorial/</link>
       <pubDate>Mon, 13 Jul 2020 19:23:49 +0200</pubDate>
       
-      <guid>monksterfx.github.io/tags/tutorial/</guid>
+      <guid>mrmonk.dev/tags/tutorial/</guid>
       <description></description>
     </item>
     
