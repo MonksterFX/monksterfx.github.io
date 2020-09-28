@@ -7,29 +7,29 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>© {year}</copyright>
-    <lastBuildDate>Mon, 13 Jul 2020 19:23:49 +0200</lastBuildDate>
+    <lastBuildDate>Mon, 28 Sep 2020 00:00:00 +0200</lastBuildDate>
     
 	<atom:link href="/blog/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>getting started with nutch on localhost</title>
-      <link>/blog/test/nutch-start-01/</link>
-      <pubDate>Mon, 13 Jul 2020 19:23:49 +0200</pubDate>
+      <title>project: working with socket.io</title>
+      <link>/blog/projects/coffeinchat/coffein-chat-1/</link>
+      <pubDate>Mon, 28 Sep 2020 00:00:00 +0200</pubDate>
       
-      <guid>/blog/test/nutch-start-01/</guid>
-      <description>Test h1 Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry&amp;rsquo;s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book
-Test h2 Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry&amp;rsquo;s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book</description>
+      <guid>/blog/projects/coffeinchat/coffein-chat-1/</guid>
+      <description>CC or CoffeinChat In a project im working on I recently got asked how we could implement a chat by ourselfs. We work a lot with GCP in this Project an so the first tough was to implement it with the help of firebase.
+But because of the ongoing debate about GDPR we skipped the easy way and tough about the critical stuff in a chat: The live reload aka pushing news to the client.</description>
     </item>
     
     <item>
-      <title>introduction to micropython</title>
-      <link>/blog/micropython/tutorial/introduction/</link>
+      <title>make ftp working with ssh without changing permissions</title>
+      <link>/blog/notes/ftp-without-chmod/</link>
       <pubDate>Mon, 13 Jul 2020 19:23:49 +0200</pubDate>
       
-      <guid>/blog/micropython/tutorial/introduction/</guid>
-      <description>what is micropython Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry&amp;rsquo;s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book
-examples print(&amp;quot;Hello World!&amp;quot;)  more informations </description>
+      <guid>/blog/notes/ftp-without-chmod/</guid>
+      <description>the problem If you want to disable your root user of the maschine being accessed via SSH you probably ran into Problems with SFTP on your server. As long you use the root user of the maschine your SFTP will work fine, but if you change your user you will get into trouble.
+I&amp;rsquo;m working a lot with docker and bind mounts for config files so I can&amp;rsquo;t change the owner/permission of the directory or file I&amp;rsquo;m binding to.</description>
     </item>
     
   </channel>

@@ -4,41 +4,61 @@
   
   <url>
     <loc>/</loc>
-    <lastmod>2020-07-13T19:23:49+02:00</lastmod>
+    <lastmod>2020-09-28T00:00:00+02:00</lastmod>
   </url>
   
   <url>
     <loc>/blog/</loc>
-    <lastmod>2020-07-13T19:23:49+02:00</lastmod>
+    <lastmod>2020-09-28T00:00:00+02:00</lastmod>
   </url>
   
   <url>
-    <loc>/blog/test/nutch-start-01/</loc>
-    <lastmod>2020-07-13T19:23:49+02:00</lastmod>
+    <loc>/tags/coffeinchat/</loc>
+    <lastmod>2020-09-28T00:00:00+02:00</lastmod>
   </url>
   
   <url>
-    <loc>/blog/micropython/tutorial/introduction/</loc>
-    <lastmod>2020-07-13T19:23:49+02:00</lastmod>
+    <loc>/tags/project/</loc>
+    <lastmod>2020-09-28T00:00:00+02:00</lastmod>
   </url>
   
   <url>
-    <loc>/tags/micropython/</loc>
-    <lastmod>2020-07-13T19:23:49+02:00</lastmod>
+    <loc>/blog/projects/coffeinchat/coffein-chat-1/</loc>
+    <lastmod>2020-09-28T00:00:00+02:00</lastmod>
   </url>
   
   <url>
-    <loc>/tags/nutch/</loc>
-    <lastmod>2020-07-13T19:23:49+02:00</lastmod>
+    <loc>/tags/socket.io/</loc>
+    <lastmod>2020-09-28T00:00:00+02:00</lastmod>
   </url>
   
   <url>
     <loc>/tags/</loc>
+    <lastmod>2020-09-28T00:00:00+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/ftp/</loc>
     <lastmod>2020-07-13T19:23:49+02:00</lastmod>
   </url>
   
   <url>
-    <loc>/tags/tutorial/</loc>
+    <loc>/blog/notes/ftp-without-chmod/</loc>
+    <lastmod>2020-07-13T19:23:49+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/notes/</loc>
+    <lastmod>2020-07-13T19:23:49+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/server/</loc>
+    <lastmod>2020-07-13T19:23:49+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/sftp/</loc>
     <lastmod>2020-07-13T19:23:49+02:00</lastmod>
   </url>
   

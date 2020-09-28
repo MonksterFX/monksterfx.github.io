@@ -1,26 +1,16 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>moench.dev</title>
-    <link>/</link>
-    <description>Recent content on moench.dev</description>
+    <title>ftp on moench.dev</title>
+    <link>/tags/ftp/</link>
+    <description>Recent content in ftp on moench.dev</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>© {year}</copyright>
-    <lastBuildDate>Mon, 28 Sep 2020 00:00:00 +0200</lastBuildDate>
+    <lastBuildDate>Mon, 13 Jul 2020 19:23:49 +0200</lastBuildDate>
     
-	<atom:link href="/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/tags/ftp/index.xml" rel="self" type="application/rss+xml" />
     
-    
-    <item>
-      <title>project: working with socket.io</title>
-      <link>/blog/projects/coffeinchat/coffein-chat-1/</link>
-      <pubDate>Mon, 28 Sep 2020 00:00:00 +0200</pubDate>
-      
-      <guid>/blog/projects/coffeinchat/coffein-chat-1/</guid>
-      <description>CC or CoffeinChat In a project im working on I recently got asked how we could implement a chat by ourselfs. We work a lot with GCP in this Project an so the first tough was to implement it with the help of firebase.
-But because of the ongoing debate about GDPR we skipped the easy way and tough about the critical stuff in a chat: The live reload aka pushing news to the client.</description>
-    </item>
     
     <item>
       <title>make ftp working with ssh without changing permissions</title>
