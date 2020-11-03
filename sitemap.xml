@@ -4,12 +4,32 @@
   
   <url>
     <loc>/</loc>
-    <lastmod>2020-09-28T00:00:00+02:00</lastmod>
+    <lastmod>2020-11-02T12:00:00+02:00</lastmod>
   </url>
   
   <url>
     <loc>/blog/</loc>
-    <lastmod>2020-09-28T00:00:00+02:00</lastmod>
+    <lastmod>2020-11-02T12:00:00+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/blog/mongo/mongo-fixing-stuff/</loc>
+    <lastmod>2020-11-02T12:00:00+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/mongodb/</loc>
+    <lastmod>2020-11-02T12:00:00+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/notes/</loc>
+    <lastmod>2020-11-02T12:00:00+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/</loc>
+    <lastmod>2020-11-02T12:00:00+02:00</lastmod>
   </url>
   
   <url>
@@ -33,42 +53,27 @@
   </url>
   
   <url>
-    <loc>/tags/</loc>
-    <lastmod>2020-09-28T00:00:00+02:00</lastmod>
-  </url>
-  
-  <url>
     <loc>/tags/ftp/</loc>
-    <lastmod>2020-07-13T19:23:49+02:00</lastmod>
+    <lastmod>2020-09-01T12:00:00+02:00</lastmod>
   </url>
   
   <url>
     <loc>/blog/notes/ftp-without-chmod/</loc>
-    <lastmod>2020-07-13T19:23:49+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/blog/mongo/mongo-snippets-arrays/</loc>
-    <lastmod>2020-07-13T19:23:49+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/tags/mongodb/</loc>
-    <lastmod>2020-07-13T19:23:49+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/tags/notes/</loc>
-    <lastmod>2020-07-13T19:23:49+02:00</lastmod>
+    <lastmod>2020-09-01T12:00:00+02:00</lastmod>
   </url>
   
   <url>
     <loc>/tags/server/</loc>
-    <lastmod>2020-07-13T19:23:49+02:00</lastmod>
+    <lastmod>2020-09-01T12:00:00+02:00</lastmod>
   </url>
   
   <url>
     <loc>/tags/sftp/</loc>
+    <lastmod>2020-09-01T12:00:00+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/blog/mongo/mongo-snippets-arrays/</loc>
     <lastmod>2020-07-13T19:23:49+02:00</lastmod>
   </url>
   

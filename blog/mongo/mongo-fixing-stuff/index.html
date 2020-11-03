@@ -2,12 +2,12 @@
 <html lang="en-us">
 
 <head>
-  <title>project: working with socket.io | moench.dev</title>
+  <title>mongo fixing broken stuff | moench.dev</title>
 
   <meta charset="UTF-8">
   <meta name="language" content="en">
-  <meta name="description" content="Learning socket.io by writing a little chat program is easy and fun">
-  <meta name="keywords" content="project">
+  <meta name="description" content="fixing stuff which causes me headache">
+  <meta name="keywords" content="notes">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -17,8 +17,8 @@
   
   
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="project: working with socket.io" />
-  <meta name="twitter:description" content="Learning socket.io by writing a little chat program is easy and fun"/>
+  <meta name="twitter:title" content="mongo fixing broken stuff" />
+  <meta name="twitter:description" content="fixing stuff which causes me headache"/>
   <meta name="twitter:site" content="https://twitter.com/soulfoodmonk" />
   <meta name="twitter:creator" content="https://twitter.com/soulfoodmonk" />
   
@@ -56,9 +56,9 @@
             "@id": ""
       },
       "articleSection" : "blog",
-      "name" : "project: working with socket.io",
-      "headline" : "project: working with socket.io",
-      "description" : "Learning socket.io by writing a little chat program is easy and fun",
+      "name" : "mongo fixing broken stuff",
+      "headline" : "mongo fixing broken stuff",
+      "description" : "fixing stuff which causes me headache",
       "inLanguage" : "en-US",
       "author" : "",
       "creator" : "",
@@ -66,11 +66,11 @@
       "accountablePerson" : "",
       "copyrightHolder" : "",
       "copyrightYear" : "2020",
-      "datePublished": "2020-09-28 00:00:00 \u002b0200 CEST",
-      "dateModified" : "2020-09-28 00:00:00 \u002b0200 CEST",
-      "url" : "\/blog\/projects\/coffeinchat\/coffein-chat-1\/",
-      "wordCount" : "238",
-      "keywords" : ["project", "Blog"]
+      "datePublished": "2020-11-02 12:00:00 \u002b0200 \u002b0200",
+      "dateModified" : "2020-11-02 12:00:00 \u002b0200 \u002b0200",
+      "url" : "\/blog\/mongo\/mongo-fixing-stuff\/",
+      "wordCount" : "207",
+      "keywords" : ["notes", "Blog"]
     }
   
   </script>
@@ -111,41 +111,33 @@
       <div class="post__container">
         <div class="post">
           <header class="post__header">
-            <h1 id="post__title">project: working with socket.io</h1>
-            <time datetime="2020-09-28 00:00:00 &#43;0200 CEST" class="post__date">28 Sep 2020</time> 
+            <h1 id="post__title">mongo fixing broken stuff</h1>
+            <time datetime="2020-11-02 12:00:00 &#43;0200 &#43;0200" class="post__date">2 Nov 2020</time> 
           </header>
           <article class="post__content">
               
-<h2 id="cc-or-coffeinchat">CC or CoffeinChat<a class="anchor" href="#cc-or-coffeinchat">#</a></h2>
-<p>In a project im working on I recently got asked how we could implement a chat by ourselfs. We work a lot with GCP in this Project an so the first tough was to implement it with the help of firebase.</p>
-<p>But because of the ongoing debate about <strong>GDPR</strong> we skipped the easy way and tough about the critical stuff in a chat: The live reload aka pushing news to the client.</p>
-<p>Instantly three technical solutions where noted on the whiteboard:</p>
+<h2 id="convert-bson-timestamp-to-date">convert bson timestamp to date<a class="anchor" href="#convert-bson-timestamp-to-date">#</a></h2>
+<p>So I&rsquo;m used to create a timestamp for logging in the db when something is created. What should go wrong with using mongo bson <em>timestamp</em>. Let me say it this way. As long as you leave it alone in the database it will happily coexist with all the other stuff.</p>
+<p>But if you want to use it in javascript it gets complicated.</p>
+<p><strong>What is a timestamp in bson</strong></p>
+<p>This internal timestamp type is a 64 bit value where:</p>
 <ul>
-<li><strong>intervall polling</strong></li>
-<li><strong>long polling</strong></li>
-<li><strong>websockets</strong></li>
+<li>the most significant 32 bits are a time_t value (seconds since the Unix epoch)</li>
+<li>the least significant 32 bits are an incrementing ordinal for operations within a given second.</li>
 </ul>
-<p>But before going deeper in the technologies, I remembered there was as great solution for pushing stuff to the client: <strong>socket.io</strong></p>
-<p>I never worked before with socket.io but there is a nice tutorial on their page: <code>https://socket.io/get-started/chat/</code></p>
-<h2 id="making-a-usable-solution">making a usable solution<a class="anchor" href="#making-a-usable-solution">#</a></h2>
-<p>Tutorials are nice but what can we really do with it to make a fun little project out of it. Making Instant Chatting as simple as possible.</p>
+<p>Of course we can parse it to date, but do we really want to respect this every time we look at a timestamp? So how to reverse it back to good old handy bson date:</p>
+<p><strong>Solution</strong></p>
+<pre><code class="language-js">{
+  &quot;changed&quot; : { $toDate : { $dateToString : { date: &quot;$created_on&quot;}}}
+}
+</code></pre>
+<p>Sometimes it is good to understand the docs, at least now I do:</p>
+<blockquote>
+<p>The BSON timestamp type is for internal MongoDB use. For most cases, in application development, you will want to use the BSON date type. See <strong>Date</strong> for more information.</p>
+</blockquote>
+<h3 id="further-reading">further reading<a class="anchor" href="#further-reading">#</a></h3>
 <ul>
-<li>Starting a chat by a <strong>shareable url</strong>. I really appreciate it the way <a href="https://meet.jit.si/"><strong>jitsi</strong></a> does it.</li>
-<li>Having <strong>Nicknames</strong></li>
-<li>Meeting <strong>random people</strong></li>
-<li><strong>Destroying</strong> each chat after you leave the page/close the session (also means storing nothing in the backend)</li>
-</ul>
-<h2 id="lets-make-it">lets make it<a class="anchor" href="#lets-make-it">#</a></h2>
-<p><em>In production (not ready by now):</em></p>
-<ul>
-<li><strong>Part 1</strong>: Basics::Making the Chatroom and the basic server.</li>
-<li><strong>Part 2</strong>: Features::Build all the great features</li>
-</ul>
-<h2 id="current-state">current state<a class="anchor" href="#current-state">#</a></h2>
-<p>If you are interested in current development state visit:</p>
-<ul>
-<li><a href="https://github.com/MonksterFX/coffeinflash">Github - CoffeinFlash</a></li>
-<li><a href="https://github.com/MonksterFX/coffeinflash-ui">Github - CoffeinFlash UI</a></li>
+<li><a href="https://docs.mongodb.com/manual/reference/bson-types/#timestamps">mongo doc</a></li>
 </ul>
 
 
@@ -156,28 +148,20 @@
 <ul class="tags__list">
     
     <li class="tag__item">
-        <a class="tag__link" href="/tags/coffeinchat/">coffeinchat</a>
+        <a class="tag__link" href="/tags/mongodb/">mongodb</a>
     </li>
     <li class="tag__item">
-        <a class="tag__link" href="/tags/socket.io/">socket.io</a>
-    </li>
-    <li class="tag__item">
-        <a class="tag__link" href="/tags/project/">project</a>
+        <a class="tag__link" href="/tags/notes/">notes</a>
     </li></ul>
 
  <div class="pagination">
   
-    <a class="pagination__item" href="/blog/notes/ftp-without-chmod/">
+    <a class="pagination__item" href="/blog/projects/coffeinchat/coffein-chat-1/">
         <span class="pagination__label">Previous Post</span>
-        <span class="pagination__title">make ftp working with ssh without changing permissions</span>
+        <span class="pagination__title">project: working with socket.io</span>
     </a>
   
 
-  
-    <a class="pagination__item" href="/blog/mongo/mongo-fixing-stuff/">
-      <span class="pagination__label">Next Post</span>
-      <span class="pagination__title" >mongo fixing broken stuff</a>
-    </a>
   
 </div>
 
@@ -235,10 +219,11 @@
           
         <nav id="TableOfContents">
   <ul>
-    <li><a href="#cc-or-coffeinchat">CC or CoffeinChat</a></li>
-    <li><a href="#making-a-usable-solution">making a usable solution</a></li>
-    <li><a href="#lets-make-it">lets make it</a></li>
-    <li><a href="#current-state">current state</a></li>
+    <li><a href="#convert-bson-timestamp-to-date">convert bson timestamp to date</a>
+      <ul>
+        <li><a href="#further-reading">further reading</a></li>
+      </ul>
+    </li>
   </ul>
 </nav>
       </div>

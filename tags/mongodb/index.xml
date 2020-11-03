@@ -7,10 +7,21 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>© {year}</copyright>
-    <lastBuildDate>Mon, 13 Jul 2020 19:23:49 +0200</lastBuildDate>
+    <lastBuildDate>Mon, 02 Nov 2020 12:00:00 +0200</lastBuildDate>
     
 	<atom:link href="/tags/mongodb/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>mongo fixing broken stuff</title>
+      <link>/blog/mongo/mongo-fixing-stuff/</link>
+      <pubDate>Mon, 02 Nov 2020 12:00:00 +0200</pubDate>
+      
+      <guid>/blog/mongo/mongo-fixing-stuff/</guid>
+      <description>convert bson timestamp to date So I&amp;rsquo;m used to create a timestamp for logging in the db when something is created. What should go wrong with using mongo bson timestamp. Let me say it this way. As long as you leave it alone in the database it will happily coexist with all the other stuff.
+But if you want to use it in javascript it gets complicated.
+What is a timestamp in bson</description>
+    </item>
     
     <item>
       <title>mongo snippets: arrays</title>

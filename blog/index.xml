@@ -7,10 +7,21 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>© {year}</copyright>
-    <lastBuildDate>Mon, 28 Sep 2020 00:00:00 +0200</lastBuildDate>
+    <lastBuildDate>Mon, 02 Nov 2020 12:00:00 +0200</lastBuildDate>
     
 	<atom:link href="/blog/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>mongo fixing broken stuff</title>
+      <link>/blog/mongo/mongo-fixing-stuff/</link>
+      <pubDate>Mon, 02 Nov 2020 12:00:00 +0200</pubDate>
+      
+      <guid>/blog/mongo/mongo-fixing-stuff/</guid>
+      <description>convert bson timestamp to date So I&amp;rsquo;m used to create a timestamp for logging in the db when something is created. What should go wrong with using mongo bson timestamp. Let me say it this way. As long as you leave it alone in the database it will happily coexist with all the other stuff.
+But if you want to use it in javascript it gets complicated.
+What is a timestamp in bson</description>
+    </item>
     
     <item>
       <title>project: working with socket.io</title>
@@ -25,7 +36,7 @@ But because of the ongoing debate about GDPR we skipped the easy way and tough a
     <item>
       <title>make ftp working with ssh without changing permissions</title>
       <link>/blog/notes/ftp-without-chmod/</link>
-      <pubDate>Mon, 13 Jul 2020 19:23:49 +0200</pubDate>
+      <pubDate>Tue, 01 Sep 2020 12:00:00 +0200</pubDate>
       
       <guid>/blog/notes/ftp-without-chmod/</guid>
       <description>the problem If you want to disable your root user of the maschine being accessed via SSH you probably ran into Problems with SFTP on your server. As long you use the root user of the maschine your SFTP will work fine, but if you change your user you will get into trouble.

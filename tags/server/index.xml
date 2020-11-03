@@ -7,7 +7,7 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>© {year}</copyright>
-    <lastBuildDate>Mon, 13 Jul 2020 19:23:49 +0200</lastBuildDate>
+    <lastBuildDate>Tue, 01 Sep 2020 12:00:00 +0200</lastBuildDate>
     
 	<atom:link href="/tags/server/index.xml" rel="self" type="application/rss+xml" />
     
@@ -15,7 +15,7 @@
     <item>
       <title>make ftp working with ssh without changing permissions</title>
       <link>/blog/notes/ftp-without-chmod/</link>
-      <pubDate>Mon, 13 Jul 2020 19:23:49 +0200</pubDate>
+      <pubDate>Tue, 01 Sep 2020 12:00:00 +0200</pubDate>
       
       <guid>/blog/notes/ftp-without-chmod/</guid>
       <description>the problem If you want to disable your root user of the maschine being accessed via SSH you probably ran into Problems with SFTP on your server. As long you use the root user of the maschine your SFTP will work fine, but if you change your user you will get into trouble.

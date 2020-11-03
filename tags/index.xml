@@ -7,10 +7,28 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>© {year}</copyright>
-    <lastBuildDate>Mon, 28 Sep 2020 00:00:00 +0200</lastBuildDate>
+    <lastBuildDate>Mon, 02 Nov 2020 12:00:00 +0200</lastBuildDate>
     
 	<atom:link href="/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>mongodb</title>
+      <link>/tags/mongodb/</link>
+      <pubDate>Mon, 02 Nov 2020 12:00:00 +0200</pubDate>
+      
+      <guid>/tags/mongodb/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>notes</title>
+      <link>/tags/notes/</link>
+      <pubDate>Mon, 02 Nov 2020 12:00:00 +0200</pubDate>
+      
+      <guid>/tags/notes/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>coffeinchat</title>
@@ -42,34 +60,16 @@
     <item>
       <title>ftp</title>
       <link>/tags/ftp/</link>
-      <pubDate>Mon, 13 Jul 2020 19:23:49 +0200</pubDate>
+      <pubDate>Tue, 01 Sep 2020 12:00:00 +0200</pubDate>
       
       <guid>/tags/ftp/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>mongodb</title>
-      <link>/tags/mongodb/</link>
-      <pubDate>Mon, 13 Jul 2020 19:23:49 +0200</pubDate>
-      
-      <guid>/tags/mongodb/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>notes</title>
-      <link>/tags/notes/</link>
-      <pubDate>Mon, 13 Jul 2020 19:23:49 +0200</pubDate>
-      
-      <guid>/tags/notes/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>server</title>
       <link>/tags/server/</link>
-      <pubDate>Mon, 13 Jul 2020 19:23:49 +0200</pubDate>
+      <pubDate>Tue, 01 Sep 2020 12:00:00 +0200</pubDate>
       
       <guid>/tags/server/</guid>
       <description></description>
@@ -78,7 +78,7 @@
     <item>
       <title>sftp</title>
       <link>/tags/sftp/</link>
-      <pubDate>Mon, 13 Jul 2020 19:23:49 +0200</pubDate>
+      <pubDate>Tue, 01 Sep 2020 12:00:00 +0200</pubDate>
       
       <guid>/tags/sftp/</guid>
       <description></description>
