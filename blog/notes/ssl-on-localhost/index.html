@@ -2,12 +2,12 @@
 <html lang="en-us">
 
 <head>
-  <title>mongo fixing broken timestamps | moench.dev</title>
+  <title> | moench.dev</title>
 
   <meta charset="UTF-8">
   <meta name="language" content="en">
-  <meta name="description" content="fixing stuff which causes me headache">
-  <meta name="keywords" content="notes">
+  <meta name="description" content="">
+  <meta name="keywords" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -17,8 +17,8 @@
   
   
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="mongo fixing broken timestamps" />
-  <meta name="twitter:description" content="fixing stuff which causes me headache"/>
+  <meta name="twitter:title" content="" />
+  <meta name="twitter:description" content=""/>
   <meta name="twitter:site" content="https://twitter.com/soulfoodmonk" />
   <meta name="twitter:creator" content="https://twitter.com/soulfoodmonk" />
   
@@ -56,21 +56,21 @@
             "@id": ""
       },
       "articleSection" : "blog",
-      "name" : "mongo fixing broken timestamps",
-      "headline" : "mongo fixing broken timestamps",
-      "description" : "fixing stuff which causes me headache",
+      "name" : "",
+      "headline" : "",
+      "description" : "",
       "inLanguage" : "en-US",
       "author" : "",
       "creator" : "",
       "publisher": "",
       "accountablePerson" : "",
       "copyrightHolder" : "",
-      "copyrightYear" : "2020",
-      "datePublished": "2020-11-02 12:00:00 \u002b0200 \u002b0200",
-      "dateModified" : "2020-11-02 12:00:00 \u002b0200 \u002b0200",
-      "url" : "\/blog\/mongo\/mongo-fixing-stuff\/",
-      "wordCount" : "207",
-      "keywords" : ["notes", "Blog"]
+      "copyrightYear" : "0001",
+      "datePublished": "0001-01-01 00:00:00 \u002b0000 UTC",
+      "dateModified" : "0001-01-01 00:00:00 \u002b0000 UTC",
+      "url" : "\/blog\/notes\/ssl-on-localhost\/",
+      "wordCount" : "68",
+      "keywords" : ["Blog"]
     }
   
   </script>
@@ -115,61 +115,40 @@
       <div class="post__container">
         <div class="post">
           <header class="post__header">
-            <h1 id="post__title">mongo fixing broken timestamps</h1>
-            <time datetime="2020-11-02 12:00:00 &#43;0200 &#43;0200" class="post__date">2 Nov 2020</time> 
+            <h1 id="post__title"></h1>
+            
           </header>
           <article class="post__content">
               
-<h2 id="convert-bson-timestamp-to-date">convert bson timestamp to date<a class="anchor" href="#convert-bson-timestamp-to-date">#</a></h2>
-<p>So I&rsquo;m used to create a timestamp for logging in the db when something is created. What should go wrong with using mongo bson <em>timestamp</em>. Let me say it this way. As long as you leave it alone in the database it will happily coexist with all the other stuff.</p>
-<p>But if you want to use it in javascript it gets complicated.</p>
-<p><strong>What is a timestamp in bson</strong></p>
-<p>This internal timestamp type is a 64 bit value where:</p>
-<ul>
-<li>the most significant 32 bits are a time_t value (seconds since the Unix epoch)</li>
-<li>the least significant 32 bits are an incrementing ordinal for operations within a given second.</li>
-</ul>
-<p>Of course we can parse it to date, but do we really want to respect this every time we look at a timestamp? So how to reverse it back to good old handy bson date:</p>
-<p><strong>Solution</strong></p>
-<pre><code class="language-js">{
-  &quot;changed&quot; : { $toDate : { $dateToString : { date: &quot;$created_on&quot;}}}
-}
-</code></pre>
-<p>Sometimes it is good to understand the docs, at least now I do:</p>
-<blockquote>
-<p>The BSON timestamp type is for internal MongoDB use. For most cases, in application development, you will want to use the BSON date type. See <strong>Date</strong> for more information.</p>
-</blockquote>
-<h3 id="further-reading">further reading<a class="anchor" href="#further-reading">#</a></h3>
-<ul>
-<li><a href="https://docs.mongodb.com/manual/reference/bson-types/#timestamps">mongo doc</a></li>
-</ul>
+<h1 id="use-https-on-localhost-with-angular">use https on localhost with angular</h1>
+<p><code>ng serve --ssl --ssl-key=&lt;path-to-key&gt; --ssl-key=&lt;path-to-cert&gt;</code></p>
+<h1 id="use-https-on-localhost-with-vue">use https on localhost with vue</h1>
+<h1 id="use-https-on-localhost-with-node">use https on localhost with node</h1>
+<h1 id="chrome-caching-problem-hsts-with-http">chrome caching problem hsts with http</h1>
+<p>If you use HSTS on your local development build
+HSTS is HTTP Strict Transport Security: a way for sites to elect to always use HTTPS.</p>
+<p><code>chrome://net-internals/#hsts</code></p>
+<p>Delete domain security policies</p>
+<h2 id="literatur">literatur<a class="anchor" href="#literatur">#</a></h2>
+<p>ssl certificate route
+<a href="https://letsencrypt.org/docs/certificates-for-localhost/">https://letsencrypt.org/docs/certificates-for-localhost/</a></p>
+<p><a href="https://medium.com/@richardr39/using-angular-cli-to-serve-over-https-locally-70dab07417c8">https://medium.com/@richardr39/using-angular-cli-to-serve-over-https-locally-70dab07417c8</a>
+<a href="https://angular.io/cli/serve#options">https://angular.io/cli/serve#options</a></p>
+<p><a href="https://vue-view.com/vue-ssl-certificate-how-to-enable-it/">https://vue-view.com/vue-ssl-certificate-how-to-enable-it/</a>
+<a href="https://webpack.js.org/configuration/dev-server/#devserverhttps">https://webpack.js.org/configuration/dev-server/#devserverhttps</a></p>
 
 
               
           </article>
           
 
-<ul class="tags__list">
-    
-    <li class="tag__item">
-        <a class="tag__link" href="/tags/mongodb/">mongodb</a>
-    </li>
-    <li class="tag__item">
-        <a class="tag__link" href="/tags/notes/">notes</a>
-    </li></ul>
-
  <div class="pagination">
   
-    <a class="pagination__item" href="/blog/projects/coffeinchat/coffein-chat-1/">
-        <span class="pagination__label">Previous Post</span>
-        <span class="pagination__title">project: working with socket.io</span>
-    </a>
-  
 
   
-    <a class="pagination__item" href="/blog/about/about-me/">
+    <a class="pagination__item" href="/blog/mongo/mongo-snippets-arrays/">
       <span class="pagination__label">Next Post</span>
-      <span class="pagination__title" >about: me</a>
+      <span class="pagination__title" >mongo snippets: arrays</a>
     </a>
   
 </div>
@@ -230,19 +209,6 @@
           </div>
       </div>
       
-      <div class="toc-container">
-          
-        <nav id="TableOfContents">
-  <ul>
-    <li><a href="#convert-bson-timestamp-to-date">convert bson timestamp to date</a>
-      <ul>
-        <li><a href="#further-reading">further reading</a></li>
-      </ul>
-    </li>
-  </ul>
-</nav>
-      </div>
-      
     </div>
     
 
@@ -260,8 +226,6 @@
   <script src="https://unpkg.com/prismjs@1.20.0/plugins/autoloader/prism-autoloader.min.js"
     data-autoloader-path="https://unpkg.com/prismjs@1.20.0/components/"></script>
 
-  
-    <script src="/js/table-of-contents.js"></script>
   
 
 

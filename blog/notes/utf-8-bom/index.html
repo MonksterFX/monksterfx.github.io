@@ -2,12 +2,12 @@
 <html lang="en-us">
 
 <head>
-  <title>mongo fixing broken timestamps | moench.dev</title>
+  <title>w(u)tf-8 german csv and ms excel | moench.dev</title>
 
   <meta charset="UTF-8">
   <meta name="language" content="en">
-  <meta name="description" content="fixing stuff which causes me headache">
-  <meta name="keywords" content="notes">
+  <meta name="description" content="utf-8 bom and why it matters with german csv">
+  <meta name="keywords" content="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -17,8 +17,8 @@
   
   
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="mongo fixing broken timestamps" />
-  <meta name="twitter:description" content="fixing stuff which causes me headache"/>
+  <meta name="twitter:title" content="w(u)tf-8 german csv and ms excel" />
+  <meta name="twitter:description" content="utf-8 bom and why it matters with german csv"/>
   <meta name="twitter:site" content="https://twitter.com/soulfoodmonk" />
   <meta name="twitter:creator" content="https://twitter.com/soulfoodmonk" />
   
@@ -56,21 +56,21 @@
             "@id": ""
       },
       "articleSection" : "blog",
-      "name" : "mongo fixing broken timestamps",
-      "headline" : "mongo fixing broken timestamps",
-      "description" : "fixing stuff which causes me headache",
+      "name" : "w(u)tf-8 german csv and ms excel",
+      "headline" : "w(u)tf-8 german csv and ms excel",
+      "description" : "utf-8 bom and why it matters with german csv",
       "inLanguage" : "en-US",
       "author" : "",
       "creator" : "",
       "publisher": "",
       "accountablePerson" : "",
       "copyrightHolder" : "",
-      "copyrightYear" : "2020",
-      "datePublished": "2020-11-02 12:00:00 \u002b0200 \u002b0200",
-      "dateModified" : "2020-11-02 12:00:00 \u002b0200 \u002b0200",
-      "url" : "\/blog\/mongo\/mongo-fixing-stuff\/",
-      "wordCount" : "207",
-      "keywords" : ["notes", "Blog"]
+      "copyrightYear" : "2021",
+      "datePublished": "2021-02-25 12:00:00 \u002b0100 CET",
+      "dateModified" : "2021-02-25 12:00:00 \u002b0100 CET",
+      "url" : "\/blog\/notes\/utf-8-bom\/",
+      "wordCount" : "239",
+      "keywords" : ["utf-8", "Blog"]
     }
   
   </script>
@@ -115,33 +115,36 @@
       <div class="post__container">
         <div class="post">
           <header class="post__header">
-            <h1 id="post__title">mongo fixing broken timestamps</h1>
-            <time datetime="2020-11-02 12:00:00 &#43;0200 &#43;0200" class="post__date">2 Nov 2020</time> 
+            <h1 id="post__title">w(u)tf-8 german csv and ms excel</h1>
+            <time datetime="2021-02-25 12:00:00 &#43;0100 CET" class="post__date">25 Feb 2021</time> 
           </header>
           <article class="post__content">
               
-<h2 id="convert-bson-timestamp-to-date">convert bson timestamp to date<a class="anchor" href="#convert-bson-timestamp-to-date">#</a></h2>
-<p>So I&rsquo;m used to create a timestamp for logging in the db when something is created. What should go wrong with using mongo bson <em>timestamp</em>. Let me say it this way. As long as you leave it alone in the database it will happily coexist with all the other stuff.</p>
-<p>But if you want to use it in javascript it gets complicated.</p>
-<p><strong>What is a timestamp in bson</strong></p>
-<p>This internal timestamp type is a 64 bit value where:</p>
-<ul>
-<li>the most significant 32 bits are a time_t value (seconds since the Unix epoch)</li>
-<li>the least significant 32 bits are an incrementing ordinal for operations within a given second.</li>
-</ul>
-<p>Of course we can parse it to date, but do we really want to respect this every time we look at a timestamp? So how to reverse it back to good old handy bson date:</p>
-<p><strong>Solution</strong></p>
-<pre><code class="language-js">{
-  &quot;changed&quot; : { $toDate : { $dateToString : { date: &quot;$created_on&quot;}}}
-}
+<h2 id="why-german-utf-8-is-broken">why german utf-8 is broken<a class="anchor" href="#why-german-utf-8-is-broken">#</a></h2>
+<p>The programming world most of the time does not really care about characters which are special in other languages others than englisch. So in Germany we have our all time favorites <code>ÄÖÜäüöß</code> to take care about everytime we work with text documents.</p>
+<p>Normally you will have no trouble with text editors, but an burning example is Microsoft Office. To correctly import an utf-8 encoded csv document (with special chars) you have to provide an BOM. If you don&rsquo;t add an BOM Mircosoft will handle the file as it would be ASCII-encoded.</p>
+<h2 id="example">example<a class="anchor" href="#example">#</a></h2>
+<p><em>node.js example</em>:</p>
+<pre><code class="language-js">// utf-8
+fs.writeFileSync(filename, '\ufeff' + content);
 </code></pre>
-<p>Sometimes it is good to understand the docs, at least now I do:</p>
+<p>This is strange because Wikipedia says with utf-8 it should be <code>0xEFBBBF</code> for utf-8.</p>
+<p>But Mozilla Developer states:</p>
 <blockquote>
-<p>The BSON timestamp type is for internal MongoDB use. For most cases, in application development, you will want to use the BSON date type. See <strong>Date</strong> for more information.</p>
+<p><strong>0xFEFF</strong>: Used at the start of the script to mark it as Unicode and the text&rsquo;s byte order. <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Lexical_grammar#control_characters">Mozilla Developer</a></p>
 </blockquote>
-<h3 id="further-reading">further reading<a class="anchor" href="#further-reading">#</a></h3>
+<p>But anyway. Node handels it for us and now we you can import the csv file in Microsoft Office with correct encoding.</p>
+<h2 id="extra-round-regex">extra round regex<a class="anchor" href="#extra-round-regex">#</a></h2>
+<p>If I talk about this topic, I should shortly add how this things work with regex.</p>
+<blockquote>
+<p>Instead of using <code>[A-Z]</code> we have to use <code>[A-ZÄÜÖß]</code>. Keep this in mind if you work a lot with text. You can try this here <a href="https://regexr.com/">https://regexr.com/</a></p>
+</blockquote>
+<h2 id="more-informations">more informations<a class="anchor" href="#more-informations">#</a></h2>
 <ul>
-<li><a href="https://docs.mongodb.com/manual/reference/bson-types/#timestamps">mongo doc</a></li>
+<li><a href="https://stackoverflow.com/questions/2223882/whats-the-difference-between-utf-8-and-utf-8-without-bom">discussion on StackOverflow about BOM in utf-8 encoded files, part 1</a></li>
+<li><a href="https://stackoverflow.com/questions/17879198/adding-utf-8-bom-to-string-blob">discussion on StackOverflow about BOM in utf-8 encoded files, part2</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Byte_order_mark">wikipedia article about BOM</a></li>
+<li><a href="https://docs.microsoft.com/en-us/globalization/encoding/byte-order-mark">microsoft globalisation</a></li>
 </ul>
 
 
@@ -149,28 +152,14 @@
           </article>
           
 
-<ul class="tags__list">
-    
-    <li class="tag__item">
-        <a class="tag__link" href="/tags/mongodb/">mongodb</a>
-    </li>
-    <li class="tag__item">
-        <a class="tag__link" href="/tags/notes/">notes</a>
-    </li></ul>
-
  <div class="pagination">
   
-    <a class="pagination__item" href="/blog/projects/coffeinchat/coffein-chat-1/">
+    <a class="pagination__item" href="/blog/about/about-me/">
         <span class="pagination__label">Previous Post</span>
-        <span class="pagination__title">project: working with socket.io</span>
+        <span class="pagination__title">about: me</span>
     </a>
   
 
-  
-    <a class="pagination__item" href="/blog/about/about-me/">
-      <span class="pagination__label">Next Post</span>
-      <span class="pagination__title" >about: me</a>
-    </a>
   
 </div>
 
@@ -230,19 +219,6 @@
           </div>
       </div>
       
-      <div class="toc-container">
-          
-        <nav id="TableOfContents">
-  <ul>
-    <li><a href="#convert-bson-timestamp-to-date">convert bson timestamp to date</a>
-      <ul>
-        <li><a href="#further-reading">further reading</a></li>
-      </ul>
-    </li>
-  </ul>
-</nav>
-      </div>
-      
     </div>
     
 
@@ -260,8 +236,6 @@
   <script src="https://unpkg.com/prismjs@1.20.0/plugins/autoloader/prism-autoloader.min.js"
     data-autoloader-path="https://unpkg.com/prismjs@1.20.0/components/"></script>
 
-  
-    <script src="/js/table-of-contents.js"></script>
   
 
 

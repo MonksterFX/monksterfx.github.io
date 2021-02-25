@@ -4,12 +4,22 @@
   
   <url>
     <loc>/</loc>
-    <lastmod>2020-11-02T12:00:00+02:00</lastmod>
+    <lastmod>2021-02-25T12:00:00+01:00</lastmod>
   </url>
   
   <url>
     <loc>/blog/</loc>
-    <lastmod>2020-11-02T12:00:00+02:00</lastmod>
+    <lastmod>2021-02-25T12:00:00+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/blog/notes/utf-8-bom/</loc>
+    <lastmod>2021-02-25T12:00:00+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/blog/about/about-me/</loc>
+    <lastmod>2020-12-31T12:00:00+02:00</lastmod>
   </url>
   
   <url>
@@ -75,6 +85,10 @@
   <url>
     <loc>/blog/mongo/mongo-snippets-arrays/</loc>
     <lastmod>2020-07-13T19:23:49+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/blog/notes/ssl-on-localhost/</loc>
   </url>
   
   <url>
