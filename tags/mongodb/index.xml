@@ -7,10 +7,21 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>© {year}</copyright>
-    <lastBuildDate>Mon, 02 Nov 2020 12:00:00 +0200</lastBuildDate>
+    <lastBuildDate>Sun, 25 Apr 2021 12:00:00 +0200</lastBuildDate>
     
 	<atom:link href="/tags/mongodb/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>mongo snippets: array cheatsheet</title>
+      <link>/blog/mongo/mongo-array-cheatsheet-values/</link>
+      <pubDate>Sun, 25 Apr 2021 12:00:00 +0200</pubDate>
+      
+      <guid>/blog/mongo/mongo-array-cheatsheet-values/</guid>
+      <description>Cheatsheet - Array Of Values A short cheat sheet for working with arrays in mongodb queries and aggregations. Inspired by: Mongo Doc - Update Array Operator
+document structure For all following examples we assume a collection named &amp;ldquo;arrays&amp;rdquo; with at least on document of the following structure:
+{ &amp;quot;tags&amp;quot;: [ &amp;quot;tag a&amp;quot;, &amp;quot;tag b&amp;quot;, &amp;quot;tag c&amp;quot; ] }  create Creation is very straight forward so we will skip this part here.</description>
+    </item>
     
     <item>
       <title>mongo fixing broken timestamps</title>

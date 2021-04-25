@@ -7,10 +7,20 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>© {year}</copyright>
-    <lastBuildDate>Mon, 02 Nov 2020 12:00:00 +0200</lastBuildDate>
+    <lastBuildDate>Thu, 25 Feb 2021 12:00:00 +0200</lastBuildDate>
     
 	<atom:link href="/tags/notes/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>arduino: how to use the serial plotter of Arduino IDE</title>
+      <link>/blog/arduino/arduino-ide-serial-plotter/</link>
+      <pubDate>Thu, 25 Feb 2021 12:00:00 +0200</pubDate>
+      
+      <guid>/blog/arduino/arduino-ide-serial-plotter/</guid>
+      <description>the serial plotter labeling the series If you have to print some debug messages in the beginning, the Serial Plotter will interpret these as Series Labels. To clear unneacessary labels, just restart the serial plotter (not the mc). In order to catch up the labels, you have to print them to Serial everytime you print values. So it is garanted that the series labels are recognized.
+As seperators you can use a tabulator, a space or a comma.</description>
+    </item>
     
     <item>
       <title>mongo fixing broken timestamps</title>
@@ -31,17 +41,6 @@ What is a timestamp in bson</description>
       <guid>/blog/notes/ftp-without-chmod/</guid>
       <description>the problem If you want to disable your root user of the maschine being accessed via SSH you probably ran into Problems with SFTP on your server. As long you use the root user of the maschine your SFTP will work fine, but if you change your user you will get into trouble.
 I&amp;rsquo;m working a lot with docker and bind mounts for config files so I can&amp;rsquo;t change the owner/permission of the directory or file I&amp;rsquo;m binding to.</description>
-    </item>
-    
-    <item>
-      <title>mongo snippets: arrays</title>
-      <link>/blog/mongo/mongo-snippets-arrays/</link>
-      <pubDate>Mon, 13 Jul 2020 19:23:49 +0200</pubDate>
-      
-      <guid>/blog/mongo/mongo-snippets-arrays/</guid>
-      <description>extract only subset of embedded documents Sometimes we want to extract not all embedded documents from a matched documents. Imagine a object chatroom:
-{ _id: ObjectId(&#39;5f687ba6a93aeddc476ea157&#39;), ... messages: Array&amp;lt;Messages&amp;gt; }  The messages look like this:
-{ sender: Reference, send_at: Date payload: &amp;quot;&amp;quot; }  Now when we want to extract all message before, after a date we could query the Chatroom and filter it in the backend logic, or we can use Aggregation Pipeline.</description>
     </item>
     
   </channel>

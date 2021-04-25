@@ -7,10 +7,21 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>© {year}</copyright>
-    <lastBuildDate>Thu, 25 Feb 2021 12:00:00 +0100</lastBuildDate>
+    <lastBuildDate>Sun, 25 Apr 2021 12:00:00 +0200</lastBuildDate>
     
 	<atom:link href="/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>mongo snippets: array cheatsheet</title>
+      <link>/blog/mongo/mongo-array-cheatsheet-values/</link>
+      <pubDate>Sun, 25 Apr 2021 12:00:00 +0200</pubDate>
+      
+      <guid>/blog/mongo/mongo-array-cheatsheet-values/</guid>
+      <description>Cheatsheet - Array Of Values A short cheat sheet for working with arrays in mongodb queries and aggregations. Inspired by: Mongo Doc - Update Array Operator
+document structure For all following examples we assume a collection named &amp;ldquo;arrays&amp;rdquo; with at least on document of the following structure:
+{ &amp;quot;tags&amp;quot;: [ &amp;quot;tag a&amp;quot;, &amp;quot;tag b&amp;quot;, &amp;quot;tag c&amp;quot; ] }  create Creation is very straight forward so we will skip this part here.</description>
+    </item>
     
     <item>
       <title>w(u)tf-8 german csv and ms excel</title>
@@ -20,6 +31,16 @@
       <guid>/blog/notes/utf-8-bom/</guid>
       <description>why german utf-8 is broken The programming world most of the time does not really care about characters which are special in other languages others than englisch. So in Germany we have our all time favorites ÄÖÜäüöß to take care about everytime we work with text documents.
 Normally you will have no trouble with text editors, but an burning example is Microsoft Office. To correctly import an utf-8 encoded csv document (with special chars) you have to provide an BOM.</description>
+    </item>
+    
+    <item>
+      <title>arduino: how to use the serial plotter of Arduino IDE</title>
+      <link>/blog/arduino/arduino-ide-serial-plotter/</link>
+      <pubDate>Thu, 25 Feb 2021 12:00:00 +0200</pubDate>
+      
+      <guid>/blog/arduino/arduino-ide-serial-plotter/</guid>
+      <description>the serial plotter labeling the series If you have to print some debug messages in the beginning, the Serial Plotter will interpret these as Series Labels. To clear unneacessary labels, just restart the serial plotter (not the mc). In order to catch up the labels, you have to print them to Serial everytime you print values. So it is garanted that the series labels are recognized.
+As seperators you can use a tabulator, a space or a comma.</description>
     </item>
     
     <item>
@@ -74,21 +95,6 @@ I&amp;rsquo;m working a lot with docker and bind mounts for config files so I ca
       <description>extract only subset of embedded documents Sometimes we want to extract not all embedded documents from a matched documents. Imagine a object chatroom:
 { _id: ObjectId(&#39;5f687ba6a93aeddc476ea157&#39;), ... messages: Array&amp;lt;Messages&amp;gt; }  The messages look like this:
 { sender: Reference, send_at: Date payload: &amp;quot;&amp;quot; }  Now when we want to extract all message before, after a date we could query the Chatroom and filter it in the backend logic, or we can use Aggregation Pipeline.</description>
-    </item>
-    
-    <item>
-      <title></title>
-      <link>/blog/notes/ssl-on-localhost/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>/blog/notes/ssl-on-localhost/</guid>
-      <description>use https on localhost with angular ng serve --ssl --ssl-key=&amp;lt;path-to-key&amp;gt; --ssl-key=&amp;lt;path-to-cert&amp;gt;
-use https on localhost with vue use https on localhost with node chrome caching problem hsts with http If you use HSTS on your local development build HSTS is HTTP Strict Transport Security: a way for sites to elect to always use HTTPS.
-chrome://net-internals/#hsts
-Delete domain security policies
-literatur ssl certificate route https://letsencrypt.org/docs/certificates-for-localhost/
-https://medium.com/@richardr39/using-angular-cli-to-serve-over-https-locally-70dab07417c8 https://angular.io/cli/serve#options
-https://vue-view.com/vue-ssl-certificate-how-to-enable-it/ https://webpack.js.org/configuration/dev-server/#devserverhttps</description>
     </item>
     
   </channel>

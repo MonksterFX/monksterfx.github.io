@@ -2,11 +2,11 @@
 <html lang="en-us">
 
 <head>
-  <title>mongo snippets: arrays | moench.dev</title>
+  <title>arduino: how to use the serial plotter of Arduino IDE | moench.dev</title>
 
   <meta charset="UTF-8">
   <meta name="language" content="en">
-  <meta name="description" content="mongodb snippets for handling arrays">
+  <meta name="description" content="How to use the serial plotter of Arduino IDE">
   <meta name="keywords" content="notes">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
@@ -17,8 +17,8 @@
   
   
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="mongo snippets: arrays" />
-  <meta name="twitter:description" content="mongodb snippets for handling arrays"/>
+  <meta name="twitter:title" content="arduino: how to use the serial plotter of Arduino IDE" />
+  <meta name="twitter:description" content="How to use the serial plotter of Arduino IDE"/>
   <meta name="twitter:site" content="https://twitter.com/soulfoodmonk" />
   <meta name="twitter:creator" content="https://twitter.com/soulfoodmonk" />
   
@@ -56,20 +56,20 @@
             "@id": ""
       },
       "articleSection" : "blog",
-      "name" : "mongo snippets: arrays",
-      "headline" : "mongo snippets: arrays",
-      "description" : "mongodb snippets for handling arrays",
+      "name" : "arduino: how to use the serial plotter of Arduino IDE",
+      "headline" : "arduino: how to use the serial plotter of Arduino IDE",
+      "description" : "How to use the serial plotter of Arduino IDE",
       "inLanguage" : "en-US",
       "author" : "",
       "creator" : "",
       "publisher": "",
       "accountablePerson" : "",
       "copyrightHolder" : "",
-      "copyrightYear" : "2020",
-      "datePublished": "2020-07-13 19:23:49 \u002b0200 CEST",
-      "dateModified" : "2020-07-13 19:23:49 \u002b0200 CEST",
-      "url" : "\/blog\/mongo\/mongo-snippets-arrays\/",
-      "wordCount" : "148",
+      "copyrightYear" : "2021",
+      "datePublished": "2021-02-25 12:00:00 \u002b0200 \u002b0200",
+      "dateModified" : "2021-02-25 12:00:00 \u002b0200 \u002b0200",
+      "url" : "\/blog\/arduino\/arduino-ide-serial-plotter\/",
+      "wordCount" : "89",
       "keywords" : ["notes", "Blog"]
     }
   
@@ -114,68 +114,38 @@
       <div class="post__container">
         <div class="post">
           <header class="post__header">
-            <h1 id="post__title">mongo snippets: arrays</h1>
-            <time datetime="2020-07-13 19:23:49 &#43;0200 CEST" class="post__date">13 Jul 2020</time> 
+            <h1 id="post__title">arduino: how to use the serial plotter of Arduino IDE</h1>
+            <time datetime="2021-02-25 12:00:00 &#43;0200 &#43;0200" class="post__date">25 Feb 2021</time> 
           </header>
           <article class="post__content">
               
-<h2 id="extract-only-subset-of-embedded-documents">extract only subset of embedded documents<a class="anchor" href="#extract-only-subset-of-embedded-documents">#</a></h2>
-<p>Sometimes we want to extract not all embedded documents from a matched documents. Imagine a object <strong>chatroom</strong>:</p>
-<pre><code class="language-js">{
-    _id: ObjectId('5f687ba6a93aeddc476ea157'),
-    ...
-    messages: Array&lt;Messages&gt;
-}
+<h2 id="the-serial-plotter">the serial plotter<a class="anchor" href="#the-serial-plotter">#</a></h2>
+<h2 id="labeling-the-series">labeling the series<a class="anchor" href="#labeling-the-series">#</a></h2>
+<p>If you have to print some debug messages in the beginning, the Serial Plotter will interpret these as Series Labels. To clear unneacessary labels, just restart the serial plotter (not the mc). In order to catch up the labels, you have to print them to Serial everytime you print values. So it is garanted that the series labels are recognized.</p>
+<p>As seperators you can use a tabulator, a space or a comma.</p>
+<p><strong>Example:</strong></p>
+<pre><code class="language-c++">// in each loop
+Serial.println(&quot;Series1\tSeries2\tSeries3&quot;);
+Serial.print(value1);
+Serial.print(&quot;\t&quot;);
+Serial.print(value2);
+Serial.print(&quot;\t&quot;);
+Serial.println(value3);
 </code></pre>
-<p>The <strong>messages</strong> look like this:</p>
-<pre><code class="language-js">{
-    sender: Reference,
-    send_at: Date
-    payload: &quot;&quot;
-}
-</code></pre>
-<p>Now when we want to extract all message before, after a date we could query the Chatroom and filter it in the backend logic, or we can use <a href="">Aggregation Pipeline</a>. In this specifc case we have two steps in the pipeline:</p>
-<ul>
-<li>find chatroom (<strong>match</strong>)</li>
-<li>extract all Messages before/after a date in the chatroom (<strong>filter</strong>)</li>
-</ul>
-<h3 id="the-query">the query<a class="anchor" href="#the-query">#</a></h3>
-<p>Example for <strong>after</strong> a defined date:</p>
-<pre><code class="language-js">[
-  {
-    $match: {
-      _id: new ObjectId(
-        &quot;5f687ba6a93aeddc476ea157&quot;
-      ),
-    },
-  },
-  {
-    $filter: {
-      input:
-        &quot;$messages&quot;,
-      as: &quot;message&quot;,
-      cond: {
-        $gte: [
-          &quot;$$message.send_at&quot;,
-          new Date(
-            &quot;2020-10-12T13:00:00.000Z&quot;
-          ),
-        ],
-      },
-    },
-  },
-];
-</code></pre>
-<h2 id="deep-dive-subcollections">deep dive subcollections<a class="anchor" href="#deep-dive-subcollections">#</a></h2>
-<p><a href="https://gist.github.com/MonksterFX/c06e8fdeaa577760a325424ed3a84bd6">https://gist.github.com/MonksterFX/c06e8fdeaa577760a325424ed3a84bd6</a></p>
-<p><a href="http://www.petecorey.com/blog/2020/01/29/mongodb-object-array-lookup-aggregation/">http://www.petecorey.com/blog/2020/01/29/mongodb-object-array-lookup-aggregation/</a></p>
-<h3 id="further-reading">further reading<a class="anchor" href="#further-reading">#</a></h3>
-<ul>
-<li><a href="https://stackoverflow.com/a/40972424/10101463">Stackoverflow Answer</a></li>
-<li><a href="https://docs.mongodb.com/manual/reference/operator/aggregation/filter/">Mongodb Filter</a></li>
-</ul>
 
 
+              
+                  
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_SVG"></script>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+            showMathMenu: false, //disables context menu
+            tex2jax: {
+            inlineMath: [ ['$','$'], ['\\(','\\)'] ]
+           }
+    });
+</script>
               
           </article>
           
@@ -183,19 +153,21 @@
 <ul class="tags__list">
     
     <li class="tag__item">
-        <a class="tag__link" href="/tags/mongodb/">mongodb</a>
-    </li>
-    <li class="tag__item">
-        <a class="tag__link" href="/tags/arrays/">arrays</a>
+        <a class="tag__link" href="/tags/notes/">notes</a>
     </li></ul>
 
  <div class="pagination">
   
+    <a class="pagination__item" href="/blog/about/about-me/">
+        <span class="pagination__label">Previous Post</span>
+        <span class="pagination__title">about: me</span>
+    </a>
+  
 
   
-    <a class="pagination__item" href="/blog/notes/ftp-without-chmod/">
+    <a class="pagination__item" href="/blog/notes/utf-8-bom/">
       <span class="pagination__label">Next Post</span>
-      <span class="pagination__title" >make ftp working with ssh without changing permissions</a>
+      <span class="pagination__title" >w(u)tf-8 german csv and ms excel</a>
     </a>
   
 </div>
@@ -256,24 +228,6 @@
           </div>
       </div>
       
-      <div class="toc-container">
-          
-        <nav id="TableOfContents">
-  <ul>
-    <li><a href="#extract-only-subset-of-embedded-documents">extract only subset of embedded documents</a>
-      <ul>
-        <li><a href="#the-query">the query</a></li>
-      </ul>
-    </li>
-    <li><a href="#deep-dive-subcollections">deep dive subcollections</a>
-      <ul>
-        <li><a href="#further-reading">further reading</a></li>
-      </ul>
-    </li>
-  </ul>
-</nav>
-      </div>
-      
     </div>
     
 
@@ -291,8 +245,6 @@
   <script src="https://unpkg.com/prismjs@1.20.0/plugins/autoloader/prism-autoloader.min.js"
     data-autoloader-path="https://unpkg.com/prismjs@1.20.0/components/"></script>
 
-  
-    <script src="/js/table-of-contents.js"></script>
   
 
 
