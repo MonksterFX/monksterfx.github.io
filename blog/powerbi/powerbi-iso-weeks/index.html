@@ -2,12 +2,12 @@
 <html lang="en-us">
 
 <head>
-  <title>w(u)tf-8 german csv and ms excel | moench.dev</title>
+  <title>powerbi: handling iso weeks | moench.dev</title>
 
   <meta charset="UTF-8">
   <meta name="language" content="en">
-  <meta name="description" content="utf-8 bom and why it matters with german csv">
-  <meta name="keywords" content="utf-8">
+  <meta name="description" content="handling iso calendar weeks in powerbi">
+  <meta name="keywords" content="notes">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -17,8 +17,8 @@
   
   
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="w(u)tf-8 german csv and ms excel" />
-  <meta name="twitter:description" content="utf-8 bom and why it matters with german csv"/>
+  <meta name="twitter:title" content="powerbi: handling iso weeks" />
+  <meta name="twitter:description" content="handling iso calendar weeks in powerbi"/>
   <meta name="twitter:site" content="https://twitter.com/soulfoodmonk" />
   <meta name="twitter:creator" content="https://twitter.com/soulfoodmonk" />
   
@@ -56,9 +56,9 @@
             "@id": ""
       },
       "articleSection" : "blog",
-      "name" : "w(u)tf-8 german csv and ms excel",
-      "headline" : "w(u)tf-8 german csv and ms excel",
-      "description" : "utf-8 bom and why it matters with german csv",
+      "name" : "powerbi: handling iso weeks",
+      "headline" : "powerbi: handling iso weeks",
+      "description" : "handling iso calendar weeks in powerbi",
       "inLanguage" : "en-US",
       "author" : "",
       "creator" : "",
@@ -66,11 +66,11 @@
       "accountablePerson" : "",
       "copyrightHolder" : "",
       "copyrightYear" : "2021",
-      "datePublished": "2021-02-25 12:00:00 \u002b0100 CET",
-      "dateModified" : "2021-02-25 12:00:00 \u002b0100 CET",
-      "url" : "\/blog\/notes\/utf-8-bom\/",
-      "wordCount" : "239",
-      "keywords" : ["utf-8", "Blog"]
+      "datePublished": "2021-04-25 12:00:00 \u002b0200 CEST",
+      "dateModified" : "2021-04-25 12:00:00 \u002b0200 CEST",
+      "url" : "\/blog\/powerbi\/powerbi-iso-weeks\/",
+      "wordCount" : "105",
+      "keywords" : ["notes", "Blog"]
     }
   
   </script>
@@ -114,55 +114,54 @@
       <div class="post__container">
         <div class="post">
           <header class="post__header">
-            <h1 id="post__title">w(u)tf-8 german csv and ms excel</h1>
-            <time datetime="2021-02-25 12:00:00 &#43;0100 CET" class="post__date">25 Feb 2021</time> 
+            <h1 id="post__title">powerbi: handling iso weeks</h1>
+            <time datetime="2021-04-25 12:00:00 &#43;0200 CEST" class="post__date">25 Apr 2021</time> 
           </header>
           <article class="post__content">
               
-<h2 id="why-german-utf-8-is-broken">why german utf-8 is broken<a class="anchor" href="#why-german-utf-8-is-broken">#</a></h2>
-<p>The programming world most of the time does not really care about characters which are special in other languages others than englisch. So in Germany we have our all time favorites <code>ÄÖÜäüöß</code> to take care about everytime we work with text documents.</p>
-<p>Normally you will have no trouble with text editors, but an burning example is Microsoft Office. To correctly import an utf-8 encoded csv document (with special chars) you have to provide an BOM. If you don&rsquo;t add an BOM Mircosoft will handle the file as it would be ASCII-encoded.</p>
-<h2 id="example">example<a class="anchor" href="#example">#</a></h2>
-<p><em>node.js example</em>:</p>
-<pre><code class="language-js">// utf-8
-fs.writeFileSync(filename, '\ufeff' + content);
+<p>There are some twist to keep in mind, when working with ISO calendar weeks. The first week of the year is defi</p>
+<h2 id="formulars">formulars<a class="anchor" href="#formulars">#</a></h2>
+<p><strong>formular for ISO calendar week</strong></p>
+<pre><code class="language-c#">WEEKNUM(data[&quot;timestamp&quot;], 21)
 </code></pre>
-<p>This is strange because Wikipedia says with utf-8 it should be <code>0xEFBBBF</code> for utf-8.</p>
-<p>But Mozilla Developer states:</p>
-<blockquote>
-<p><strong>0xFEFF</strong>: Used at the start of the script to mark it as Unicode and the text&rsquo;s byte order. <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Lexical_grammar#control_characters">Mozilla Developer</a></p>
-</blockquote>
-<p>But anyway. Node handels it for us and now we you can import the csv file in Microsoft Office with correct encoding.</p>
-<h2 id="extra-round-regex">extra round regex<a class="anchor" href="#extra-round-regex">#</a></h2>
-<p>If I talk about this topic, I should shortly add how this things work with regex.</p>
-<blockquote>
-<p>Instead of using <code>[A-Z]</code> we have to use <code>[A-ZÄÜÖß]</code>. Keep this in mind if you work a lot with text. You can try this here <a href="https://regexr.com/">https://regexr.com/</a></p>
-</blockquote>
-<h2 id="more-informations">more informations<a class="anchor" href="#more-informations">#</a></h2>
-<ul>
-<li><a href="https://stackoverflow.com/questions/2223882/whats-the-difference-between-utf-8-and-utf-8-without-bom">discussion on StackOverflow about BOM in utf-8 encoded files, part 1</a></li>
-<li><a href="https://stackoverflow.com/questions/17879198/adding-utf-8-bom-to-string-blob">discussion on StackOverflow about BOM in utf-8 encoded files, part2</a></li>
-<li><a href="https://en.wikipedia.org/wiki/Byte_order_mark">wikipedia article about BOM</a></li>
-<li><a href="https://docs.microsoft.com/en-us/globalization/encoding/byte-order-mark">microsoft globalisation</a></li>
-</ul>
+<p><strong>Hint:</strong> The parameter 21 is not always <a href="https://dax.guide/weeknum/">documented</a> for PowerBi depending on the source.</p>
+<p><strong>formular for ISO year</strong></p>
+<p>For grouping we need to know to which year a calendar week belongs. It could be that the last week lays in the new year but for aggregation purpose these week counts to the previous year.</p>
+<pre><code class="language-c#">YEAR(data[&quot;timestamp&quot;]-WEEKDAY(data[&quot;timestamp&quot;],3)+3)
+</code></pre>
+<p><a href="https://www.mrexcel.com/board/threads/calculating-iso-year.736852/">Original Answer</a></p>
+<p><strong>formular for monday</strong></p>
+<p>Calculate the date of monday from iso week and year.</p>
+<pre><code class="language-c#">DATE(data[&quot;iso_year&quot;],1,-2)-WEEKDAY(DATE(data[&quot;iso_year&quot;],1,3))+data[&quot;iso_cw&quot;]*7
+</code></pre>
+<p>Detailed explanation <a href="https://stackoverflow.com/a/10855872/10101463">Stackoverflow Answer</a></p>
 
 
               
           </article>
           
 
+<ul class="tags__list">
+    
+    <li class="tag__item">
+        <a class="tag__link" href="/tags/powerbi/">powerbi</a>
+    </li>
+    <li class="tag__item">
+        <a class="tag__link" href="/tags/notes/">notes</a>
+    </li></ul>
+
  <div class="pagination">
   
-    <a class="pagination__item" href="/blog/arduino/arduino-ide-serial-plotter/">
+    <a class="pagination__item" href="/blog/notes/utf-8-bom/">
         <span class="pagination__label">Previous Post</span>
-        <span class="pagination__title">arduino: how to use the serial plotter of Arduino IDE</span>
+        <span class="pagination__title">w(u)tf-8 german csv and ms excel</span>
     </a>
   
 
   
-    <a class="pagination__item" href="/blog/powerbi/powerbi-iso-weeks/">
+    <a class="pagination__item" href="/blog/mongo/mongo-array-cheatsheet-values/">
       <span class="pagination__label">Next Post</span>
-      <span class="pagination__title" >powerbi: handling iso weeks</a>
+      <span class="pagination__title" >mongo snippets: array cheatsheet</a>
     </a>
   
 </div>
