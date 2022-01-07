@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>notes on moench.dev</title>
-    <link>/tags/notes/</link>
-    <description>Recent content in notes on moench.dev</description>
+    <title>ts on moench.dev</title>
+    <link>/tags/ts/</link>
+    <description>Recent content in ts on moench.dev</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>© {year}</copyright>
     <lastBuildDate>Fri, 07 Jan 2022 11:00:00 +0100</lastBuildDate>
     
-	<atom:link href="/tags/notes/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/tags/ts/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
@@ -43,50 +43,6 @@ As goodie we also get for that is type completion in VSC. So we get suggestions 
       <description>the problem Offical Solution from visual studio code homepage for setting up debugging:
 { &amp;quot;name&amp;quot;: &amp;quot;Launch Server&amp;quot;, &amp;quot;program&amp;quot;: &amp;quot;${workspaceFolder}/src/index.ts&amp;quot;, &amp;quot;type&amp;quot;: &amp;quot;node&amp;quot;, &amp;quot;request&amp;quot;: &amp;quot;launch&amp;quot;, &amp;quot;skipFiles&amp;quot;: [&amp;quot;&amp;lt;node_internals&amp;gt;/**&amp;quot;], &amp;quot;preLaunchTask&amp;quot;: &amp;quot;tsc: build - tsconfig.json&amp;quot;, &amp;quot;outFiles&amp;quot;: [&amp;quot;${workspaceFolder}/build/**/*.js&amp;quot;] }  and add in tsconfig.json:
 { ... &amp;quot;sourceMap&amp;quot;: true, ... }  This works, but brings one problem to the front: Exceptions. The exception thrown will refrence to the compiled javascript code. So we have to lookup the causing source file by our selfs.</description>
-    </item>
-    
-    <item>
-      <title>powerbi: handling iso weeks</title>
-      <link>/blog/powerbi/powerbi-iso-weeks/</link>
-      <pubDate>Sun, 25 Apr 2021 12:00:00 +0200</pubDate>
-      
-      <guid>/blog/powerbi/powerbi-iso-weeks/</guid>
-      <description>There are some twist to keep in mind, when working with ISO calendar weeks. The first week of the year is defi
-formulars formular for ISO calendar week
-WEEKNUM(data[&amp;quot;timestamp&amp;quot;], 21)  Hint: The parameter 21 is not always documented for PowerBi depending on the source.
-formular for ISO year
-For grouping we need to know to which year a calendar week belongs. It could be that the last week lays in the new year but for aggregation purpose these week counts to the previous year.</description>
-    </item>
-    
-    <item>
-      <title>arduino: how to use the serial plotter of Arduino IDE</title>
-      <link>/blog/arduino/arduino-ide-serial-plotter/</link>
-      <pubDate>Thu, 25 Feb 2021 12:00:00 +0200</pubDate>
-      
-      <guid>/blog/arduino/arduino-ide-serial-plotter/</guid>
-      <description>labeling the series If you have to print some debug messages in the beginning, the Serial Plotter will interpret these as Series Labels. To clear unneacessary labels, just restart the serial plotter (not the mc). In order to catch up the labels, you have to print them to Serial everytime you print values. So it is garanted that the series labels are recognized.
-As seperators you can use a tabulator, a space or a comma.</description>
-    </item>
-    
-    <item>
-      <title>mongo fixing broken timestamps</title>
-      <link>/blog/mongo/mongo-fixing-stuff/</link>
-      <pubDate>Mon, 02 Nov 2020 12:00:00 +0200</pubDate>
-      
-      <guid>/blog/mongo/mongo-fixing-stuff/</guid>
-      <description>convert bson timestamp to date So I&amp;rsquo;m used to create a timestamp for logging in the db when something is created. What should go wrong with using mongo bson timestamp. Let me say it this way. As long as you leave it alone in the database it will happily coexist with all the other stuff.
-But if you want to use it in javascript it gets complicated.
-What is a timestamp in bson</description>
-    </item>
-    
-    <item>
-      <title>make ftp working with ssh without changing permissions</title>
-      <link>/blog/notes/ftp-without-chmod/</link>
-      <pubDate>Tue, 01 Sep 2020 12:00:00 +0200</pubDate>
-      
-      <guid>/blog/notes/ftp-without-chmod/</guid>
-      <description>the problem If you want to disable your root user of the maschine being accessed via SSH you probably ran into Problems with SFTP on your server. As long you use the root user of the maschine your SFTP will work fine, but if you change your user you will get into trouble.
-I&amp;rsquo;m working a lot with docker and bind mounts for config files so I can&amp;rsquo;t change the owner/permission of the directory or file I&amp;rsquo;m binding to.</description>
     </item>
     
   </channel>

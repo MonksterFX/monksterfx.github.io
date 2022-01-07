@@ -4,12 +4,47 @@
   
   <url>
     <loc>/</loc>
-    <lastmod>2021-04-25T12:00:00+02:00</lastmod>
+    <lastmod>2022-01-07T11:00:00+01:00</lastmod>
   </url>
   
   <url>
     <loc>/blog/</loc>
-    <lastmod>2021-04-25T12:00:00+02:00</lastmod>
+    <lastmod>2022-01-07T11:00:00+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/notes/</loc>
+    <lastmod>2022-01-07T11:00:00+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/</loc>
+    <lastmod>2022-01-07T11:00:00+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/ts/</loc>
+    <lastmod>2022-01-07T11:00:00+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/blog/notes/typescript/ts-eventhandler/</loc>
+    <lastmod>2022-01-07T11:00:00+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/blog/notes/typescript/ts-generic-params/</loc>
+    <lastmod>2022-01-07T11:00:00+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/blog/about/about-me/</loc>
+    <lastmod>2021-12-31T12:00:00+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/blog/notes/typescript/ts-debug-vsc/</loc>
+    <lastmod>2021-10-15T19:23:49+01:00</lastmod>
   </url>
   
   <url>
@@ -28,22 +63,12 @@
   </url>
   
   <url>
-    <loc>/tags/notes/</loc>
-    <lastmod>2021-04-25T12:00:00+02:00</lastmod>
-  </url>
-  
-  <url>
     <loc>/tags/powerbi/</loc>
     <lastmod>2021-04-25T12:00:00+02:00</lastmod>
   </url>
   
   <url>
     <loc>/blog/powerbi/powerbi-iso-weeks/</loc>
-    <lastmod>2021-04-25T12:00:00+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/tags/</loc>
     <lastmod>2021-04-25T12:00:00+02:00</lastmod>
   </url>
   
@@ -58,33 +83,8 @@
   </url>
   
   <url>
-    <loc>/blog/about/about-me/</loc>
-    <lastmod>2020-12-31T12:00:00+02:00</lastmod>
-  </url>
-  
-  <url>
     <loc>/blog/mongo/mongo-fixing-stuff/</loc>
     <lastmod>2020-11-02T12:00:00+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/tags/coffeinchat/</loc>
-    <lastmod>2020-09-28T00:00:00+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/tags/project/</loc>
-    <lastmod>2020-09-28T00:00:00+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/blog/projects/coffeinchat/coffein-chat-1/</loc>
-    <lastmod>2020-09-28T00:00:00+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/tags/socket.io/</loc>
-    <lastmod>2020-09-28T00:00:00+02:00</lastmod>
   </url>
   
   <url>
@@ -115,6 +115,30 @@
   <url>
     <loc>/blog/mongo/mongo-snippets-arrays/</loc>
     <lastmod>2020-07-13T19:23:49+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/blog/banglejs/files/</loc>
+  </url>
+  
+  <url>
+    <loc>/blog/banglejs/gps/</loc>
+  </url>
+  
+  <url>
+    <loc>/blog/banglejs/gpstracker/</loc>
+  </url>
+  
+  <url>
+    <loc>/blog/notes/typescript/ts-conditional/</loc>
+  </url>
+  
+  <url>
+    <loc>/blog/notes/typescript/ts-function-param/</loc>
+  </url>
+  
+  <url>
+    <loc>/blog/projects/scalex/webble/</loc>
   </url>
   
   <url>

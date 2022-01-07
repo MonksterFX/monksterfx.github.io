@@ -7,10 +7,55 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>© {year}</copyright>
-    <lastBuildDate>Sun, 25 Apr 2021 12:00:00 +0200</lastBuildDate>
+    <lastBuildDate>Fri, 07 Jan 2022 11:00:00 +0100</lastBuildDate>
     
 	<atom:link href="/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>typing eventhandler in typescript</title>
+      <link>/blog/notes/typescript/ts-eventhandler/</link>
+      <pubDate>Fri, 07 Jan 2022 11:00:00 +0100</pubDate>
+      
+      <guid>/blog/notes/typescript/ts-eventhandler/</guid>
+      <description>I came across this issue when I made a type definition file for the upcoming web-ble functionalities in chrome and edge browser (more about it).
+the challenge The challenge is the following:
+ there are n-events we can register to trough a function addEventhandler in the callback we get data back depending on the event we register to, we expect a typed callback  untyped example:
+MyObject.addEventhandler(&amp;quot;eventA&amp;quot;, myCallback, options); function myCallback(event: any) { // do something here }  solution mapped types Mapping Types are great if we want determine the type based on a single key.</description>
+    </item>
+    
+    <item>
+      <title>using generic params in typescript</title>
+      <link>/blog/notes/typescript/ts-generic-params/</link>
+      <pubDate>Fri, 07 Jan 2022 11:00:00 +0100</pubDate>
+      
+      <guid>/blog/notes/typescript/ts-generic-params/</guid>
+      <description>the challenge interface MyInterface { key1: number; key2: string; }  So for example we have the following setup. We have a Typescript interface and object implementing this interface and a function we pass the object and a key, which indicates the field of the object we want to manipulate.
+As goodie we also get for that is type completion in VSC. So we get suggestions deppending on the type the object hast.</description>
+    </item>
+    
+    <item>
+      <title>about: me</title>
+      <link>/blog/about/about-me/</link>
+      <pubDate>Fri, 31 Dec 2021 12:00:00 +0200</pubDate>
+      
+      <guid>/blog/about/about-me/</guid>
+      <description>My name is Max Mönch, I&amp;rsquo;m an engineer, founder and food and coffee nerd.
+ what is this site? This is not a classical blog, I&amp;rsquo;m not writing to adress somebody. This are just toughs and projects I work on. If I did something interessting, it probably lands here to not forget it or to share it with some colleages.
+my development world Stuff I work with a lot&amp;hellip;
+Languages</description>
+    </item>
+    
+    <item>
+      <title>setting up debugging with node and typescript in visual studio code</title>
+      <link>/blog/notes/typescript/ts-debug-vsc/</link>
+      <pubDate>Fri, 15 Oct 2021 19:23:49 +0100</pubDate>
+      
+      <guid>/blog/notes/typescript/ts-debug-vsc/</guid>
+      <description>the problem Offical Solution from visual studio code homepage for setting up debugging:
+{ &amp;quot;name&amp;quot;: &amp;quot;Launch Server&amp;quot;, &amp;quot;program&amp;quot;: &amp;quot;${workspaceFolder}/src/index.ts&amp;quot;, &amp;quot;type&amp;quot;: &amp;quot;node&amp;quot;, &amp;quot;request&amp;quot;: &amp;quot;launch&amp;quot;, &amp;quot;skipFiles&amp;quot;: [&amp;quot;&amp;lt;node_internals&amp;gt;/**&amp;quot;], &amp;quot;preLaunchTask&amp;quot;: &amp;quot;tsc: build - tsconfig.json&amp;quot;, &amp;quot;outFiles&amp;quot;: [&amp;quot;${workspaceFolder}/build/**/*.js&amp;quot;] }  and add in tsconfig.json:
+{ ... &amp;quot;sourceMap&amp;quot;: true, ... }  This works, but brings one problem to the front: Exceptions. The exception thrown will refrence to the compiled javascript code. So we have to lookup the causing source file by our selfs.</description>
+    </item>
     
     <item>
       <title>mongo snippets: array cheatsheet</title>
@@ -52,20 +97,8 @@ Normally you will have no trouble with text editors, but an burning example is M
       <pubDate>Thu, 25 Feb 2021 12:00:00 +0200</pubDate>
       
       <guid>/blog/arduino/arduino-ide-serial-plotter/</guid>
-      <description>the serial plotter labeling the series If you have to print some debug messages in the beginning, the Serial Plotter will interpret these as Series Labels. To clear unneacessary labels, just restart the serial plotter (not the mc). In order to catch up the labels, you have to print them to Serial everytime you print values. So it is garanted that the series labels are recognized.
+      <description>labeling the series If you have to print some debug messages in the beginning, the Serial Plotter will interpret these as Series Labels. To clear unneacessary labels, just restart the serial plotter (not the mc). In order to catch up the labels, you have to print them to Serial everytime you print values. So it is garanted that the series labels are recognized.
 As seperators you can use a tabulator, a space or a comma.</description>
-    </item>
-    
-    <item>
-      <title>about: me</title>
-      <link>/blog/about/about-me/</link>
-      <pubDate>Thu, 31 Dec 2020 12:00:00 +0200</pubDate>
-      
-      <guid>/blog/about/about-me/</guid>
-      <description>My name is Max Mönch, I&amp;rsquo;m an engineer, founder and food and coffee nerd.
- what is this site? This is not a classical blog, I&amp;rsquo;m not writing to adress somebody. This are just toughs and projects I work on. If I did something interessting, it probably lands here to not forget it or to share it with some colleages.
-my development world Stuff I work with a lot&amp;hellip;
-Languages</description>
     </item>
     
     <item>
@@ -77,16 +110,6 @@ Languages</description>
       <description>convert bson timestamp to date So I&amp;rsquo;m used to create a timestamp for logging in the db when something is created. What should go wrong with using mongo bson timestamp. Let me say it this way. As long as you leave it alone in the database it will happily coexist with all the other stuff.
 But if you want to use it in javascript it gets complicated.
 What is a timestamp in bson</description>
-    </item>
-    
-    <item>
-      <title>project: working with socket.io</title>
-      <link>/blog/projects/coffeinchat/coffein-chat-1/</link>
-      <pubDate>Mon, 28 Sep 2020 00:00:00 +0200</pubDate>
-      
-      <guid>/blog/projects/coffeinchat/coffein-chat-1/</guid>
-      <description>CC or CoffeinChat In a project im working on I recently got asked how we could implement a chat by ourselfs. We work a lot with GCP in this Project an so the first tough was to implement it with the help of firebase.
-But because of the ongoing debate about GDPR we skipped the easy way and tough about the critical stuff in a chat: The live reload aka pushing news to the client.</description>
     </item>
     
     <item>
@@ -108,6 +131,69 @@ I&amp;rsquo;m working a lot with docker and bind mounts for config files so I ca
       <description>extract only subset of embedded documents Sometimes we want to extract not all embedded documents from a matched documents. Imagine a object chatroom:
 { _id: ObjectId(&#39;5f687ba6a93aeddc476ea157&#39;), ... messages: Array&amp;lt;Messages&amp;gt; }  The messages look like this:
 { sender: Reference, send_at: Date payload: &amp;quot;&amp;quot; }  Now when we want to extract all message before, after a date we could query the Chatroom and filter it in the backend logic, or we can use Aggregation Pipeline.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>/blog/banglejs/files/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/blog/banglejs/files/</guid>
+      <description>Bangl.js - Working With Files
+read an image
+https://banglejs.com/reference#l_Storage_readJSON
+read json
+https://banglejs.com/reference#l_Storage_readJSON
+search for storage files with regex
+require(&amp;quot;Storage&amp;quot;).list(/gpstracker-./, { sf: true });  free space
+require(&amp;quot;Storage&amp;quot;).getFree(); require(&amp;quot;Storage&amp;quot;).compact(); require(&amp;quot;Storage&amp;quot;).getFree();  Links
+https://www.espruino.com/Bangle.js+Storage</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>/blog/banglejs/gps/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/blog/banglejs/gps/</guid>
+      <description>data accurracy  hdop is a value from the GPS receiver that gives a rough idea of accuracy of lat/lon based on the geometry of the satellites in range. Multiply by 5 to get a value in meters. This is just a ballpark estimation and should not be considered remotely accurate.
+ heading/course time gps settings Note: To use the settings module, it is necessary to have the GPS Setup App installed.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>/blog/banglejs/gpstracker/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/blog/banglejs/gpstracker/</guid>
+      <description>&lt;h1 id=&#34;heading&#34;&gt;&lt;/h1&gt;</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>/blog/notes/typescript/ts-conditional/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/blog/notes/typescript/ts-conditional/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>/blog/notes/typescript/ts-function-param/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/blog/notes/typescript/ts-function-param/</guid>
+      <description>usefull links https://www.typescriptlang.org/play?#code/C4TwDgpgBAYgrgOwMbAJYHsEAUCGAnHAWwGcoBeKAbwCgooAzddALitrqkJADV9WE4hAEYQ8AbnYBfCXSF82HTj3nFgeVAgDmMqNPZyAXqwBKEJOjwATADyr1WgDRQBw0QD4Je6qEixEKDAQAOSJoCgBrCBB0ej9kNExcAhIJampLMwAbfGhzBFUoYggES1MARzgIVVYACgA6BvxNYlYcBBAAbQBdAEpyNyg2kFT6fwSEKCQcTMz4eMDrABUoCAAPYGLLUjmAzBDCCDca9noEVkWHdjB8Iha43ewbkg7FrsumjoikvLK1RrTk5rsliD1PKkpjMduMagByRjoWFOT5KXh4Viw4AAC1QpGIWPQcEylgYOFQmSRUAA9FSAEIAeXpAFkAITUSRgoA https://typeofnan.dev/how-to-make-one-function-argument-dependent-on-another-in-typescript/</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>/blog/projects/scalex/webble/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/blog/projects/scalex/webble/</guid>
+      <description></description>
     </item>
     
   </channel>
