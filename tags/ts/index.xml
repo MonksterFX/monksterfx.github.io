@@ -25,6 +25,19 @@ MyObject.addEventhandler(&amp;quot;eventA&amp;quot;, myCallback, options); funct
     </item>
     
     <item>
+      <title>typing your json with json schema</title>
+      <link>/blog/notes/json-schema/</link>
+      <pubDate>Fri, 07 Jan 2022 11:00:00 +0100</pubDate>
+      
+      <guid>/blog/notes/json-schema/</guid>
+      <description>what is a json schema how to add it to VISUAL STUDIO CODE Adding to the .vscode/settings.json
+&amp;quot;json.schemas&amp;quot;: [ { &amp;quot;fileMatch&amp;quot;: [ &amp;quot;models/*.schema.json&amp;quot; ], &amp;quot;url&amp;quot;: &amp;quot;schema/schema.json&amp;quot; } ]  how split json schema into multi files troubleshooting maps Maps, Records not working  $schema: instead of workspace
+usefull links documentation
+ https://json-schema.org/specification.html https://code.visualstudio.com/docs/languages/json#_json-schemas-and-settings  libaries
+ https://github.com/vega/ts-json-schema-generator https://www.npmjs.com/package/typescript-json-schema  </description>
+    </item>
+    
+    <item>
       <title>using generic params in typescript</title>
       <link>/blog/notes/typescript/ts-generic-params/</link>
       <pubDate>Fri, 07 Jan 2022 11:00:00 +0100</pubDate>

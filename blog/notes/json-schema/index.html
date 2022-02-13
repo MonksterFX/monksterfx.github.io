@@ -2,7 +2,7 @@
 <html lang="en-us">
 
 <head>
-  <title>using generic params in typescript | moench.dev</title>
+  <title>typing your json with json schema | moench.dev</title>
 
   <meta charset="UTF-8">
   <meta name="language" content="en">
@@ -17,7 +17,7 @@
   
   
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="using generic params in typescript" />
+  <meta name="twitter:title" content="typing your json with json schema" />
   <meta name="twitter:description" content=""/>
   <meta name="twitter:site" content="https://twitter.com/soulfoodmonk" />
   <meta name="twitter:creator" content="https://twitter.com/soulfoodmonk" />
@@ -56,8 +56,8 @@
             "@id": ""
       },
       "articleSection" : "blog",
-      "name" : "using generic params in typescript",
-      "headline" : "using generic params in typescript",
+      "name" : "typing your json with json schema",
+      "headline" : "typing your json with json schema",
       "description" : "",
       "inLanguage" : "en-US",
       "author" : "",
@@ -68,8 +68,8 @@
       "copyrightYear" : "2022",
       "datePublished": "2022-01-07 11:00:00 \u002b0100 CET",
       "dateModified" : "2022-01-07 11:00:00 \u002b0100 CET",
-      "url" : "\/blog\/notes\/typescript\/ts-generic-params\/",
-      "wordCount" : "156",
+      "url" : "\/blog\/notes\/json-schema\/",
+      "wordCount" : "53",
       "keywords" : ["notes", "Blog"]
     }
   
@@ -114,50 +114,39 @@
       <div class="post__container">
         <div class="post">
           <header class="post__header">
-            <h1 id="post__title">using generic params in typescript</h1>
+            <h1 id="post__title">typing your json with json schema</h1>
             <time datetime="2022-01-07 11:00:00 &#43;0100 CET" class="post__date">7 Jan 2022</time> 
           </header>
           <article class="post__content">
               
-<h2 id="the-challenge">the challenge<a class="anchor" href="#the-challenge">#</a></h2>
-<pre><code class="language-ts">interface MyInterface {
-  key1: number;
-  key2: string;
-}
+<h2 id="what-is-a-json-schema">what is a json schema<a class="anchor" href="#what-is-a-json-schema">#</a></h2>
+<h2 id="how-to-add-it-to-visual-studio-code">how to add it to VISUAL STUDIO CODE<a class="anchor" href="#how-to-add-it-to-visual-studio-code">#</a></h2>
+<p>Adding to the <code>.vscode/settings.json</code></p>
+<pre><code class="language-json">&quot;json.schemas&quot;: [
+    {
+        &quot;fileMatch&quot;: [
+            &quot;models/*.schema.json&quot;
+        ],
+        &quot;url&quot;: &quot;schema/schema.json&quot;
+    }
+]
 </code></pre>
-<p>So for example we have the following setup. We have a Typescript <code>interface</code> and <code>object</code> implementing this interface and a <code>function</code> we pass the object and a key, which indicates the field of the object we want to manipulate.</p>
-<p>As <strong>goodie</strong> we also get for that is <strong>type completion</strong> in VSC. So we get suggestions deppending on the type the object hast.</p>
-<!-- prettier-ignore-start -->
-<pre><code class="language-ts">interface MyInterface {
-  key1: number,
-  key2: string
-}
-
-const obj: MyInterface =
-  {
-    key1: 1,
-    key2: &quot;value&quot;
-  };
-
-function myFunction( obj: any, key: string ) {
-  // do something here
-}
+<h3 id="how-split-json-schema-into-multi-files">how split json schema into multi files<a class="anchor" href="#how-split-json-schema-into-multi-files">#</a></h3>
+<h2 id="troubleshooting-maps">troubleshooting maps<a class="anchor" href="#troubleshooting-maps">#</a></h2>
+<pre><code class="language-ts">Maps, Records not working
 </code></pre>
-<p>We can easily change our <code>function</code> to use generics:</p>
-<pre><code class="language-ts">function myFunction&lt; T &gt;( obj: T, value: keyof T ) {
-  // do something here
-}
-</code></pre>
-<p>Use the function as follow:</p>
-<pre><code class="language-ts">function myFunction&lt; MyInterface &gt;( obj, &quot;key1&quot; );
-</code></pre>
-<p>Or even simpler:</p>
-<pre><code class="language-ts">function myFunction( obj, &quot;key1&quot; );
-</code></pre>
-<!-- prettier-ignore-end -->
+<p>$schema:
+instead of workspace</p>
 <h2 id="usefull-links">usefull links<a class="anchor" href="#usefull-links">#</a></h2>
+<p><strong>documentation</strong></p>
 <ul>
-<li><a href="https://www.typescriptlang.org/play?ssl=9&amp;ssc=2&amp;pln=1&amp;pc=1&amp;q=287#code/JYOwLgpgTgZghgYwgAgLIE8CS5ryQbwFgAoZZAawnQEYAuZEAVwFsAjaAbhLMvQCZ6AZzBRQAcy7EAviRIIA9iGHJ5rAFb0M2SLEQoAvMiKkKVOsmoAabqf70ARADc4AG0YR7JGcRIxGIBDBgRWRmdAAxf0DgkAAeABUAPgAKVQ1keMtkZzcIel55GAyASmMvWWIwyICgxVitHF0kFLSsgHJeajbiioB6XuQIRwgQZEFgZgAHF2gSKqjakFT1ds7uiqA">ts playground with the example above</a></li>
+<li><a href="https://json-schema.org/specification.html">https://json-schema.org/specification.html</a></li>
+<li><a href="https://code.visualstudio.com/docs/languages/json#_json-schemas-and-settings">https://code.visualstudio.com/docs/languages/json#_json-schemas-and-settings</a></li>
+</ul>
+<p><strong>libaries</strong></p>
+<ul>
+<li><a href="https://github.com/vega/ts-json-schema-generator">https://github.com/vega/ts-json-schema-generator</a></li>
+<li><a href="https://www.npmjs.com/package/typescript-json-schema">https://www.npmjs.com/package/typescript-json-schema</a></li>
 </ul>
 
 
@@ -171,21 +160,27 @@ function myFunction( obj: any, key: string ) {
         <a class="tag__link" href="/tags/ts/">ts</a>
     </li>
     <li class="tag__item">
+        <a class="tag__link" href="/tags/vsc/">vsc</a>
+    </li>
+    <li class="tag__item">
+        <a class="tag__link" href="/tags/json/">json</a>
+    </li>
+    <li class="tag__item">
         <a class="tag__link" href="/tags/notes/">notes</a>
     </li></ul>
 
  <div class="pagination">
   
-    <a class="pagination__item" href="/blog/about/about-me/">
+    <a class="pagination__item" href="/blog/notes/typescript/ts-generic-params/">
         <span class="pagination__label">Previous Post</span>
-        <span class="pagination__title">about: me</span>
+        <span class="pagination__title">using generic params in typescript</span>
     </a>
   
 
   
-    <a class="pagination__item" href="/blog/notes/json-schema/">
+    <a class="pagination__item" href="/blog/notes/typescript/ts-eventhandler/">
       <span class="pagination__label">Next Post</span>
-      <span class="pagination__title" >typing your json with json schema</a>
+      <span class="pagination__title" >typing eventhandler in typescript</a>
     </a>
   
 </div>

@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+  <title> | moench.dev</title>
+
+  <meta charset="UTF-8">
+  <meta name="language" content="en">
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+  <script async defer data-website-id="1f26013b-24f5-4b9b-8c03-cec017cf455a" src="https://umami.mrmonk.dev/umami.js" data-domains="mrmonk.dev"></script>
+  
+  
+  
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="" />
+  <meta name="twitter:description" content=""/>
+  <meta name="twitter:site" content="https://twitter.com/soulfoodmonk" />
+  <meta name="twitter:creator" content="https://twitter.com/soulfoodmonk" />
+  
+
+  <link rel="shortcut icon" type="image/png" href="/favicon.ico" />
+
+  
+  
+    
+ 
+  
+  
+  
+  
+  
+  
+    
+    <link type="text/css" rel="stylesheet" href="/css/post.min.2cb93c91050d1853bf971cc31e00122edd6e0f405aa1de3b7f8ef67ea3b5a79a.css" integrity="sha256-LLk8kQUNGFO/lxzDHgASLt1uD0Baod47f472fqO1p5o="/>
+  
+    
+    <link type="text/css" rel="stylesheet" href="/css/custom.min.b112582fd39bd868479be881c45dc0a50679dbd75a41be46466b0200855fbcd3.css" integrity="sha256-sRJYL9Ob2GhHm&#43;iBxF3ApQZ529daQb5GRmsCAIVfvNM="/>
+  
+  
+   
+   
+    
+
+<script type="application/ld+json">
+  
+    {
+      "@context" : "http://schema.org",
+      "@type" : "BlogPosting",
+      "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": ""
+      },
+      "articleSection" : "blog",
+      "name" : "",
+      "headline" : "",
+      "description" : "",
+      "inLanguage" : "en-US",
+      "author" : "",
+      "creator" : "",
+      "publisher": "",
+      "accountablePerson" : "",
+      "copyrightHolder" : "",
+      "copyrightYear" : "0001",
+      "datePublished": "0001-01-01 00:00:00 \u002b0000 UTC",
+      "dateModified" : "0001-01-01 00:00:00 \u002b0000 UTC",
+      "url" : "\/blog\/notes\/typescript\/ts-decorators\/",
+      "wordCount" : "385",
+      "keywords" : ["Blog"]
+    }
+  
+  </script>
+</head>
+
+<body>
+  <div class="burger__container">
+  <div class="burger" aria-controls="navigation" aria-label="Menu">
+    <div class="burger__meat burger__meat--1"></div>
+    <div class="burger__meat burger__meat--2"></div>
+    <div class="burger__meat burger__meat--3"></div>
+  </div>
+</div>
+ 
+
+  <nav class="nav" id="navigation">
+  <ul class="nav__list">
+    
+    
+      <li>
+        <a  href="/">home</a>
+      </li>
+    
+      <li>
+        <a  href="/blog/about/about-me/">about</a>
+      </li>
+    
+      <li>
+        <a  href="/blog">notes</a>
+      </li>
+    
+  </ul>
+</nav>
+
+
+  <main>
+    
+    
+
+    <div class="flex-wrapper">
+      <div class="post__container">
+        <div class="post">
+          <header class="post__header">
+            <h1 id="post__title"></h1>
+            
+          </header>
+          <article class="post__content">
+              
+<pre><code class="language-ts">// Deprecated Decorators
+
+// ClassDecorator
+
+// PropertyDecorator
+
+// MethodDecorator
+// measure the time of an execution
+function MeasureExecutionTime() {
+  return function (cls: any, propertyKey: string, descriptor: PropertyDescriptor) {
+    // save reference to to original method
+    const originalMethod = descriptor.value;
+
+    // override the original function
+    descriptor.value = function (...args: any[]) {
+      const start = performance.now();
+
+      // call original function
+      const result = originalMethod.apply(this, args);
+
+      const finish = performance.now();
+
+      console.log(
+        `Execution time of function ${cls.name}.${propertyKey}(): ${finish - start} milliseconds`
+      );
+
+      // return the result of the execution
+      return result;
+    };
+  };
+}
+
+// wont work! https://github.com/microsoft/TypeScript/issues/3661
+// @MeasureExecutionTime()
+function test() {
+  console.log();
+}
+
+class Test {
+  @MeasureExecutionTime()
+  static run() {
+    console.log();
+  }
+}
+
+// test function
+Test.run();
+
+// Deprecated
+function DeprecatedClass(cls: any, propertyKey?: string, descriptor?: PropertyDescriptor): any {
+  console.log(cls, propertyKey, descriptor);
+  console.warn(`you are using a deprecated class ${cls.name}`);
+  return cls;
+}
+
+function DeprecatedFunction(cls: any, propertyKey: string, descriptor: PropertyDescriptor): any {
+  console.log(cls, propertyKey, descriptor);
+  console.warn(`you are using a deprecated method ${propertyKey}`);
+  return descriptor.value;
+}
+
+function DeprecatedProperty(cls: any, propertyKey: string, descriptor?: PropertyDescriptor): any {
+  console.log(cls, propertyKey, descriptor);
+  console.warn(`you are using a deprecated property ${propertyKey}`);
+  return cls[propertyKey];
+}
+
+/**
+ * @deprecated
+ */
+@DeprecatedClass
+class HardlyDeprecated {
+  @DeprecatedProperty
+  moreDeprecated?: boolean;
+
+  @DeprecatedFunction
+  callMeDeprecated() {
+    console.log(&quot;called me!&quot;);
+  }
+}
+
+const hd = new HardlyDeprecated();
+hd.moreDeprecated;
+hd.moreDeprecated = true;
+hd.callMeDeprecated();
+
+// Multi Decorators
+
+/*
+Multi DecoratorsAs such, the following steps are performed when evaluating multiple decorators on a single declaration in TypeScript:
+The expressions for each decorator are evaluated top-to-bottom.
+The results are then called as functions from bottom-to-top.
+*/
+
+/*
+Decorator Evaluation
+There is a well defined order to how decorators applied to various declarations inside of a class are applied:
+
+Parameter Decorators, followed by Method, Accessor, or Property Decorators are applied for each instance member.
+Parameter Decorators, followed by Method, Accessor, or Property Decorators are applied for each static member.
+Parameter Decorators are applied for the constructor.
+Class Decorators are applied for the class.
+*/
+
+// examples
+
+function CountExecutions() {
+  return function (cls: any, propertyKey: string, descriptor: PropertyDescriptor): any {
+    const originalMethod = descriptor.value;
+
+    let executionCount = 0;
+
+    descriptor.value = function (...args: any[]) {
+      executionCount++;
+      console.log(`this is run ${executionCount} of this function`);
+      return originalMethod.apply(this, args);
+    };
+
+    return descriptor;
+  };
+}
+
+class Test2 {
+  @CountExecutions()
+  static run() {
+    console.log(&quot;a&quot;);
+  }
+
+  @CountExecutions()
+  run() {
+    console.log(&quot;a&quot;);
+  }
+}
+
+// https://blog.logrocket.com/a-practical-guide-to-typescript-decorators/
+// https://www.digitalocean.com/community/tutorials/how-to-use-decorators-in-typescript
+// https://saul-mirone.github.io/a-complete-guide-to-typescript-decorator/
+</code></pre>
+<p><a href="https://www.typescriptlang.org/play?#code/PTAEBEFMAcCdIMYEMAukAmFEHtatwM4BQRIoAwgDZIEFQK76wlkAKs20ksKAnvYxS4WYALKQUAC2zoBeIczIBbSDQCu8UFMhaAlitDYAZqCQA7UJAAeiNSl3YzRI2rMJ7j0OPXwAojYQ7BzMAFX1IAAoASlAAbyJQRNB4FA0LFzcPCwiESgIALlMzXgAaUDhObj4AaUheQoIUWF0zAHMy9EgCBGboBUL2Sp5+Lp7dPtwY+KSZ0DICJAA3HXgjbkg3HSEtbENm1pakSlAVKRkE2cSGM0a93QOzI-EzzABeUE7u3oUAOkWjtSQADcJEuiTI2GWsGanS0kh0uHuh2OGXcwVAF0unzGE1gfwBOneqKyoAiP3JSFgrQKRV4AG0ALpTUFgmbXW6NSkoUDvLiwIy4JTmBCQH5mbAAd2iIMxrLmYGQlGOiIeR1AxPRstZ7O58AIako3PeKuRz2k6B+SGg0EovAiUl0BDKlOpURlcqSOvVLUdkh55W4AtgQs2Ysl0pZHvZ2Eooso2FaEQABv5bCT7AZjOrXGjPAASWK5AhipAqAC+PwLFT5NTqZeihQLRh9BD9AFpQJyeGWTrolY6cGZ0AQk26tWDx5cyCk0nCVl0Ddys9pLAEgo5J7MZ7ALHrFyDWWWD0ky0RT6QwBLHNyr7AANYAQlAkhQKGgBRABykagARj8GEowBKLoPTYAQxgoMAIS8FwADKOKQY6+pdMAADMABs6EAIwXqAAAC3j6n4a5ZGEKjRM4Obpl0KDRHEsrRrGPzxomURniQuQ0AQoAhDR9EzARqhEZAqaBKR4QUTMnL2AgySuHR0xgoxcYJpJJ7sbhaC3BqG68Y0PywPJbG4VAcCIKgGCUZk6KmfAyBoOgVBcTkeSFOYpTlBwNa8LUvAAPwNE0LTtB8ozfLgAWgIM3lQF84wKFEbnFPxnqOOBTEsS5TqeUMtYedi4WwGxbJpTGooSpSZjJrw2BqKYmhqAQwWmKFZn2RgoCcbQoAFkWJblqOsrbhYRYaTpFi2eZDkAGJUcEWVJR51ZVD5dSBc0bQdGF8W4AMXkrbFCGTItKVXKVGWqUWZTLcMvlbXFuLFalNxlT8FU7tVtX1TojXNUgrV2RZmCnOaPWxDdeVloNMzDaFD2-P8lCAmNc2eJN7XoNFK0LbS137bda2dkFm1w0dsCRVjwyHYViW0qdnXnSpiZXTl3l3aTNMMYzb2VZ9dWUj9TVtC1nRtUDrMrWDEOrbwUNPYksNFnS0u+QyGksAAVBrCQa-houAw5OvAEQeHo0DTm0EQXXcQAEpS6C2mbDn06bMAGxglN8LKSi4JATsYJFP7YGV5jukkrtizNqNOGyRyUOI-voApm7KcxqkAOSKrGwOQA+6fy6Ap7nl6khvKAZiQBKoB27ADsjJHGAUaXPw+-AidEM3rd+27U0de8TSAiCzdZwnPcYxRIheIuuhYAw8iEJrRCiNPs+CIQACC3H6ggkhlCuApKpKzWNDA3ECwG-KCh1ErwhYkCI2oqDNUo082jonRz0w3GeP9QutLGoVOLyHRC0HiMFIDwW+PkIgIR4SrjMrQYI3EgyWCQDvQBa9YDfUsA-cWQhoBtiEG2IOr5sBKB+DAuBe5DRn00NoEaccOo0GzNZNK6oOBKFACQoQShCHYD4dAChGtjaLzkEwUAvhcFZEoesUAjoWoSkgEqUKzYK6YFwJ0LB2xpBVw-pgs+1pKC6A6tsf4zRarcQ-tQYBbCWhNVhFmf61tsFWhtMY9A0CiCsEpKWCQ3BV7z1gNlA+8ZFGYB-LwLwEhzRlHXggEUtBcBlFwFFfGfAAlfxcYY9x6oUmqHQXYlAwodAqCUD+bgFDvF4FOP4sRChgkxlCR1CJUSXixPiV0cCsBklYM9pEuphAsluI6ig-JfppIgROJAMpFSvE+JqVggZQShlGJGSklcOpDLuFwBQi23Elm0J0K41ZmAUEbOoLQIRIjcLWFLG-biJBxoUFqmYFAol1w3GTjDCQs4nk43cnjXKMt1rBXumTPaQLqY7SKidRSlwvQmkePHaJMh-QFWhfiJGwJNybljNyawaZgjkBeUaUAAAGSMsx0W4kxYCf0fzySWipDSdyjJmQekSASsSRKSUAGpeXHijNzTKSYHTcXkYZCwBYuUfOJa4FAPZlySHkeNaGHLYaIqeCii0xy7RiudMysch4w6XFhtShQgrC4kHPFbC53E9IoAAEwuzla895WQCBqUSBM2SkqvlKWFRnJA+dZTngEq6t5JEkFerklVdlAaXoXUTOnYNBci6TxfG+D8wAfwsTTq0DgCA7wSH-GQ4ASA2xwDQTJI4bZWhqF0J0PhhDwHwzbHowJBBjZkEze+fIIAJSDp+OgJERT4winMKWwCAEX5mF0HwYAqQFC6COF2nRzbGqQHbTgTtbYWgtq4PDXCvbs0LANG2YCHAK4-C-JIX8PwHDlrbABN+aA60NqbUQvgh6ELbs-goYAQA">Playground</a></p>
+
+
+              
+          </article>
+          
+
+ <div class="pagination">
+  
+    <a class="pagination__item" href="/blog/notes/typescript/ts-mapped-types/">
+        <span class="pagination__label">Previous Post</span>
+        <span class="pagination__title"></span>
+    </a>
+  
+
+  
+    <a class="pagination__item" href="/blog/notes/typescript/fixing-python-env/">
+      <span class="pagination__label">Next Post</span>
+      <span class="pagination__title" ></a>
+    </a>
+  
+</div>
+
+          
+          <footer class="post__footer">
+            
+
+
+<div class="social-icons">
+  
+     
+    
+      <a class="social-icons__link" title="Twitter"
+         href="https://twitter.com/soulfoodmonk"
+         target="_blank" rel="noopener">
+        <div class="social-icons__icon" style="background-image: url('svg/twitter.svg')"></div>
+      </a>
+    
+  
+     
+    
+      <a class="social-icons__link" title="GitHub"
+         href="https://github.com/MonksterFX"
+         target="_blank" rel="noopener">
+        <div class="social-icons__icon" style="background-image: url('svg/github.svg')"></div>
+      </a>
+    
+  
+     
+    
+  
+     
+    
+  
+     
+    
+  
+     
+    
+  
+     
+    
+      <a class="social-icons__link" title="LinkedIn"
+         href="https://www.linkedin.com/in/max-m%C3%B6nch-6325a8b1/"
+         target="_blank" rel="noopener">
+        <div class="social-icons__icon" style="background-image: url('svg/linkedin.svg')"></div>
+      </a>
+    
+  
+     
+    
+     
+</div>
+
+            <p>© 2022</p>
+          </footer>
+          </div>
+      </div>
+      
+    </div>
+    
+
+  </main>
+
+   
+
+  
+  <script src="/js/index.min.49e4d8a384357d9b445b87371863419937ede9fa77737522ffb633073aebfa44.js" integrity="sha256-SeTYo4Q1fZtEW4c3GGNBmTft6fp3c3Ui/7YzBzrr&#43;kQ=" crossorigin="anonymous"></script>
+  
+  
+  <script src="https://unpkg.com/prismjs@1.20.0/components/prism-core.min.js"></script>
+
+  
+  <script src="https://unpkg.com/prismjs@1.20.0/plugins/autoloader/prism-autoloader.min.js"
+    data-autoloader-path="https://unpkg.com/prismjs@1.20.0/components/"></script>
+
+  
+
+
+</body>
+
+</html>

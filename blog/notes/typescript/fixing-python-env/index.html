@@ -2,12 +2,12 @@
 <html lang="en-us">
 
 <head>
-  <title>using generic params in typescript | moench.dev</title>
+  <title> | moench.dev</title>
 
   <meta charset="UTF-8">
   <meta name="language" content="en">
   <meta name="description" content="">
-  <meta name="keywords" content="notes">
+  <meta name="keywords" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -17,7 +17,7 @@
   
   
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="using generic params in typescript" />
+  <meta name="twitter:title" content="" />
   <meta name="twitter:description" content=""/>
   <meta name="twitter:site" content="https://twitter.com/soulfoodmonk" />
   <meta name="twitter:creator" content="https://twitter.com/soulfoodmonk" />
@@ -56,8 +56,8 @@
             "@id": ""
       },
       "articleSection" : "blog",
-      "name" : "using generic params in typescript",
-      "headline" : "using generic params in typescript",
+      "name" : "",
+      "headline" : "",
       "description" : "",
       "inLanguage" : "en-US",
       "author" : "",
@@ -65,12 +65,12 @@
       "publisher": "",
       "accountablePerson" : "",
       "copyrightHolder" : "",
-      "copyrightYear" : "2022",
-      "datePublished": "2022-01-07 11:00:00 \u002b0100 CET",
-      "dateModified" : "2022-01-07 11:00:00 \u002b0100 CET",
-      "url" : "\/blog\/notes\/typescript\/ts-generic-params\/",
-      "wordCount" : "156",
-      "keywords" : ["notes", "Blog"]
+      "copyrightYear" : "0001",
+      "datePublished": "0001-01-01 00:00:00 \u002b0000 UTC",
+      "dateModified" : "0001-01-01 00:00:00 \u002b0000 UTC",
+      "url" : "\/blog\/notes\/typescript\/fixing-python-env\/",
+      "wordCount" : "3",
+      "keywords" : ["Blog"]
     }
   
   </script>
@@ -114,78 +114,30 @@
       <div class="post__container">
         <div class="post">
           <header class="post__header">
-            <h1 id="post__title">using generic params in typescript</h1>
-            <time datetime="2022-01-07 11:00:00 &#43;0100 CET" class="post__date">7 Jan 2022</time> 
+            <h1 id="post__title"></h1>
+            
           </header>
           <article class="post__content">
               
-<h2 id="the-challenge">the challenge<a class="anchor" href="#the-challenge">#</a></h2>
-<pre><code class="language-ts">interface MyInterface {
-  key1: number;
-  key2: string;
-}
-</code></pre>
-<p>So for example we have the following setup. We have a Typescript <code>interface</code> and <code>object</code> implementing this interface and a <code>function</code> we pass the object and a key, which indicates the field of the object we want to manipulate.</p>
-<p>As <strong>goodie</strong> we also get for that is <strong>type completion</strong> in VSC. So we get suggestions deppending on the type the object hast.</p>
-<!-- prettier-ignore-start -->
-<pre><code class="language-ts">interface MyInterface {
-  key1: number,
-  key2: string
-}
-
-const obj: MyInterface =
-  {
-    key1: 1,
-    key2: &quot;value&quot;
-  };
-
-function myFunction( obj: any, key: string ) {
-  // do something here
-}
-</code></pre>
-<p>We can easily change our <code>function</code> to use generics:</p>
-<pre><code class="language-ts">function myFunction&lt; T &gt;( obj: T, value: keyof T ) {
-  // do something here
-}
-</code></pre>
-<p>Use the function as follow:</p>
-<pre><code class="language-ts">function myFunction&lt; MyInterface &gt;( obj, &quot;key1&quot; );
-</code></pre>
-<p>Or even simpler:</p>
-<pre><code class="language-ts">function myFunction( obj, &quot;key1&quot; );
-</code></pre>
-<!-- prettier-ignore-end -->
-<h2 id="usefull-links">usefull links<a class="anchor" href="#usefull-links">#</a></h2>
-<ul>
-<li><a href="https://www.typescriptlang.org/play?ssl=9&amp;ssc=2&amp;pln=1&amp;pc=1&amp;q=287#code/JYOwLgpgTgZghgYwgAgLIE8CS5ryQbwFgAoZZAawnQEYAuZEAVwFsAjaAbhLMvQCZ6AZzBRQAcy7EAviRIIA9iGHJ5rAFb0M2SLEQoAvMiKkKVOsmoAabqf70ARADc4AG0YR7JGcRIxGIBDBgRWRmdAAxf0DgkAAeABUAPgAKVQ1keMtkZzcIel55GAyASmMvWWIwyICgxVitHF0kFLSsgHJeajbiioB6XuQIRwgQZEFgZgAHF2gSKqjakFT1ds7uiqA">ts playground with the example above</a></li>
-</ul>
+<p><code>conda list --revisions</code></p>
 
 
               
           </article>
           
 
-<ul class="tags__list">
-    
-    <li class="tag__item">
-        <a class="tag__link" href="/tags/ts/">ts</a>
-    </li>
-    <li class="tag__item">
-        <a class="tag__link" href="/tags/notes/">notes</a>
-    </li></ul>
-
  <div class="pagination">
   
-    <a class="pagination__item" href="/blog/about/about-me/">
+    <a class="pagination__item" href="/blog/notes/typescript/ts-decorators/">
         <span class="pagination__label">Previous Post</span>
-        <span class="pagination__title">about: me</span>
+        <span class="pagination__title"></span>
     </a>
   
 
   
-    <a class="pagination__item" href="/blog/notes/json-schema/">
+    <a class="pagination__item" href="/blog/banglejs/gpstracker/">
       <span class="pagination__label">Next Post</span>
-      <span class="pagination__title" >typing your json with json schema</a>
+      <span class="pagination__title" ></a>
     </a>
   
 </div>

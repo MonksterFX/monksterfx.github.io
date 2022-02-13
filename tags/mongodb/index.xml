@@ -20,7 +20,8 @@
       <guid>/blog/mongo/mongo-array-cheatsheet-values/</guid>
       <description>Cheatsheet - Array Of Values A short cheat sheet for working with arrays in mongodb queries and aggregations. Inspired by: Mongo Doc - Update Array Operator
 document structure For all following examples we assume a collection named &amp;ldquo;arrays&amp;rdquo; with at least on document of the following structure:
-{ &amp;quot;tags&amp;quot;: [ &amp;quot;tag a&amp;quot;, &amp;quot;tag b&amp;quot;, &amp;quot;tag c&amp;quot; ] }  create Creation is very straight forward so we will skip this part here.</description>
+{ &amp;quot;tags&amp;quot;: [&amp;quot;A&amp;quot;, &amp;quot;B&amp;quot;, &amp;quot;C&amp;quot;] }  create Creation is very straight forward so we will skip this part here.
+query Basic query operation on elements.</description>
     </item>
     
     <item>

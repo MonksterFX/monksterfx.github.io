@@ -69,7 +69,7 @@
       "datePublished": "2021-04-25 12:00:00 \u002b0200 CEST",
       "dateModified" : "2021-04-25 12:00:00 \u002b0200 CEST",
       "url" : "\/blog\/mongo\/mongo-array-cheatsheet-values\/",
-      "wordCount" : "450",
+      "wordCount" : "413",
       "keywords" : ["notes", "Blog"]
     }
   
@@ -124,11 +124,7 @@
 <h2 id="document-structure">document structure<a class="anchor" href="#document-structure">#</a></h2>
 <p>For all following examples we assume a collection named <strong>&ldquo;arrays&rdquo;</strong> with at least on document of the following structure:</p>
 <pre><code class="language-json">{
-  &quot;tags&quot;: [
-    &quot;tag a&quot;,
-    &quot;tag b&quot;,
-    &quot;tag c&quot;
-  ]
+  &quot;tags&quot;: [&quot;A&quot;, &quot;B&quot;, &quot;C&quot;]
 }
 </code></pre>
 <h2 id="create">create<a class="anchor" href="#create">#</a></h2>
@@ -138,14 +134,14 @@
 <p><strong>contains an element</strong></p>
 <!-- prettier-ignore -->
 <pre><code class="language-js">db.arrays.find({
-    tags: &quot;tag a&quot;,
+    tags: &quot;A&quot;,
   }).toArray();
 </code></pre>
-<p><strong>contains on of multi elements</strong></p>
+<p><strong>contains one of multi elements</strong></p>
 <!-- prettier-ignore -->
 <pre><code class="language-js">db.arrays.find({
     tags: {
-      $in: [&quot;tag a&quot;, &quot;tag c&quot;],
+      $in: [&quot;A&quot;, &quot;C&quot;],
     },
   }).toArray();
 </code></pre>
@@ -153,14 +149,14 @@
 <!-- prettier-ignore -->
 <pre><code class="language-js">db.arrays.find({
     tags: { 
-      $all: [&quot;tag a&quot;, &quot;tag c&quot;] 
+      $all: [&quot;A&quot;, &quot;C&quot;] 
     },
   }).toArray();
 </code></pre>
 <p><strong>does not contain</strong></p>
 <!-- prettier-ignore -->
 <pre><code class="language-js">db.arrays.find({
-    tags: {$ne: &quot;tag c&quot;},
+    tags: {$ne: &quot;C&quot;},
   }).toArray();
 </code></pre>
 <p>or with multiple values:</p>
@@ -183,7 +179,7 @@
   {},
   {
     $push: {
-      tags: &quot;tag x&quot;,
+      tags: &quot;X&quot;,
     },
   }
 );
@@ -194,10 +190,7 @@
   {
     $push: {
       tags: {
-        $each: [
-          &quot;tag y&quot;,
-          &quot;tag z&quot;,
-        ],
+        $each: [&quot;Y&quot;, &quot;Z&quot;],
       },
     },
   }
@@ -209,10 +202,7 @@
   {
     $addToSet: {
       tags: {
-        $each: [
-          &quot;tag c&quot;,
-          &quot;tag d&quot;,
-        ],
+        $each: [&quot;C&quot;, &quot;D&quot;],
       },
     },
   }
@@ -221,11 +211,10 @@
 <h3 id="find-and-replace-values">find and replace values<a class="anchor" href="#find-and-replace-values">#</a></h3>
 <p><strong>find first occurence and change that value</strong></p>
 <pre><code class="language-js">db.arrays.updateMany(
-  { tags: &quot;tag a&quot; },
+  { tags: &quot;A&quot; },
   {
     $set: {
-      &quot;tags.$&quot;:
-        &quot;tag c&quot;,
+      &quot;tags.$&quot;: &quot;C&quot;,
     },
   }
 );
@@ -235,15 +224,13 @@
   {},
   {
     $set: {
-      &quot;tags.$[filter]&quot;:
-        &quot;tag c&quot;,
+      &quot;tags.$[filter]&quot;: &quot;C&quot;,
     },
   },
   {
     arrayFilters: [
       {
-        filter:
-          &quot;tag a&quot;,
+        filter: &quot;A&quot;,
       },
     ],
   }
@@ -254,11 +241,7 @@
 <pre><code class="language-js">db.arrays.update(
   {},
   {
-    tags: [
-      &quot;tag a&quot;,
-      &quot;tag b&quot;,
-      &quot;tag c&quot;,
-    ],
+    tags: [&quot;A&quot;, &quot;B&quot;, &quot;C&quot;],
   }
 );
 </code></pre>
@@ -268,7 +251,7 @@
   {},
   {
     $pull: {
-      tags: &quot;tag a&quot;,
+      tags: &quot;A&quot;,
     },
   },
   { multi: true }
@@ -280,10 +263,7 @@
   {
     $pull: {
       tags: {
-        $in: [
-          &quot;tag a&quot;,
-          &quot;tag b&quot;,
-        ],
+        $in: [&quot;A&quot;, &quot;B&quot;],
       },
     },
   }
@@ -298,9 +278,7 @@
   {
     $push: {
       tags: {
-        $each: [
-          &quot;tags x&quot;,
-        ],
+        $each: [&quot;X&quot;],
         $sort: -1,
       },
     },
