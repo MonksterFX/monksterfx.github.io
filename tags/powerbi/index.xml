@@ -2,22 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>powerbi on moench.dev</title>
-    <link>/tags/powerbi/</link>
+    <link>https://mrmonk.dev/tags/powerbi/</link>
     <description>Recent content in powerbi on moench.dev</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>© {year}</copyright>
     <lastBuildDate>Sun, 25 Apr 2021 12:00:00 +0200</lastBuildDate>
     
-	<atom:link href="/tags/powerbi/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://mrmonk.dev/tags/powerbi/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>powerbi: handling iso weeks</title>
-      <link>/blog/powerbi/powerbi-iso-weeks/</link>
+      <link>https://mrmonk.dev/blog/powerbi/powerbi-iso-weeks/</link>
       <pubDate>Sun, 25 Apr 2021 12:00:00 +0200</pubDate>
       
-      <guid>/blog/powerbi/powerbi-iso-weeks/</guid>
+      <guid>https://mrmonk.dev/blog/powerbi/powerbi-iso-weeks/</guid>
       <description>There are some twist to keep in mind, when working with ISO calendar weeks. The first week of the year is defi
 formulars formular for ISO calendar week
 WEEKNUM(data[&amp;quot;timestamp&amp;quot;], 21)  Hint: The parameter 21 is not always documented for PowerBi depending on the source.

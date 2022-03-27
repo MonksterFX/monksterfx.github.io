@@ -2,22 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>notes on moench.dev</title>
-    <link>/tags/notes/</link>
+    <link>https://mrmonk.dev/tags/notes/</link>
     <description>Recent content in notes on moench.dev</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>© {year}</copyright>
     <lastBuildDate>Fri, 07 Jan 2022 11:00:00 +0100</lastBuildDate>
     
-	<atom:link href="/tags/notes/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://mrmonk.dev/tags/notes/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>typing eventhandler in typescript</title>
-      <link>/blog/notes/typescript/ts-eventhandler/</link>
+      <link>https://mrmonk.dev/blog/notes/typescript/ts-eventhandler/</link>
       <pubDate>Fri, 07 Jan 2022 11:00:00 +0100</pubDate>
       
-      <guid>/blog/notes/typescript/ts-eventhandler/</guid>
+      <guid>https://mrmonk.dev/blog/notes/typescript/ts-eventhandler/</guid>
       <description>I came across this issue when I made a type definition file for the upcoming web-ble functionalities in chrome and edge browser (more about it).
 the challenge The challenge is the following:
  there are n-events we can register to trough a function addEventhandler in the callback we get data back depending on the event we register to, we expect a typed callback  untyped example:
@@ -26,10 +26,10 @@ MyObject.addEventhandler(&amp;quot;eventA&amp;quot;, myCallback, options); funct
     
     <item>
       <title>typing your json with json schema</title>
-      <link>/blog/notes/json-schema/</link>
+      <link>https://mrmonk.dev/blog/notes/json-schema/</link>
       <pubDate>Fri, 07 Jan 2022 11:00:00 +0100</pubDate>
       
-      <guid>/blog/notes/json-schema/</guid>
+      <guid>https://mrmonk.dev/blog/notes/json-schema/</guid>
       <description>what is a json schema how to add it to VISUAL STUDIO CODE Adding to the .vscode/settings.json
 &amp;quot;json.schemas&amp;quot;: [ { &amp;quot;fileMatch&amp;quot;: [ &amp;quot;models/*.schema.json&amp;quot; ], &amp;quot;url&amp;quot;: &amp;quot;schema/schema.json&amp;quot; } ]  how split json schema into multi files troubleshooting maps Maps, Records not working  $schema: instead of workspace
 usefull links documentation
@@ -39,20 +39,20 @@ usefull links documentation
     
     <item>
       <title>using generic params in typescript</title>
-      <link>/blog/notes/typescript/ts-generic-params/</link>
+      <link>https://mrmonk.dev/blog/notes/typescript/ts-generic-params/</link>
       <pubDate>Fri, 07 Jan 2022 11:00:00 +0100</pubDate>
       
-      <guid>/blog/notes/typescript/ts-generic-params/</guid>
+      <guid>https://mrmonk.dev/blog/notes/typescript/ts-generic-params/</guid>
       <description>the challenge interface MyInterface { key1: number; key2: string; }  So for example we have the following setup. We have a Typescript interface and object implementing this interface and a function we pass the object and a key, which indicates the field of the object we want to manipulate.
 As goodie we also get for that is type completion in VSC. So we get suggestions deppending on the type the object hast.</description>
     </item>
     
     <item>
       <title>setting up debugging with node and typescript in visual studio code</title>
-      <link>/blog/notes/typescript/ts-debug-vsc/</link>
+      <link>https://mrmonk.dev/blog/notes/typescript/ts-debug-vsc/</link>
       <pubDate>Fri, 15 Oct 2021 19:23:49 +0100</pubDate>
       
-      <guid>/blog/notes/typescript/ts-debug-vsc/</guid>
+      <guid>https://mrmonk.dev/blog/notes/typescript/ts-debug-vsc/</guid>
       <description>the problem Offical Solution from visual studio code homepage for setting up debugging:
 { &amp;quot;name&amp;quot;: &amp;quot;Launch Server&amp;quot;, &amp;quot;program&amp;quot;: &amp;quot;${workspaceFolder}/src/index.ts&amp;quot;, &amp;quot;type&amp;quot;: &amp;quot;node&amp;quot;, &amp;quot;request&amp;quot;: &amp;quot;launch&amp;quot;, &amp;quot;skipFiles&amp;quot;: [&amp;quot;&amp;lt;node_internals&amp;gt;/**&amp;quot;], &amp;quot;preLaunchTask&amp;quot;: &amp;quot;tsc: build - tsconfig.json&amp;quot;, &amp;quot;outFiles&amp;quot;: [&amp;quot;${workspaceFolder}/build/**/*.js&amp;quot;] }  and add in tsconfig.json:
 { ... &amp;quot;sourceMap&amp;quot;: true, ... }  This works, but brings one problem to the front: Exceptions. The exception thrown will refrence to the compiled javascript code. So we have to lookup the causing source file by our selfs.</description>
@@ -60,10 +60,10 @@ As goodie we also get for that is type completion in VSC. So we get suggestions 
     
     <item>
       <title>powerbi: handling iso weeks</title>
-      <link>/blog/powerbi/powerbi-iso-weeks/</link>
+      <link>https://mrmonk.dev/blog/powerbi/powerbi-iso-weeks/</link>
       <pubDate>Sun, 25 Apr 2021 12:00:00 +0200</pubDate>
       
-      <guid>/blog/powerbi/powerbi-iso-weeks/</guid>
+      <guid>https://mrmonk.dev/blog/powerbi/powerbi-iso-weeks/</guid>
       <description>There are some twist to keep in mind, when working with ISO calendar weeks. The first week of the year is defi
 formulars formular for ISO calendar week
 WEEKNUM(data[&amp;quot;timestamp&amp;quot;], 21)  Hint: The parameter 21 is not always documented for PowerBi depending on the source.
@@ -73,20 +73,20 @@ For grouping we need to know to which year a calendar week belongs. It could be 
     
     <item>
       <title>arduino: how to use the serial plotter of Arduino IDE</title>
-      <link>/blog/arduino/arduino-ide-serial-plotter/</link>
+      <link>https://mrmonk.dev/blog/arduino/arduino-ide-serial-plotter/</link>
       <pubDate>Thu, 25 Feb 2021 12:00:00 +0200</pubDate>
       
-      <guid>/blog/arduino/arduino-ide-serial-plotter/</guid>
+      <guid>https://mrmonk.dev/blog/arduino/arduino-ide-serial-plotter/</guid>
       <description>labeling the series If you have to print some debug messages in the beginning, the Serial Plotter will interpret these as Series Labels. To clear unneacessary labels, just restart the serial plotter (not the mc). In order to catch up the labels, you have to print them to Serial everytime you print values. So it is garanted that the series labels are recognized.
 As seperators you can use a tabulator, a space or a comma.</description>
     </item>
     
     <item>
       <title>mongo fixing broken timestamps</title>
-      <link>/blog/mongo/mongo-fixing-stuff/</link>
+      <link>https://mrmonk.dev/blog/mongo/mongo-fixing-stuff/</link>
       <pubDate>Mon, 02 Nov 2020 12:00:00 +0200</pubDate>
       
-      <guid>/blog/mongo/mongo-fixing-stuff/</guid>
+      <guid>https://mrmonk.dev/blog/mongo/mongo-fixing-stuff/</guid>
       <description>convert bson timestamp to date So I&amp;rsquo;m used to create a timestamp for logging in the db when something is created. What should go wrong with using mongo bson timestamp. Let me say it this way. As long as you leave it alone in the database it will happily coexist with all the other stuff.
 But if you want to use it in javascript it gets complicated.
 What is a timestamp in bson</description>
@@ -94,10 +94,10 @@ What is a timestamp in bson</description>
     
     <item>
       <title>make ftp working with ssh without changing permissions</title>
-      <link>/blog/notes/ftp-without-chmod/</link>
+      <link>https://mrmonk.dev/blog/notes/ftp-without-chmod/</link>
       <pubDate>Tue, 01 Sep 2020 12:00:00 +0200</pubDate>
       
-      <guid>/blog/notes/ftp-without-chmod/</guid>
+      <guid>https://mrmonk.dev/blog/notes/ftp-without-chmod/</guid>
       <description>the problem If you want to disable your root user of the maschine being accessed via SSH you probably ran into Problems with SFTP on your server. As long you use the root user of the maschine your SFTP will work fine, but if you change your user you will get into trouble.
 I&amp;rsquo;m working a lot with docker and bind mounts for config files so I can&amp;rsquo;t change the owner/permission of the directory or file I&amp;rsquo;m binding to.</description>
     </item>

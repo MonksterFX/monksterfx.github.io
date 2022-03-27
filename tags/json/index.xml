@@ -2,22 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>json on moench.dev</title>
-    <link>/tags/json/</link>
+    <link>https://mrmonk.dev/tags/json/</link>
     <description>Recent content in json on moench.dev</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>© {year}</copyright>
     <lastBuildDate>Fri, 07 Jan 2022 11:00:00 +0100</lastBuildDate>
     
-	<atom:link href="/tags/json/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://mrmonk.dev/tags/json/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>typing your json with json schema</title>
-      <link>/blog/notes/json-schema/</link>
+      <link>https://mrmonk.dev/blog/notes/json-schema/</link>
       <pubDate>Fri, 07 Jan 2022 11:00:00 +0100</pubDate>
       
-      <guid>/blog/notes/json-schema/</guid>
+      <guid>https://mrmonk.dev/blog/notes/json-schema/</guid>
       <description>what is a json schema how to add it to VISUAL STUDIO CODE Adding to the .vscode/settings.json
 &amp;quot;json.schemas&amp;quot;: [ { &amp;quot;fileMatch&amp;quot;: [ &amp;quot;models/*.schema.json&amp;quot; ], &amp;quot;url&amp;quot;: &amp;quot;schema/schema.json&amp;quot; } ]  how split json schema into multi files troubleshooting maps Maps, Records not working  $schema: instead of workspace
 usefull links documentation

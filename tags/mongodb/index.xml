@@ -2,22 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>mongodb on moench.dev</title>
-    <link>/tags/mongodb/</link>
+    <link>https://mrmonk.dev/tags/mongodb/</link>
     <description>Recent content in mongodb on moench.dev</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>© {year}</copyright>
     <lastBuildDate>Sun, 25 Apr 2021 12:00:00 +0200</lastBuildDate>
     
-	<atom:link href="/tags/mongodb/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://mrmonk.dev/tags/mongodb/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>mongo snippets: array cheatsheet</title>
-      <link>/blog/mongo/mongo-array-cheatsheet-values/</link>
+      <link>https://mrmonk.dev/blog/mongo/mongo-array-cheatsheet-values/</link>
       <pubDate>Sun, 25 Apr 2021 12:00:00 +0200</pubDate>
       
-      <guid>/blog/mongo/mongo-array-cheatsheet-values/</guid>
+      <guid>https://mrmonk.dev/blog/mongo/mongo-array-cheatsheet-values/</guid>
       <description>Cheatsheet - Array Of Values A short cheat sheet for working with arrays in mongodb queries and aggregations. Inspired by: Mongo Doc - Update Array Operator
 document structure For all following examples we assume a collection named &amp;ldquo;arrays&amp;rdquo; with at least on document of the following structure:
 { &amp;quot;tags&amp;quot;: [&amp;quot;A&amp;quot;, &amp;quot;B&amp;quot;, &amp;quot;C&amp;quot;] }  create Creation is very straight forward so we will skip this part here.
@@ -26,10 +26,10 @@ query Basic query operation on elements.</description>
     
     <item>
       <title>mongo fixing broken timestamps</title>
-      <link>/blog/mongo/mongo-fixing-stuff/</link>
+      <link>https://mrmonk.dev/blog/mongo/mongo-fixing-stuff/</link>
       <pubDate>Mon, 02 Nov 2020 12:00:00 +0200</pubDate>
       
-      <guid>/blog/mongo/mongo-fixing-stuff/</guid>
+      <guid>https://mrmonk.dev/blog/mongo/mongo-fixing-stuff/</guid>
       <description>convert bson timestamp to date So I&amp;rsquo;m used to create a timestamp for logging in the db when something is created. What should go wrong with using mongo bson timestamp. Let me say it this way. As long as you leave it alone in the database it will happily coexist with all the other stuff.
 But if you want to use it in javascript it gets complicated.
 What is a timestamp in bson</description>
@@ -37,10 +37,10 @@ What is a timestamp in bson</description>
     
     <item>
       <title>mongo snippets: arrays</title>
-      <link>/blog/mongo/mongo-snippets-arrays/</link>
+      <link>https://mrmonk.dev/blog/mongo/mongo-snippets-arrays/</link>
       <pubDate>Mon, 13 Jul 2020 19:23:49 +0200</pubDate>
       
-      <guid>/blog/mongo/mongo-snippets-arrays/</guid>
+      <guid>https://mrmonk.dev/blog/mongo/mongo-snippets-arrays/</guid>
       <description>extract only subset of embedded documents Sometimes we want to extract not all embedded documents from a matched documents. Imagine a object chatroom:
 { _id: ObjectId(&#39;5f687ba6a93aeddc476ea157&#39;), ... messages: Array&amp;lt;Messages&amp;gt; }  The messages look like this:
 { sender: Reference, send_at: Date payload: &amp;quot;&amp;quot; }  Now when we want to extract all message before, after a date we could query the Chatroom and filter it in the backend logic, or we can use Aggregation Pipeline.</description>

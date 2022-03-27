@@ -2,22 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>terminal on moench.dev</title>
-    <link>/tags/terminal/</link>
+    <link>https://mrmonk.dev/tags/terminal/</link>
     <description>Recent content in terminal on moench.dev</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>© {year}</copyright>
     <lastBuildDate>Sun, 13 Feb 2022 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="/tags/terminal/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://mrmonk.dev/tags/terminal/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>build a command line java switch</title>
-      <link>/blog/notes/terminal/java-switch-versions-commandline/</link>
+      <link>https://mrmonk.dev/blog/notes/terminal/java-switch-versions-commandline/</link>
       <pubDate>Sun, 13 Feb 2022 00:00:00 +0000</pubDate>
       
-      <guid>/blog/notes/terminal/java-switch-versions-commandline/</guid>
+      <guid>https://mrmonk.dev/blog/notes/terminal/java-switch-versions-commandline/</guid>
       <description>Add this to your ~/.zshrcafter both versions are installed:
 # export JAVA_HOME=$(/usr/libexec/java_home) export JAVA_8_HOME=$(/usr/libexec/java_home -v1.8) export JAVA_11_HOME=$(/usr/libexec/java_home -v11) alias java8=&#39;export JAVA_HOME=$JAVA_8_HOME&#39; alias java11=&#39;export JAVA_HOME=$JAVA_11_HOME&#39; java8  To switch no simple execute:
 # or switch to java11, default in this example is 8 java11 # ...your stuff will be executed with java11  original post - with deeper explanation</description>
@@ -25,10 +25,10 @@
     
     <item>
       <title>zsh (better) privacy setup</title>
-      <link>/blog/notes/terminal/zsh-privacy-setup/</link>
+      <link>https://mrmonk.dev/blog/notes/terminal/zsh-privacy-setup/</link>
       <pubDate>Sun, 13 Feb 2022 00:00:00 +0000</pubDate>
       
-      <guid>/blog/notes/terminal/zsh-privacy-setup/</guid>
+      <guid>https://mrmonk.dev/blog/notes/terminal/zsh-privacy-setup/</guid>
       <description>the problem Exposing the history of commandline inputs can expose sensitive informations to all programms which have access to it.
 clean the history on the begining of workday (6:00) each day I like this approach because I use mutliple sessions over the day and dont want to lose commands I working with all the day. On linux you can use crontab but MacOS I will use launchd deamon.
 first step: create sheduled job</description>

@@ -2,22 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>cheatsheet on moench.dev</title>
-    <link>/tags/cheatsheet/</link>
+    <link>https://mrmonk.dev/tags/cheatsheet/</link>
     <description>Recent content in cheatsheet on moench.dev</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>© {year}</copyright>
     <lastBuildDate>Sun, 25 Apr 2021 12:00:00 +0200</lastBuildDate>
     
-	<atom:link href="/tags/cheatsheet/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://mrmonk.dev/tags/cheatsheet/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>mongo snippets: array cheatsheet</title>
-      <link>/blog/mongo/mongo-array-cheatsheet-values/</link>
+      <link>https://mrmonk.dev/blog/mongo/mongo-array-cheatsheet-values/</link>
       <pubDate>Sun, 25 Apr 2021 12:00:00 +0200</pubDate>
       
-      <guid>/blog/mongo/mongo-array-cheatsheet-values/</guid>
+      <guid>https://mrmonk.dev/blog/mongo/mongo-array-cheatsheet-values/</guid>
       <description>Cheatsheet - Array Of Values A short cheat sheet for working with arrays in mongodb queries and aggregations. Inspired by: Mongo Doc - Update Array Operator
 document structure For all following examples we assume a collection named &amp;ldquo;arrays&amp;rdquo; with at least on document of the following structure:
 { &amp;quot;tags&amp;quot;: [&amp;quot;A&amp;quot;, &amp;quot;B&amp;quot;, &amp;quot;C&amp;quot;] }  create Creation is very straight forward so we will skip this part here.

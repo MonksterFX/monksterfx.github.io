@@ -2,22 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>arrays on moench.dev</title>
-    <link>/tags/arrays/</link>
+    <link>https://mrmonk.dev/tags/arrays/</link>
     <description>Recent content in arrays on moench.dev</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>© {year}</copyright>
     <lastBuildDate>Mon, 13 Jul 2020 19:23:49 +0200</lastBuildDate>
     
-	<atom:link href="/tags/arrays/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://mrmonk.dev/tags/arrays/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>mongo snippets: arrays</title>
-      <link>/blog/mongo/mongo-snippets-arrays/</link>
+      <link>https://mrmonk.dev/blog/mongo/mongo-snippets-arrays/</link>
       <pubDate>Mon, 13 Jul 2020 19:23:49 +0200</pubDate>
       
-      <guid>/blog/mongo/mongo-snippets-arrays/</guid>
+      <guid>https://mrmonk.dev/blog/mongo/mongo-snippets-arrays/</guid>
       <description>extract only subset of embedded documents Sometimes we want to extract not all embedded documents from a matched documents. Imagine a object chatroom:
 { _id: ObjectId(&#39;5f687ba6a93aeddc476ea157&#39;), ... messages: Array&amp;lt;Messages&amp;gt; }  The messages look like this:
 { sender: Reference, send_at: Date payload: &amp;quot;&amp;quot; }  Now when we want to extract all message before, after a date we could query the Chatroom and filter it in the backend logic, or we can use Aggregation Pipeline.</description>

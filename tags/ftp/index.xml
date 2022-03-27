@@ -2,22 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>ftp on moench.dev</title>
-    <link>/tags/ftp/</link>
+    <link>https://mrmonk.dev/tags/ftp/</link>
     <description>Recent content in ftp on moench.dev</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>© {year}</copyright>
     <lastBuildDate>Tue, 01 Sep 2020 12:00:00 +0200</lastBuildDate>
     
-	<atom:link href="/tags/ftp/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://mrmonk.dev/tags/ftp/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>make ftp working with ssh without changing permissions</title>
-      <link>/blog/notes/ftp-without-chmod/</link>
+      <link>https://mrmonk.dev/blog/notes/ftp-without-chmod/</link>
       <pubDate>Tue, 01 Sep 2020 12:00:00 +0200</pubDate>
       
-      <guid>/blog/notes/ftp-without-chmod/</guid>
+      <guid>https://mrmonk.dev/blog/notes/ftp-without-chmod/</guid>
       <description>the problem If you want to disable your root user of the maschine being accessed via SSH you probably ran into Problems with SFTP on your server. As long you use the root user of the maschine your SFTP will work fine, but if you change your user you will get into trouble.
 I&amp;rsquo;m working a lot with docker and bind mounts for config files so I can&amp;rsquo;t change the owner/permission of the directory or file I&amp;rsquo;m binding to.</description>
     </item>
