@@ -2,12 +2,12 @@
 <html lang="en-us">
 
 <head>
-  <title>w(u)tf-8 german csv and ms excel | moench.dev</title>
+  <title>a season calendar for fermentation nerds | moench.dev</title>
 
   <meta charset="UTF-8">
   <meta name="language" content="en">
-  <meta name="description" content="utf-8 bom and why it matters with german csv">
-  <meta name="keywords" content="utf-8">
+  <meta name="description" content="A small website get always shown which fruits and vegetables are in season.">
+  <meta name="keywords" content="projects">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -17,8 +17,8 @@
   
   
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="w(u)tf-8 german csv and ms excel" />
-  <meta name="twitter:description" content="utf-8 bom and why it matters with german csv"/>
+  <meta name="twitter:title" content="a season calendar for fermentation nerds" />
+  <meta name="twitter:description" content="A small website get always shown which fruits and vegetables are in season."/>
   <meta name="twitter:site" content="https://twitter.com/soulfoodmonk" />
   <meta name="twitter:creator" content="https://twitter.com/soulfoodmonk" />
   
@@ -56,21 +56,21 @@
             "@id": "https:\/\/mrmonk.dev"
       },
       "articleSection" : "blog",
-      "name" : "w(u)tf-8 german csv and ms excel",
-      "headline" : "w(u)tf-8 german csv and ms excel",
-      "description" : "utf-8 bom and why it matters with german csv",
+      "name" : "a season calendar for fermentation nerds",
+      "headline" : "a season calendar for fermentation nerds",
+      "description" : "A small website get always shown which fruits and vegetables are in season.",
       "inLanguage" : "en-US",
       "author" : "",
       "creator" : "",
       "publisher": "",
       "accountablePerson" : "",
       "copyrightHolder" : "",
-      "copyrightYear" : "2021",
-      "datePublished": "2021-02-25 12:00:00 \u002b0100 CET",
-      "dateModified" : "2021-02-25 12:00:00 \u002b0100 CET",
-      "url" : "https:\/\/mrmonk.dev\/blog\/notes\/utf-8-bom\/",
-      "wordCount" : "239",
-      "keywords" : ["utf-8", "Blog"]
+      "copyrightYear" : "2022",
+      "datePublished": "2022-03-27 00:00:00 \u002b0000 UTC",
+      "dateModified" : "2022-03-27 00:00:00 \u002b0000 UTC",
+      "url" : "https:\/\/mrmonk.dev\/blog\/projects\/microtools\/fermentation-calendar\/",
+      "wordCount" : "210",
+      "keywords" : ["projects", "Blog"]
     }
   
   </script>
@@ -118,36 +118,58 @@
       <div class="post__container">
         <div class="post">
           <header class="post__header">
-            <h1 id="post__title">w(u)tf-8 german csv and ms excel</h1>
-            <time datetime="2021-02-25 12:00:00 &#43;0100 CET" class="post__date">25 Feb 2021</time> 
+            <h1 id="post__title">a season calendar for fermentation nerds</h1>
+            <time datetime="2022-03-27 00:00:00 &#43;0000 UTC" class="post__date">27 Mar 2022</time> 
           </header>
           <article class="post__content">
               
-<h2 id="why-utf-8-seems-broken-sometimes">why utf-8 seems broken sometimes<a class="anchor" href="#why-utf-8-seems-broken-sometimes">#</a></h2>
-<p>The programming world most of the time does not really care about characters which are special in other languages others than englisch. So in Germany we have our all time favorites <code>ÄÖÜäüöß</code> to take care about everytime we work with text documents.</p>
-<p>Normally you will have no trouble with text editors, but an burning example is Microsoft Office. To correctly import an utf-8 encoded csv document (with special chars) you have to provide an BOM. If you don&rsquo;t add an BOM Mircosoft will handle the file as it would be ASCII-encoded.</p>
-<h2 id="example">example<a class="anchor" href="#example">#</a></h2>
-<p><em>node.js example</em>:</p>
-<pre><code class="language-js">// utf-8
-fs.writeFileSync(filename, &quot;\ufeff&quot; + content);
-</code></pre>
-<p>This is strange because Wikipedia says with utf-8 it should be <code>0xEFBBBF</code> for utf-8.</p>
-<p>But Mozilla Developer states:</p>
-<blockquote>
-<p><strong>0xFEFF</strong>: Used at the start of the script to mark it as Unicode and the text&rsquo;s byte order. <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Lexical_grammar#control_characters">Mozilla Developer</a></p>
-</blockquote>
-<p>But anyway. Node handels it for us and now we you can import the csv file in Microsoft Office with correct encoding.</p>
-<h2 id="extra-round-regex">extra round regex<a class="anchor" href="#extra-round-regex">#</a></h2>
-<p>If I talk about this topic, I should shortly add how this things work with regex.</p>
-<blockquote>
-<p>Instead of using <code>[A-Z]</code> we have to use <code>[A-ZÄÜÖß]</code>. Keep this in mind if you work a lot with text. You can try this here <a href="https://regexr.com/">https://regexr.com/</a></p>
-</blockquote>
-<h2 id="more-informations">more informations<a class="anchor" href="#more-informations">#</a></h2>
+<h2 id="season-and-fermentation-calendar">season and fermentation calendar<a class="anchor" href="#season-and-fermentation-calendar">#</a></h2>
+<p>I&rsquo;m quite excited about fermentation from time to time. My main issue is that most of the time I&rsquo;m not aware of which fruits and vegetables have season. So to have this list always with me I build up a small site to have this informations always ready. Small but usefull feature set:</p>
 <ul>
-<li><a href="https://stackoverflow.com/questions/2223882/whats-the-difference-between-utf-8-and-utf-8-without-bom">discussion on StackOverflow about BOM in utf-8 encoded files, part 1</a></li>
-<li><a href="https://stackoverflow.com/questions/17879198/adding-utf-8-bom-to-string-blob">discussion on StackOverflow about BOM in utf-8 encoded files, part2</a></li>
-<li><a href="https://en.wikipedia.org/wiki/Byte_order_mark">wikipedia article about BOM</a></li>
-<li><a href="https://docs.microsoft.com/en-us/globalization/encoding/byte-order-mark">microsoft globalisation</a></li>
+<li>You can search</li>
+<li>Multilanguage &amp; Multiregion (at least in theory)</li>
+<li>Data can easily be extended</li>
+</ul>
+<h2 id="the-data-and-technology">the data and technology<a class="anchor" href="#the-data-and-technology">#</a></h2>
+<p>I pulled the data from various sources and wrote them together (a typical nighttime task). Just stupidly dumped a state for each month and fruit into a csv file.</p>
+<p>Example line how the data looks like:</p>
+</br>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Name(EN)</th>
+<th>jan</th>
+<th>feb</th>
+<th>mar</th>
+<th>apr</th>
+<th>mai</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Spargel</td>
+<td>Asparagus</td>
+<td></td>
+<td></td>
+<td>2</td>
+<td>3</td>
+<td>3</td>
+</tr>
+</tbody>
+</table>
+<p>The scale reaches from 0 to 3.</p>
+<ul>
+<li>3 means fresh and in season, while</li>
+<li>2 means from storage or very pre-season.</li>
+<li>0 and 1 are currently not used and both have the meaning of not in season.</li>
+</ul>
+<p>From the technology point of view this project has no &ldquo;special&rdquo; or &ldquo;fancy&rdquo; implementation. It was actually my first project to get in touch with node.js.</p>
+<p>I think it is simple project but it helps me to decide what to buy and what not.</p>
+<h2 id="links">links<a class="anchor" href="#links">#</a></h2>
+<ul>
+<li><a href="https://calendar.wildferments.org/">To Calendar</a></li>
+<li><a href="https://github.com/wildferments/season-calendar">To Github</a></li>
 </ul>
 
 
@@ -155,18 +177,27 @@ fs.writeFileSync(filename, &quot;\ufeff&quot; + content);
           </article>
           
 
+<ul class="tags__list">
+    
+    <li class="tag__item">
+        <a class="tag__link" href="https://mrmonk.dev/tags/projects/">projects</a>
+    </li>
+    <li class="tag__item">
+        <a class="tag__link" href="https://mrmonk.dev/tags/fermentation/">fermentation</a>
+    </li></ul>
+
  <div class="pagination">
   
-    <a class="pagination__item" href="https://mrmonk.dev/blog/arduino/arduino-ide-serial-plotter/">
+    <a class="pagination__item" href="https://mrmonk.dev/blog/notes/terminal/java-switch-versions-commandline/">
         <span class="pagination__label">Previous Post</span>
-        <span class="pagination__title">arduino: how to use the serial plotter of Arduino IDE</span>
+        <span class="pagination__title">build a command line java switch</span>
     </a>
   
 
   
-    <a class="pagination__item" href="https://mrmonk.dev/blog/powerbi/powerbi-iso-weeks/">
+    <a class="pagination__item" href="https://mrmonk.dev/blog/projects/microtools/throw-away-js/">
       <span class="pagination__label">Next Post</span>
-      <span class="pagination__title" >powerbi: handling iso weeks</a>
+      <span class="pagination__title" >throwAway.js</a>
     </a>
   
 </div>

@@ -2,12 +2,12 @@
 <html lang="en-us">
 
 <head>
-  <title>w(u)tf-8 german csv and ms excel | moench.dev</title>
+  <title>throwAway.js | moench.dev</title>
 
   <meta charset="UTF-8">
   <meta name="language" content="en">
-  <meta name="description" content="utf-8 bom and why it matters with german csv">
-  <meta name="keywords" content="utf-8">
+  <meta name="description" content="single use encrypted clipboard to share secrets, passwords">
+  <meta name="keywords" content="projects">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -17,8 +17,8 @@
   
   
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="w(u)tf-8 german csv and ms excel" />
-  <meta name="twitter:description" content="utf-8 bom and why it matters with german csv"/>
+  <meta name="twitter:title" content="throwAway.js" />
+  <meta name="twitter:description" content="single use encrypted clipboard to share secrets, passwords"/>
   <meta name="twitter:site" content="https://twitter.com/soulfoodmonk" />
   <meta name="twitter:creator" content="https://twitter.com/soulfoodmonk" />
   
@@ -56,21 +56,21 @@
             "@id": "https:\/\/mrmonk.dev"
       },
       "articleSection" : "blog",
-      "name" : "w(u)tf-8 german csv and ms excel",
-      "headline" : "w(u)tf-8 german csv and ms excel",
-      "description" : "utf-8 bom and why it matters with german csv",
+      "name" : "throwAway.js",
+      "headline" : "throwAway.js",
+      "description" : "single use encrypted clipboard to share secrets, passwords",
       "inLanguage" : "en-US",
       "author" : "",
       "creator" : "",
       "publisher": "",
       "accountablePerson" : "",
       "copyrightHolder" : "",
-      "copyrightYear" : "2021",
-      "datePublished": "2021-02-25 12:00:00 \u002b0100 CET",
-      "dateModified" : "2021-02-25 12:00:00 \u002b0100 CET",
-      "url" : "https:\/\/mrmonk.dev\/blog\/notes\/utf-8-bom\/",
-      "wordCount" : "239",
-      "keywords" : ["utf-8", "Blog"]
+      "copyrightYear" : "2022",
+      "datePublished": "2022-04-01 00:00:00 \u002b0000 UTC",
+      "dateModified" : "2022-04-01 00:00:00 \u002b0000 UTC",
+      "url" : "https:\/\/mrmonk.dev\/blog\/projects\/microtools\/throw-away-js\/",
+      "wordCount" : "246",
+      "keywords" : ["projects", "Blog"]
     }
   
   </script>
@@ -118,36 +118,37 @@
       <div class="post__container">
         <div class="post">
           <header class="post__header">
-            <h1 id="post__title">w(u)tf-8 german csv and ms excel</h1>
-            <time datetime="2021-02-25 12:00:00 &#43;0100 CET" class="post__date">25 Feb 2021</time> 
+            <h1 id="post__title">throwAway.js</h1>
+            <time datetime="2022-04-01 00:00:00 &#43;0000 UTC" class="post__date">1 Apr 2022</time> 
           </header>
           <article class="post__content">
               
-<h2 id="why-utf-8-seems-broken-sometimes">why utf-8 seems broken sometimes<a class="anchor" href="#why-utf-8-seems-broken-sometimes">#</a></h2>
-<p>The programming world most of the time does not really care about characters which are special in other languages others than englisch. So in Germany we have our all time favorites <code>ÄÖÜäüöß</code> to take care about everytime we work with text documents.</p>
-<p>Normally you will have no trouble with text editors, but an burning example is Microsoft Office. To correctly import an utf-8 encoded csv document (with special chars) you have to provide an BOM. If you don&rsquo;t add an BOM Mircosoft will handle the file as it would be ASCII-encoded.</p>
-<h2 id="example">example<a class="anchor" href="#example">#</a></h2>
-<p><em>node.js example</em>:</p>
-<pre><code class="language-js">// utf-8
-fs.writeFileSync(filename, &quot;\ufeff&quot; + content);
-</code></pre>
-<p>This is strange because Wikipedia says with utf-8 it should be <code>0xEFBBBF</code> for utf-8.</p>
-<p>But Mozilla Developer states:</p>
-<blockquote>
-<p><strong>0xFEFF</strong>: Used at the start of the script to mark it as Unicode and the text&rsquo;s byte order. <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Lexical_grammar#control_characters">Mozilla Developer</a></p>
-</blockquote>
-<p>But anyway. Node handels it for us and now we you can import the csv file in Microsoft Office with correct encoding.</p>
-<h2 id="extra-round-regex">extra round regex<a class="anchor" href="#extra-round-regex">#</a></h2>
-<p>If I talk about this topic, I should shortly add how this things work with regex.</p>
-<blockquote>
-<p>Instead of using <code>[A-Z]</code> we have to use <code>[A-ZÄÜÖß]</code>. Keep this in mind if you work a lot with text. You can try this here <a href="https://regexr.com/">https://regexr.com/</a></p>
-</blockquote>
-<h2 id="more-informations">more informations<a class="anchor" href="#more-informations">#</a></h2>
+<h2 id="background">background<a class="anchor" href="#background">#</a></h2>
+<p>Evertime I have to share secrets, notes with other parties which are not in my company, I have to think about how to do it. Secret stores are sometimes not feasable or simple to use. I dont trust some shady sites were you can exaktly do that.</p>
+<p>So I though how would I do it? I liked the idea of client side encrpytion and using the backend as &ldquo;dump&rdquo; datastore which will and cannot interfer into the whole prozess of encryption. I was exited to dive into the world of encrpytion.</p>
+<h2 id="the-task">the task<a class="anchor" href="#the-task">#</a></h2>
+<p>This is a two week project. So the feature set is small but I think it is all you need if you want to share some stuff fast and easy.</p>
 <ul>
-<li><a href="https://stackoverflow.com/questions/2223882/whats-the-difference-between-utf-8-and-utf-8-without-bom">discussion on StackOverflow about BOM in utf-8 encoded files, part 1</a></li>
-<li><a href="https://stackoverflow.com/questions/17879198/adding-utf-8-bom-to-string-blob">discussion on StackOverflow about BOM in utf-8 encoded files, part2</a></li>
-<li><a href="https://en.wikipedia.org/wiki/Byte_order_mark">wikipedia article about BOM</a></li>
-<li><a href="https://docs.microsoft.com/en-us/globalization/encoding/byte-order-mark">microsoft globalisation</a></li>
+<li>client side encryption</li>
+<li>message and payload (for files)</li>
+<li>self destruction after time</li>
+<li><del>email notification on read/destruction</del></li>
+<li>share with url only (link only)</li>
+<li>share with two factor (passphrase and link)</li>
+</ul>
+<h2 id="technical-details">technical details<a class="anchor" href="#technical-details">#</a></h2>
+<h3 id="backend">backend<a class="anchor" href="#backend">#</a></h3>
+<p>The backend does not much. It stores the encrypted message in an redis instance until it is retrieved again. It is writen in Express.js.</p>
+<p>The self destruction of the message is implemented trough the TTL feature of redis.</p>
+<h3 id="frontend">frontend<a class="anchor" href="#frontend">#</a></h3>
+<p>Most of the work happens here. It&rsquo;s a small vue 3 project, which is utilising the <strong>Web Crypto Api</strong> of modern browsers to do the encryption/decryption on the frontend.</p>
+<h3 id="encryption-details">encryption details<a class="anchor" href="#encryption-details">#</a></h3>
+<p>More advanced description will follow&hellip; you can track the progress on Github.</p>
+<h2 id="links">links<a class="anchor" href="#links">#</a></h2>
+<ul>
+<li><a href="https://github.com/MonksterFX/throwaway.js">Github</a></li>
+<li><a href="https://notes.mrmonk.dev">Demo of throwAway.js</a></li>
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/API/Web_Crypto_API">Web Crypto API</a></li>
 </ul>
 
 
@@ -155,19 +156,26 @@ fs.writeFileSync(filename, &quot;\ufeff&quot; + content);
           </article>
           
 
+<ul class="tags__list">
+    
+    <li class="tag__item">
+        <a class="tag__link" href="https://mrmonk.dev/tags/projects/">projects</a>
+    </li>
+    <li class="tag__item">
+        <a class="tag__link" href="https://mrmonk.dev/tags/encryption/">encryption</a>
+    </li>
+    <li class="tag__item">
+        <a class="tag__link" href="https://mrmonk.dev/tags/devtools/">devtools</a>
+    </li></ul>
+
  <div class="pagination">
   
-    <a class="pagination__item" href="https://mrmonk.dev/blog/arduino/arduino-ide-serial-plotter/">
+    <a class="pagination__item" href="https://mrmonk.dev/blog/projects/microtools/fermentation-calendar/">
         <span class="pagination__label">Previous Post</span>
-        <span class="pagination__title">arduino: how to use the serial plotter of Arduino IDE</span>
+        <span class="pagination__title">a season calendar for fermentation nerds</span>
     </a>
   
 
-  
-    <a class="pagination__item" href="https://mrmonk.dev/blog/powerbi/powerbi-iso-weeks/">
-      <span class="pagination__label">Next Post</span>
-      <span class="pagination__title" >powerbi: handling iso weeks</a>
-    </a>
   
 </div>
 

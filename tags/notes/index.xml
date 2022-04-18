@@ -13,31 +13,6 @@
     
     
     <item>
-      <title>typing eventhandler in typescript</title>
-      <link>https://mrmonk.dev/blog/notes/typescript/ts-eventhandler/</link>
-      <pubDate>Fri, 07 Jan 2022 11:00:00 +0100</pubDate>
-      
-      <guid>https://mrmonk.dev/blog/notes/typescript/ts-eventhandler/</guid>
-      <description>I came across this issue when I made a type definition file for the upcoming web-ble functionalities in chrome and edge browser (more about it).
-the challenge The challenge is the following:
- there are n-events we can register to trough a function addEventhandler in the callback we get data back depending on the event we register to, we expect a typed callback  untyped example:
-MyObject.addEventhandler(&amp;quot;eventA&amp;quot;, myCallback, options); function myCallback(event: any) { // do something here }  solution mapped types Mapping Types are great if we want determine the type based on a single key.</description>
-    </item>
-    
-    <item>
-      <title>typing your json with json schema</title>
-      <link>https://mrmonk.dev/blog/notes/json-schema/</link>
-      <pubDate>Fri, 07 Jan 2022 11:00:00 +0100</pubDate>
-      
-      <guid>https://mrmonk.dev/blog/notes/json-schema/</guid>
-      <description>what is a json schema how to add it to VISUAL STUDIO CODE Adding to the .vscode/settings.json
-&amp;quot;json.schemas&amp;quot;: [ { &amp;quot;fileMatch&amp;quot;: [ &amp;quot;models/*.schema.json&amp;quot; ], &amp;quot;url&amp;quot;: &amp;quot;schema/schema.json&amp;quot; } ]  how split json schema into multi files troubleshooting maps Maps, Records not working  $schema: instead of workspace
-usefull links documentation
- https://json-schema.org/specification.html https://code.visualstudio.com/docs/languages/json#_json-schemas-and-settings  libaries
- https://github.com/vega/ts-json-schema-generator https://www.npmjs.com/package/typescript-json-schema  </description>
-    </item>
-    
-    <item>
       <title>using generic params in typescript</title>
       <link>https://mrmonk.dev/blog/notes/typescript/ts-generic-params/</link>
       <pubDate>Fri, 07 Jan 2022 11:00:00 +0100</pubDate>
@@ -45,6 +20,18 @@ usefull links documentation
       <guid>https://mrmonk.dev/blog/notes/typescript/ts-generic-params/</guid>
       <description>the challenge interface MyInterface { key1: number; key2: string; }  So for example we have the following setup. We have a Typescript interface and object implementing this interface and a function we pass the object and a key, which indicates the field of the object we want to manipulate.
 As goodie we also get for that is type completion in VSC. So we get suggestions deppending on the type the object hast.</description>
+    </item>
+    
+    <item>
+      <title>typing eventhandler in typescript</title>
+      <link>https://mrmonk.dev/blog/notes/typescript/ts-eventhandler/</link>
+      <pubDate>Fri, 07 Jan 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://mrmonk.dev/blog/notes/typescript/ts-eventhandler/</guid>
+      <description>I came across this issue when I made a type definition file for the upcoming web-ble functionalities in chrome and edge browser (more about it).
+the challenge The challenge is the following:
+ there are n-events we can register to trough a function addEventhandler in the callback we get data back depending on the event we register to, we expect a typed callback  untyped example:
+MyObject.addEventhandler(&amp;quot;eventA&amp;quot;, myCallback, options); function myCallback(event: any) { // do something here }  solution mapped types Mapping Types are great if we want determine the type based on a single key.</description>
     </item>
     
     <item>

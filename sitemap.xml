@@ -4,12 +4,47 @@
   
   <url>
     <loc>https://mrmonk.dev/</loc>
-    <lastmod>2022-02-13T00:00:00+00:00</lastmod>
+    <lastmod>2022-04-01T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>https://mrmonk.dev/blog/</loc>
-    <lastmod>2022-02-13T00:00:00+00:00</lastmod>
+    <lastmod>2022-04-01T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://mrmonk.dev/tags/devtools/</loc>
+    <lastmod>2022-04-01T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://mrmonk.dev/tags/encryption/</loc>
+    <lastmod>2022-04-01T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://mrmonk.dev/tags/projects/</loc>
+    <lastmod>2022-04-01T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://mrmonk.dev/tags/</loc>
+    <lastmod>2022-04-01T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://mrmonk.dev/blog/projects/microtools/throw-away-js/</loc>
+    <lastmod>2022-04-01T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://mrmonk.dev/blog/projects/microtools/fermentation-calendar/</loc>
+    <lastmod>2022-03-27T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://mrmonk.dev/tags/fermentation/</loc>
+    <lastmod>2022-03-27T00:00:00+00:00</lastmod>
   </url>
   
   <url>
@@ -19,11 +54,6 @@
   
   <url>
     <loc>https://mrmonk.dev/tags/snippets/</loc>
-    <lastmod>2022-02-13T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://mrmonk.dev/tags/</loc>
     <lastmod>2022-02-13T00:00:00+00:00</lastmod>
   </url>
   
@@ -38,11 +68,6 @@
   </url>
   
   <url>
-    <loc>https://mrmonk.dev/tags/json/</loc>
-    <lastmod>2022-01-07T11:00:00+01:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://mrmonk.dev/tags/notes/</loc>
     <lastmod>2022-01-07T11:00:00+01:00</lastmod>
   </url>
@@ -53,28 +78,13 @@
   </url>
   
   <url>
-    <loc>https://mrmonk.dev/blog/notes/typescript/ts-eventhandler/</loc>
-    <lastmod>2022-01-07T11:00:00+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://mrmonk.dev/blog/notes/json-schema/</loc>
-    <lastmod>2022-01-07T11:00:00+01:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://mrmonk.dev/blog/notes/typescript/ts-generic-params/</loc>
     <lastmod>2022-01-07T11:00:00+01:00</lastmod>
   </url>
   
   <url>
-    <loc>https://mrmonk.dev/tags/vsc/</loc>
-    <lastmod>2022-01-07T11:00:00+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://mrmonk.dev/blog/about/about-me/</loc>
-    <lastmod>2021-12-31T12:00:00+02:00</lastmod>
+    <loc>https://mrmonk.dev/blog/notes/typescript/ts-eventhandler/</loc>
+    <lastmod>2022-01-07T00:00:00+00:00</lastmod>
   </url>
   
   <url>
@@ -153,31 +163,8 @@
   </url>
   
   <url>
-    <loc>https://mrmonk.dev/blog/banglejs/files/</loc>
-  </url>
-  
-  <url>
-    <loc>https://mrmonk.dev/blog/banglejs/gps/</loc>
-  </url>
-  
-  <url>
-    <loc>https://mrmonk.dev/blog/banglejs/gpstracker/</loc>
-  </url>
-  
-  <url>
-    <loc>https://mrmonk.dev/blog/notes/typescript/fixing-python-env/</loc>
-  </url>
-  
-  <url>
-    <loc>https://mrmonk.dev/blog/notes/typescript/ts-decorators/</loc>
-  </url>
-  
-  <url>
-    <loc>https://mrmonk.dev/blog/notes/typescript/ts-mapped-types/</loc>
-  </url>
-  
-  <url>
-    <loc>https://mrmonk.dev/blog/projects/scalex/webble/</loc>
+    <loc>https://mrmonk.dev/blog/about/about-me/</loc>
+    <lastmod>2020-01-01T00:00:00+00:00</lastmod>
   </url>
   
   <url>
