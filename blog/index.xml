@@ -7,10 +7,44 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>© {year}</copyright>
-    <lastBuildDate>Fri, 01 Apr 2022 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 14 Dec 2022 12:00:00 +0100</lastBuildDate>
     
 	<atom:link href="https://mrmonk.dev/blog/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>typescript generics series - arrays</title>
+      <link>https://mrmonk.dev/blog/notes/typescript/generics/ts-generics-arrays/</link>
+      <pubDate>Wed, 14 Dec 2022 12:00:00 +0100</pubDate>
+      
+      <guid>https://mrmonk.dev/blog/notes/typescript/generics/ts-generics-arrays/</guid>
+      <description>base technics - array This collection of basic technics really helped me to get an better understanding how we can work with array types in generics. It is quite amazing what we can do if we get used to the sometimes strange syntax of types in typescript.
+ Spoiler alert! This section contains some solutions of the great type-challenge.
+ enumerate the array keys get all keys
+This technic is helpfull if we want to convert a static runtime array into an type.</description>
+    </item>
+    
+    <item>
+      <title>typescript generics series - readonly</title>
+      <link>https://mrmonk.dev/blog/notes/typescript/generics/ts-generics-readonly/</link>
+      <pubDate>Tue, 13 Dec 2022 12:00:00 +0100</pubDate>
+      
+      <guid>https://mrmonk.dev/blog/notes/typescript/generics/ts-generics-readonly/</guid>
+      <description>basic technics - readonly We can add readonly to any key of an object.
+type User = { readonly id: string name: string }  But how can we do that in generics? It is quite easy but the syntax first confused me. We simply can add or substract the keyword to any key of an object.
+add readonly To add readonly to an key we just add they keyword +readonly or even shorter readonly.</description>
+    </item>
+    
+    <item>
+      <title>supabase - readonly columns</title>
+      <link>https://mrmonk.dev/blog/supabase/supabase-rls-readonly-columns/</link>
+      <pubDate>Thu, 01 Dec 2022 12:00:00 +0200</pubDate>
+      
+      <guid>https://mrmonk.dev/blog/supabase/supabase-rls-readonly-columns/</guid>
+      <description>the challenge Supabase is a nice solution. With row level security you can define which users can create, read, update or delte certain roles. It helps, but when it comes to foreign or primary keys you want to have more granular access, which fields can be updated.
+Imagine you have a table structure like this:
+    id title created_by     1 &amp;ldquo;Hello World&amp;rdquo; 5    We want to prevent any changes to the id or to created_by columns.</description>
+    </item>
     
     <item>
       <title>throwAway.js</title>
@@ -119,7 +153,7 @@ For grouping we need to know to which year a calendar week belongs. It could be 
       
       <guid>https://mrmonk.dev/blog/notes/utf-8-bom/</guid>
       <description>why utf-8 seems broken sometimes The programming world most of the time does not really care about characters which are special in other languages others than englisch. So in Germany we have our all time favorites ÄÖÜäüöß to take care about everytime we work with text documents.
-Normally you will have no trouble with text editors, but an burning example is Microsoft Office. To correctly import an utf-8 encoded csv document (with special chars) you have to provide an BOM.</description>
+Normally you will have no trouble with text editors, but an burning example is Microsoft Office. To correctly import an utf-8 encoded csv document (with special chars) you have to provide a BOM.</description>
     </item>
     
     <item>
@@ -173,6 +207,16 @@ I&amp;rsquo;m working a lot with docker and bind mounts for config files so I ca
       <description>My name is Max Mönch, I&amp;rsquo;m an engineer, founder and food and coffee nerd.
  what is this site? This is not a classical blog, I&amp;rsquo;m not writing to adress somebody. This are just toughs and projects I work on. If I did something interessting, it probably lands here to not forget it or to share it with some colleages.
 my development world Stuff I work with a lot&amp;hellip; from basics to expert.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://mrmonk.dev/blog/notes/typescript/ts-interface-vs-types/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://mrmonk.dev/blog/notes/typescript/ts-interface-vs-types/</guid>
+      <description>https://stackoverflow.com/questions/37233735/interfaces-vs-types-in-typescript
+https://www.typescriptlang.org/docs/handbook/2/everyday-types.html#differences-between-type-aliases-and-interfaces</description>
     </item>
     
   </channel>

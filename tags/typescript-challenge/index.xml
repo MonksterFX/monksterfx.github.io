@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>typescript-challenge on moench.dev</title>
+    <link>https://mrmonk.dev/tags/typescript-challenge/</link>
+    <description>Recent content in typescript-challenge on moench.dev</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>© {year}</copyright>
+    <lastBuildDate>Wed, 14 Dec 2022 12:00:00 +0100</lastBuildDate>
+    
+	<atom:link href="https://mrmonk.dev/tags/typescript-challenge/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>typescript generics series - arrays</title>
+      <link>https://mrmonk.dev/blog/notes/typescript/generics/ts-generics-arrays/</link>
+      <pubDate>Wed, 14 Dec 2022 12:00:00 +0100</pubDate>
+      
+      <guid>https://mrmonk.dev/blog/notes/typescript/generics/ts-generics-arrays/</guid>
+      <description>base technics - array This collection of basic technics really helped me to get an better understanding how we can work with array types in generics. It is quite amazing what we can do if we get used to the sometimes strange syntax of types in typescript.
+ Spoiler alert! This section contains some solutions of the great type-challenge.
+ enumerate the array keys get all keys
+This technic is helpfull if we want to convert a static runtime array into an type.</description>
+    </item>
+    
+    <item>
+      <title>typescript generics series - readonly</title>
+      <link>https://mrmonk.dev/blog/notes/typescript/generics/ts-generics-readonly/</link>
+      <pubDate>Tue, 13 Dec 2022 12:00:00 +0100</pubDate>
+      
+      <guid>https://mrmonk.dev/blog/notes/typescript/generics/ts-generics-readonly/</guid>
+      <description>basic technics - readonly We can add readonly to any key of an object.
+type User = { readonly id: string name: string }  But how can we do that in generics? It is quite easy but the syntax first confused me. We simply can add or substract the keyword to any key of an object.
+add readonly To add readonly to an key we just add they keyword +readonly or even shorter readonly.</description>
+    </item>
+    
+  </channel>
+</rss>

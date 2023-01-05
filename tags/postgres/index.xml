@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>postgres on moench.dev</title>
+    <link>https://mrmonk.dev/tags/postgres/</link>
+    <description>Recent content in postgres on moench.dev</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>© {year}</copyright>
+    <lastBuildDate>Thu, 01 Dec 2022 12:00:00 +0200</lastBuildDate>
+    
+	<atom:link href="https://mrmonk.dev/tags/postgres/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>supabase - readonly columns</title>
+      <link>https://mrmonk.dev/blog/supabase/supabase-rls-readonly-columns/</link>
+      <pubDate>Thu, 01 Dec 2022 12:00:00 +0200</pubDate>
+      
+      <guid>https://mrmonk.dev/blog/supabase/supabase-rls-readonly-columns/</guid>
+      <description>the challenge Supabase is a nice solution. With row level security you can define which users can create, read, update or delte certain roles. It helps, but when it comes to foreign or primary keys you want to have more granular access, which fields can be updated.
+Imagine you have a table structure like this:
+    id title created_by     1 &amp;ldquo;Hello World&amp;rdquo; 5    We want to prevent any changes to the id or to created_by columns.</description>
+    </item>
+    
+  </channel>
+</rss>
