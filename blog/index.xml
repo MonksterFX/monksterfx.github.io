@@ -7,10 +7,21 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>© {year}</copyright>
-    <lastBuildDate>Wed, 14 Dec 2022 12:00:00 +0100</lastBuildDate>
+    <lastBuildDate>Sun, 08 Jan 2023 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://mrmonk.dev/blog/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>about:me</title>
+      <link>https://mrmonk.dev/blog/about/about-me/</link>
+      <pubDate>Sun, 08 Jan 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://mrmonk.dev/blog/about/about-me/</guid>
+      <description>My name is Max Mönch, I&amp;rsquo;m an engineer, founder and data, food and coffee nerd. Currently based in Berlin.
+ what is this site? This is not a classical blog, I&amp;rsquo;m not writing to adress somebody. This are just toughs and projects I work on. If I did something interessting, it probably lands here to not forget it or to share it with some colleages.
+my development world Stuff I work with a lot&amp;hellip; from basics to expert.</description>
+    </item>
     
     <item>
       <title>typescript generics series - arrays</title>
@@ -157,7 +168,7 @@ Normally you will have no trouble with text editors, but an burning example is M
     </item>
     
     <item>
-      <title>arduino: how to use the serial plotter of Arduino IDE</title>
+      <title>arduino: how to use the serial plotter of the Arduino IDE</title>
       <link>https://mrmonk.dev/blog/arduino/arduino-ide-serial-plotter/</link>
       <pubDate>Thu, 25 Feb 2021 12:00:00 +0200</pubDate>
       
@@ -196,17 +207,6 @@ I&amp;rsquo;m working a lot with docker and bind mounts for config files so I ca
       <description>extract only subset of embedded documents Sometimes we want to extract not all embedded documents from a matched documents. Imagine a object chatroom:
 { _id: ObjectId(&#39;5f687ba6a93aeddc476ea157&#39;), ... messages: Array&amp;lt;Messages&amp;gt; }  The messages look like this:
 { sender: Reference, send_at: Date payload: &amp;quot;&amp;quot; }  Now when we want to extract all message before, after a date we could query the Chatroom and filter it in the backend logic, or we can use Aggregation Pipeline.</description>
-    </item>
-    
-    <item>
-      <title>about: me</title>
-      <link>https://mrmonk.dev/blog/about/about-me/</link>
-      <pubDate>Wed, 01 Jan 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://mrmonk.dev/blog/about/about-me/</guid>
-      <description>My name is Max Mönch, I&amp;rsquo;m an engineer, founder and food and coffee nerd.
- what is this site? This is not a classical blog, I&amp;rsquo;m not writing to adress somebody. This are just toughs and projects I work on. If I did something interessting, it probably lands here to not forget it or to share it with some colleages.
-my development world Stuff I work with a lot&amp;hellip; from basics to expert.</description>
     </item>
     
     <item>
