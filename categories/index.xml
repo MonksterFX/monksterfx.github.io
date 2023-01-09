@@ -5,7 +5,7 @@
     <link>https://mrmonk.dev/categories/</link>
     <description>Recent content in Categories on moench.dev</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
+    <language>en</language>
     <copyright>© {year}</copyright>
     
 	<atom:link href="https://mrmonk.dev/categories/index.xml" rel="self" type="application/rss+xml" />

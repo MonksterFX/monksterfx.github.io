@@ -5,26 +5,17 @@
     <link>https://mrmonk.dev/tags/</link>
     <description>Recent content in Tags on moench.dev</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
+    <language>en</language>
     <copyright>© {year}</copyright>
-    <lastBuildDate>Wed, 14 Dec 2022 12:00:00 +0100</lastBuildDate>
+    <lastBuildDate>Mon, 09 Jan 2023 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://mrmonk.dev/tags/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>generics</title>
-      <link>https://mrmonk.dev/tags/generics/</link>
-      <pubDate>Wed, 14 Dec 2022 12:00:00 +0100</pubDate>
-      
-      <guid>https://mrmonk.dev/tags/generics/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>notes</title>
       <link>https://mrmonk.dev/tags/notes/</link>
-      <pubDate>Wed, 14 Dec 2022 12:00:00 +0100</pubDate>
+      <pubDate>Mon, 09 Jan 2023 00:00:00 +0000</pubDate>
       
       <guid>https://mrmonk.dev/tags/notes/</guid>
       <description></description>
@@ -33,7 +24,7 @@
     <item>
       <title>ts</title>
       <link>https://mrmonk.dev/tags/ts/</link>
-      <pubDate>Wed, 14 Dec 2022 12:00:00 +0100</pubDate>
+      <pubDate>Mon, 09 Jan 2023 00:00:00 +0000</pubDate>
       
       <guid>https://mrmonk.dev/tags/ts/</guid>
       <description></description>
@@ -42,9 +33,18 @@
     <item>
       <title>typescript-challenge</title>
       <link>https://mrmonk.dev/tags/typescript-challenge/</link>
-      <pubDate>Wed, 14 Dec 2022 12:00:00 +0100</pubDate>
+      <pubDate>Mon, 09 Jan 2023 00:00:00 +0000</pubDate>
       
       <guid>https://mrmonk.dev/tags/typescript-challenge/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>generics</title>
+      <link>https://mrmonk.dev/tags/generics/</link>
+      <pubDate>Wed, 14 Dec 2022 12:00:00 +0100</pubDate>
+      
+      <guid>https://mrmonk.dev/tags/generics/</guid>
       <description></description>
     </item>
     

@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>getting started with the Type&lt;Challenge[]&gt; | moench.dev</title>
+
+  <meta charset="UTF-8">
+  <meta name="language" content="en">
+  <meta name="description" content="my approach to the &#34;typescript challenge&#34; and how to start understanding the playground">
+  <meta name="keywords" content="notes , typescript-challenge , overview">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+  <script async defer data-website-id="1f26013b-24f5-4b9b-8c03-cec017cf455a" src="https://umami.mrmonk.dev/umami.js" data-domains="mrmonk.dev"></script>
+  
+  
+  
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="getting started with the Type&lt;Challenge[]&gt;" />
+  <meta name="twitter:description" content="my approach to the &amp;#34;typescript challenge&amp;#34; and how to start understanding the playground"/>
+  <meta name="twitter:site" content="https://twitter.com/soulfoodmonk" />
+  <meta name="twitter:creator" content="https://twitter.com/soulfoodmonk" />
+  
+
+  <link rel="shortcut icon" type="image/png" href="/favicon.ico" />
+
+  
+  
+    
+ 
+  
+  
+  
+  
+  
+  
+    
+    <link type="text/css" rel="stylesheet" href="/css/post.min.2cb93c91050d1853bf971cc31e00122edd6e0f405aa1de3b7f8ef67ea3b5a79a.css" integrity="sha256-LLk8kQUNGFO/lxzDHgASLt1uD0Baod47f472fqO1p5o="/>
+  
+    
+    <link type="text/css" rel="stylesheet" href="/css/custom.min.0f1ec2dfa681365c2da8d4efff82102a832a085e80843cf8ba41e2024e358ec3.css" integrity="sha256-Dx7C36aBNlwtqNTv/4IQKoMqCF6AhDz4ukHiAk41jsM="/>
+  
+  
+   
+   
+    
+
+<script type="application/ld+json">
+  
+    {
+      "@context" : "http://schema.org",
+      "@type" : "BlogPosting",
+      "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/mrmonk.dev"
+      },
+      "articleSection" : "blog",
+      "name" : "getting started with the Type\u003cChallenge[]\u003e",
+      "headline" : "getting started with the Type\u003cChallenge[]\u003e",
+      "description" : "my approach to the \u0022typescript challenge\u0022 and how to start understanding the playground",
+      "inLanguage" : "en-US",
+      "author" : "",
+      "creator" : "",
+      "publisher": "",
+      "accountablePerson" : "",
+      "copyrightHolder" : "",
+      "copyrightYear" : "2023",
+      "datePublished": "2023-01-09 00:00:00 \u002b0000 UTC",
+      "dateModified" : "2023-01-09 00:00:00 \u002b0000 UTC",
+      "url" : "https:\/\/mrmonk.dev\/blog\/notes\/typescript\/generics\/ts-generics\/",
+      "wordCount" : "556",
+      "keywords" : ["notes", "typescript-challenge", "overview", "Blog"]
+    }
+  
+  </script>
+</head>
+
+<body>
+  <div class="burger__container">
+  <div class="burger" aria-controls="navigation" aria-label="Menu">
+    <div class="burger__meat burger__meat--1"></div>
+    <div class="burger__meat burger__meat--2"></div>
+    <div class="burger__meat burger__meat--3"></div>
+  </div>
+</div>
+ 
+
+  <nav class="nav" id="navigation">
+  <ul class="nav__list">
+    
+    
+      <li>
+        <a  href="/">home</a>
+      </li>
+    
+      <li>
+        <a  href="/blog/about/about-me/">about</a>
+      </li>
+    
+      <li>
+        <a  href="/tags/projects">projects</a>
+      </li>
+    
+      <li>
+        <a  href="/blog">notes</a>
+      </li>
+    
+  </ul>
+</nav>
+
+
+  <main>
+    
+    
+
+    <div class="flex-wrapper">
+      <div class="post__container">
+        <div class="post">
+          <header class="post__header">
+            <h1 id="post__title">getting started with the Type&lt;Challenge[]&gt;</h1>
+            <time datetime="2023-01-09 00:00:00 &#43;0000 UTC" class="post__date">9 Jan 2023</time> 
+          </header>
+          <article class="post__content">
+              
+<p>As I did research in the internet about some typescript topics I stumpled across this fantastic github repository. <a href="https://github.com/type-challenges/type-challenges"><code>Type&lt;Challenge[]&gt;</code></a> is an open source collection of small typescript riddles. Why you should try to solve them you might ask? Because it is fun and you learn what crazy things you can do with the type sytem. And trust me. Your colleges will love you if you can provide fully typed generic functions, because the let you develop that much faster.</p>
+<h2 id="my-learnings-and-my-approach">my learnings and my approach<a class="anchor" href="#my-learnings-and-my-approach">#</a></h2>
+<p>Altough I&rsquo;m able to write generic typescript I stumpled across the first easy challenges. Why? Because I was missing some basic understanding on how to use the typesystem to archive some functionalities we now from javascript:</p>
+<ul>
+<li>Arrays</li>
+<li>Objects</li>
+<li>Conditionals</li>
+<li>Compare Types</li>
+<li>Extract Keys</li>
+<li>Recursion</li>
+<li>Variables</li>
+</ul>
+<p>Partially I used them, but the real magic happens if you combine them.</p>
+<p>So I cheated and looked at the solutions of the first challenges which  most of the time implement some basic <a href="https://www.typescriptlang.org/docs/handbook/utility-types.html">utility types</a> which are now included in the typescript typing system.</p>
+<p>And boy, I learned a lot! I tried to put all the stuff in small cheatsheets sorted by the base challenge. It helped me to look into harder challenges which combine a lot of these technics. If you are not familiar with traversing trough objects, applying conditionals or iterate trough arrays in the typing system start with that. This will help a lot.</p>
+<h2 id="examples">examples<a class="anchor" href="#examples">#</a></h2>
+<p>Note: To understand the examples and cheat sheats I build, you need a understanding of conditional, traversing and how to use the infer keyword.</p>
+<p><strong>working with arrays</strong></p>
+<p>Imagine you have a readonly const array of fruits.</p>
+<pre><code class="language-ts">const fruits = ['apple', 'bannana', 'cherry'] as const
+</code></pre>
+<p>Wouldn&rsquo;t it be nice if we loop trough the array an extract all keys as an type? Easy:</p>
+<pre><code class="language-ts">const fruits = ['apple', 'bannana', 'cherry'] as const
+type Fruit = typeof fruits[number] // 'apple' | 'bannana' | 'cherry'
+</code></pre>
+<p>If you didn&rsquo;t know the answer this question. Alone this simple solution is mindblowing. But wait there is more. You probably know some the <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array#instance_methods">Array Instance Methods</a> like <code>pop()</code> and <code>push()</code>. There are also more advanced technics like <strong>iterate trough an array with recursion</strong>. You can visit my <a href="/blog/notes/typescript/generics/ts-generics-arrays/">typescript generics - array</a> blog to see how to implement these methods in the typing system.</p>
+<p><strong>readonly modifier</strong></p>
+<p>Perhaps you know the utilty type <code>Readonly&lt;Type&gt;</code>. But how would you implement this generic by yourself? Or do you know how to implement the reverse? Removing all the readonly modifiers from a type? Check out my small but valueable <a href="/blog/notes/typescript/generics/ts-generics-readonly/">cheatsheet about readonly</a>.</p>
+<p><strong>other examples</strong></p>
+<blockquote>
+<p>Working on it!</p>
+</blockquote>
+<h2 id="dont-reinvent-the-wheel-in-production">dont reinvent the wheel in production<a class="anchor" href="#dont-reinvent-the-wheel-in-production">#</a></h2>
+<p>There are some great solutions out there which help you to build complex types. Namely ts-toolbelt, utility-types, SimplyTyped which are great solution you should look into when it comes to production code.</p>
+<h2 id="solutions-but-with-explanations">solutions, but with explanations<a class="anchor" href="#solutions-but-with-explanations">#</a></h2>
+<p>For all challenges you will find solutions in the same git repository. Most of the time this solutions do not have any explanation on the how and why. So if you want a little bit more background and explanation to this solutions, visit the amazing <a href="https://www.youtube.com/watch?v=QFfL2azrshE&amp;list=PLOlZuxYbPik180vcJfsAM6xHYLVxrEgHC">Michigan TypeScript Channel</a> on youtube.</p>
+</br>
+<!-- TODO: privacy youtube -->
+<!-- <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/QFfL2azrshE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe> -->
+<h2 id="where-to-find-the-challenge-to-a-solution-in-the-cheat-sheet">where to find the challenge to a solution in the cheat sheet.<a class="anchor" href="#where-to-find-the-challenge-to-a-solution-in-the-cheat-sheet">#</a></h2>
+<p>Check the source code of this page and you will find comments to the actual challenge, if there was one.</p>
+
+
+              
+          </article>
+          
+
+<ul class="tags__list">
+    
+    <li class="tag__item">
+        <a class="tag__link text-accent" href="https://mrmonk.dev/tags/ts/">ts</a>
+    </li>
+    <li class="tag__item">
+        <a class="tag__link text-accent" href="https://mrmonk.dev/tags/notes/">notes</a>
+    </li>
+    <li class="tag__item">
+        <a class="tag__link text-accent" href="https://mrmonk.dev/tags/typescript-challenge/">typescript-challenge</a>
+    </li></ul>
+
+ <div class="pagination">
+  
+    <a class="pagination__item" href="https://mrmonk.dev/blog/about/about-me/">
+        <span class="pagination__label">Previous Post</span>
+        <span class="pagination__title">about:me</span>
+    </a>
+  
+
+  
+</div>
+
+          
+          <footer class="post__footer">
+            
+
+
+<div class="social-icons">
+  
+     
+    
+      <a class="social-icons__link" title="Twitter"
+         href="https://twitter.com/soulfoodmonk"
+         target="_blank" rel="noopener">
+        <div class="social-icons__icon" style="background-image: url('https://mrmonk.dev/svg/twitter.svg')"></div>
+      </a>
+    
+  
+     
+    
+      <a class="social-icons__link" title="GitHub"
+         href="https://github.com/MonksterFX"
+         target="_blank" rel="noopener">
+        <div class="social-icons__icon" style="background-image: url('https://mrmonk.dev/svg/github.svg')"></div>
+      </a>
+    
+  
+     
+    
+  
+     
+    
+  
+     
+    
+  
+     
+    
+  
+     
+    
+      <a class="social-icons__link" title="LinkedIn"
+         href="https://www.linkedin.com/in/max-m%C3%B6nch-6325a8b1/"
+         target="_blank" rel="noopener">
+        <div class="social-icons__icon" style="background-image: url('https://mrmonk.dev/svg/linkedin.svg')"></div>
+      </a>
+    
+  
+     
+    
+     
+</div>
+
+            <p>© 2023</p>
+          </footer>
+          </div>
+      </div>
+      
+    </div>
+    
+
+  </main>
+
+   
+
+  
+  <script src="/js/index.min.49e4d8a384357d9b445b87371863419937ede9fa77737522ffb633073aebfa44.js" integrity="sha256-SeTYo4Q1fZtEW4c3GGNBmTft6fp3c3Ui/7YzBzrr&#43;kQ=" crossorigin="anonymous"></script>
+  
+  
+  <script src="https://unpkg.com/prismjs@1.20.0/components/prism-core.min.js"></script>
+
+  
+  <script src="https://unpkg.com/prismjs@1.20.0/plugins/autoloader/prism-autoloader.min.js"
+    data-autoloader-path="https://unpkg.com/prismjs@1.20.0/components/"></script>
+
+  
+
+
+</body>
+
+</html>

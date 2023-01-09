@@ -5,7 +5,7 @@
     <link>https://mrmonk.dev/tags/snippets/</link>
     <description>Recent content in snippets on moench.dev</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
+    <language>en</language>
     <copyright>© {year}</copyright>
     <lastBuildDate>Sun, 13 Feb 2022 00:00:00 +0000</lastBuildDate>
     
@@ -20,7 +20,7 @@
       <guid>https://mrmonk.dev/blog/notes/terminal/java-switch-versions-commandline/</guid>
       <description>Add this to your ~/.zshrcafter both versions are installed:
 # export JAVA_HOME=$(/usr/libexec/java_home) export JAVA_8_HOME=$(/usr/libexec/java_home -v1.8) export JAVA_11_HOME=$(/usr/libexec/java_home -v11) alias java8=&#39;export JAVA_HOME=$JAVA_8_HOME&#39; alias java11=&#39;export JAVA_HOME=$JAVA_11_HOME&#39; java8  To switch no simple execute:
-# or switch to java11, default in this example is 8 java11 # ...your stuff will be executed with java11  original post - with deeper explanation</description>
+# or switch to java11, default in this example is 8 java11 # ...your stuff will be executed with java11  Credits to: original post - with deeper explanation</description>
     </item>
     
   </channel>

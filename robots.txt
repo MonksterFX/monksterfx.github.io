@@ -1,4 +1,7 @@
 User-agent: *
 Allow: /
 
+User-agent: Seobility
+Disallow: /tags
+
 Sitemap: https://mrmonk.dev/sitemap.xml

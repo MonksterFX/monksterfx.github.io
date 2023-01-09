@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en-us">
+<html lang="en">
 
 <head>
   <title>typescript generics series - readonly | moench.dev</title>
@@ -69,7 +69,7 @@
       "datePublished": "2022-12-13 12:00:00 \u002b0100 CET",
       "dateModified" : "2022-12-13 12:00:00 \u002b0100 CET",
       "url" : "https:\/\/mrmonk.dev\/blog\/notes\/typescript\/generics\/ts-generics-readonly\/",
-      "wordCount" : "209",
+      "wordCount" : "278",
       "keywords" : ["notes", "typescript-challenge", "Blog"]
     }
   
@@ -124,7 +124,7 @@
           <article class="post__content">
               
 <h1 id="basic-technics---readonly">basic technics - readonly</h1>
-<p>We can add readonly to any key of an object.</p>
+<p>As you propably now, we can easily add readonly to any key of an object in typescript.</p>
 <pre><code class="language-ts">type User = {
     readonly id: string
     name: string
@@ -132,22 +132,23 @@
 </code></pre>
 <p>But how can we do that in generics? It is quite easy but the syntax first confused me. We simply can add or substract the keyword to any key of an object.</p>
 <h2 id="add-readonly">add readonly<a class="anchor" href="#add-readonly">#</a></h2>
-<p>To add readonly to an key we just add they keyword <code>+readonly</code> or even shorter <code>readonly</code>.</p>
+<p>To add readonly to all keys we just add they keyword <code>+readonly</code> or even shorter <code>readonly</code> in an property iteration.</p>
 <pre><code class="language-ts">type Readonly&lt;T&gt; = {
   readonly [K in keyof T]: T[K];
 };
 </code></pre>
+<p>That results in the same result as the utility type <code>Readonly&lt;Type&gt;</code> which exists sincce <a href="https://www.typescriptlang.org/docs/handbook/utility-types.html#readonlytype">ypescript 2.1</a></p>
 <!-- https://github.com/type-challenges/type-challenges/blob/main/questions/00007-easy-readonly/README.md -->
 <h2 id="substract-readonly">substract readonly<a class="anchor" href="#substract-readonly">#</a></h2>
-<p>To remove all readonly keywords from a type we do the reverse as before. We substract the keyword. So instead of prefixing all keys with <code>readonly</code> we basically substract the readonly keyword with <code>-readonly</code>.</p>
+<p>To remove all readonly keywords from a type, we do the reverse as before. We substract the keyword. So instead of prefixing all keys with <code>readonly</code> we basically substract the readonly keyword with <code>-readonly</code>.</p>
 <pre><code class="language-ts">type RemoveReadonly&lt;T&gt; = {
   -readonly [K in keyof T]: T[K];
 };
 </code></pre>
-<p>More you can read in: <a href="https://www.typescriptlang.org/docs/handbook/2/mapped-types.html#mapping-modifiers">mapping-modifiers</a></p>
+<p>More about the substracting/adding of modifieres you can read in the offical documentation for <a href="https://www.typescriptlang.org/docs/handbook/2/mapped-types.html#mapping-modifiers">mapping-modifiers</a>.</p>
 <h2 id="only-make-given-keys-readonly">only make given keys readonly<a class="anchor" href="#only-make-given-keys-readonly">#</a></h2>
 <!-- https://github.com/type-challenges/type-challenges/blob/main/questions/00008-medium-readonly-2/README.md -->
-<p>What if we just want to mark given keys as readonly? We split that problem into two types:</p>
+<p>No we look into a more advanced usecase. What if we just want to mark given keys as readonly? We split that problem into two types:</p>
 <ol>
 <li>A type containing all keys were the type stays the same.</li>
 <li>A type where we mark all given keys as readonly.</li>
@@ -156,6 +157,9 @@
 <pre><code class="language-ts">type ConditionalReadonly&lt;T, K extends keyof T&gt; = Omit&lt;T, K&gt; &amp; {
   readonly [P in K]: T[P];
 };
+</code></pre>
+<p>or if you want to just use a version build on utility types:</p>
+<pre><code class="language-ts">type ConditionalReadonly&lt;T, K extends keyof T&gt; = Omit&lt;T, K&gt; &amp; Readonly&lt;Pick&lt;T, K&gt;&gt;;
 </code></pre>
 <!-- https://github.com/type-challenges/type-challenges/blob/main/questions/00009-medium-deep-readonly/README.md -->
 

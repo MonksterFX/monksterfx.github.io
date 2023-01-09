@@ -5,12 +5,21 @@
     <link>https://mrmonk.dev/tags/typescript-challenge/</link>
     <description>Recent content in typescript-challenge on moench.dev</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
+    <language>en</language>
     <copyright>© {year}</copyright>
-    <lastBuildDate>Wed, 14 Dec 2022 12:00:00 +0100</lastBuildDate>
+    <lastBuildDate>Mon, 09 Jan 2023 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://mrmonk.dev/tags/typescript-challenge/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>getting started with the Type&lt;Challenge[]&gt;</title>
+      <link>https://mrmonk.dev/blog/notes/typescript/generics/ts-generics/</link>
+      <pubDate>Mon, 09 Jan 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://mrmonk.dev/blog/notes/typescript/generics/ts-generics/</guid>
+      <description>As I did research in the internet about some typescript topics I stumpled across this fantastic github repository. Type&amp;lt;Challenge[]&amp;gt; is an open source collection of small typescript riddles. Why you should try to solve them you might ask? Because it is fun and you learn what crazy things you can do with the type sytem. And trust me. Your colleges will love you if you can provide fully typed generic functions, because the let you develop that much faster.</description>
+    </item>
     
     <item>
       <title>typescript generics series - arrays</title>
@@ -30,9 +39,9 @@ This technic is helpfull if we want to convert a static runtime array into an ty
       <pubDate>Tue, 13 Dec 2022 12:00:00 +0100</pubDate>
       
       <guid>https://mrmonk.dev/blog/notes/typescript/generics/ts-generics-readonly/</guid>
-      <description>basic technics - readonly We can add readonly to any key of an object.
+      <description>basic technics - readonly As you propably now, we can easily add readonly to any key of an object in typescript.
 type User = { readonly id: string name: string }  But how can we do that in generics? It is quite easy but the syntax first confused me. We simply can add or substract the keyword to any key of an object.
-add readonly To add readonly to an key we just add they keyword +readonly or even shorter readonly.</description>
+add readonly To add readonly to all keys we just add they keyword +readonly or even shorter readonly in an property iteration.</description>
     </item>
     
   </channel>

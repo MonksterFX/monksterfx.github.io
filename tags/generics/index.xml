@@ -5,7 +5,7 @@
     <link>https://mrmonk.dev/tags/generics/</link>
     <description>Recent content in generics on moench.dev</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
+    <language>en</language>
     <copyright>© {year}</copyright>
     <lastBuildDate>Wed, 14 Dec 2022 12:00:00 +0100</lastBuildDate>
     
@@ -30,9 +30,9 @@ This technic is helpfull if we want to convert a static runtime array into an ty
       <pubDate>Tue, 13 Dec 2022 12:00:00 +0100</pubDate>
       
       <guid>https://mrmonk.dev/blog/notes/typescript/generics/ts-generics-readonly/</guid>
-      <description>basic technics - readonly We can add readonly to any key of an object.
+      <description>basic technics - readonly As you propably now, we can easily add readonly to any key of an object in typescript.
 type User = { readonly id: string name: string }  But how can we do that in generics? It is quite easy but the syntax first confused me. We simply can add or substract the keyword to any key of an object.
-add readonly To add readonly to an key we just add they keyword +readonly or even shorter readonly.</description>
+add readonly To add readonly to all keys we just add they keyword +readonly or even shorter readonly in an property iteration.</description>
     </item>
     
   </channel>
