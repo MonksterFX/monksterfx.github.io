@@ -69,7 +69,7 @@
       "datePublished": "2022-12-13 12:00:00 \u002b0100 CET",
       "dateModified" : "2022-12-13 12:00:00 \u002b0100 CET",
       "url" : "https:\/\/mrmonk.dev\/blog\/notes\/typescript\/generics\/ts-generics-readonly\/",
-      "wordCount" : "278",
+      "wordCount" : "324",
       "keywords" : ["notes", "typescript-challenge", "Blog"]
     }
   
@@ -162,6 +162,8 @@
 <pre><code class="language-ts">type ConditionalReadonly&lt;T, K extends keyof T&gt; = Omit&lt;T, K&gt; &amp; Readonly&lt;Pick&lt;T, K&gt;&gt;;
 </code></pre>
 <!-- https://github.com/type-challenges/type-challenges/blob/main/questions/00009-medium-deep-readonly/README.md -->
+<h2 id="summary">summary<a class="anchor" href="#summary">#</a></h2>
+<p>This should give you a good starting point, how to work with readonly in typescript. There are some good challenges on the &ldquo;typescript challenges&rdquo; sites. More on learnings and approaches to solves these puzzles see in the main articel. <a href="">My approach to the typescript challenges</a></p>
 
 
               
