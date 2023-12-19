@@ -7,10 +7,20 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>© {year}</copyright>
-    <lastBuildDate>Mon, 09 Jan 2023 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 29 Apr 2023 12:00:00 +0100</lastBuildDate>
     
 	<atom:link href="https://mrmonk.dev/blog/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>typed socket.io error handler</title>
+      <link>https://mrmonk.dev/blog/notes/typescript/ts-socket-io-error-handler/</link>
+      <pubDate>Sat, 29 Apr 2023 12:00:00 +0100</pubDate>
+      
+      <guid>https://mrmonk.dev/blog/notes/typescript/ts-socket-io-error-handler/</guid>
+      <description>the challenge This is a error wrapper as described here: socket.io - error handling
+const errorHandler = (handler) =&amp;gt; { const handleError = (err) =&amp;gt; { console.error(&amp;quot;please handle me&amp;quot;, err); }; return (...args) =&amp;gt; { try { const ret = handler.apply(this, args); if (ret &amp;amp;&amp;amp; typeof ret.catch === &amp;quot;function&amp;quot;) { // async handler ret.catch(handleError); } } catch (e) { // sync handler handleError(e); } }; }; // server or client side socket.</description>
+    </item>
     
     <item>
       <title>getting started with the Type&lt;Challenge[]&gt;</title>

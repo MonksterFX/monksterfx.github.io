@@ -2,11 +2,11 @@
 <html lang="en">
 
 <head>
-  <title>setting up debugging with node and typescript in visual studio code | moench.dev</title>
+  <title>typed socket.io error handler | moench.dev</title>
 
   <meta charset="UTF-8">
   <meta name="language" content="en">
-  <meta name="description" content="Setting up debugging in node can be tricky. Two snippets to remember when you setup a typescript node.js project.">
+  <meta name="description" content="How to create a fully typed socket.io error handler">
   <meta name="keywords" content="notes">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
@@ -17,8 +17,8 @@
   
   
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="setting up debugging with node and typescript in visual studio code" />
-  <meta name="twitter:description" content="Setting up debugging in node can be tricky. Two snippets to remember when you setup a typescript node.js project."/>
+  <meta name="twitter:title" content="typed socket.io error handler" />
+  <meta name="twitter:description" content="How to create a fully typed socket.io error handler"/>
   <meta name="twitter:site" content="https://twitter.com/soulfoodmonk" />
   <meta name="twitter:creator" content="https://twitter.com/soulfoodmonk" />
   
@@ -56,20 +56,20 @@
             "@id": "https:\/\/mrmonk.dev"
       },
       "articleSection" : "blog",
-      "name" : "setting up debugging with node and typescript in visual studio code",
-      "headline" : "setting up debugging with node and typescript in visual studio code",
-      "description" : "Setting up debugging in node can be tricky. Two snippets to remember when you setup a typescript node.js project.",
+      "name" : "typed socket.io error handler",
+      "headline" : "typed socket.io error handler",
+      "description" : "How to create a fully typed socket.io error handler",
       "inLanguage" : "en-US",
       "author" : "",
       "creator" : "",
       "publisher": "",
       "accountablePerson" : "",
       "copyrightHolder" : "",
-      "copyrightYear" : "2021",
-      "datePublished": "2021-10-15 19:23:49 \u002b0100 \u002b0100",
-      "dateModified" : "2021-10-15 19:23:49 \u002b0100 \u002b0100",
-      "url" : "https:\/\/mrmonk.dev\/blog\/notes\/typescript\/ts-debug-vsc\/",
-      "wordCount" : "111",
+      "copyrightYear" : "2023",
+      "datePublished": "2023-04-29 12:00:00 \u002b0100 \u002b0100",
+      "dateModified" : "2023-04-29 12:00:00 \u002b0100 \u002b0100",
+      "url" : "https:\/\/mrmonk.dev\/blog\/notes\/typescript\/ts-socket-io-error-handler\/",
+      "wordCount" : "95",
       "keywords" : ["notes", "Blog"]
     }
   
@@ -118,45 +118,44 @@
       <div class="post__container">
         <div class="post">
           <header class="post__header">
-            <h1 id="post__title">setting up debugging with node and typescript in visual studio code</h1>
-            <time datetime="2021-10-15 19:23:49 &#43;0100 &#43;0100" class="post__date">15 Oct 2021</time> 
+            <h1 id="post__title">typed socket.io error handler</h1>
+            <time datetime="2023-04-29 12:00:00 &#43;0100 &#43;0100" class="post__date">29 Apr 2023</time> 
           </header>
           <article class="post__content">
               
-<h2 id="the-problem">the problem<a class="anchor" href="#the-problem">#</a></h2>
-<p>Offical Solution from visual studio code homepage for setting up debugging:</p>
-<pre><code class="language-json">{
-  &quot;name&quot;: &quot;Launch Server&quot;,
-  &quot;program&quot;: &quot;${workspaceFolder}/src/index.ts&quot;,
-  &quot;type&quot;: &quot;node&quot;,
-  &quot;request&quot;: &quot;launch&quot;,
-  &quot;skipFiles&quot;: [&quot;&lt;node_internals&gt;/**&quot;],
-  &quot;preLaunchTask&quot;: &quot;tsc: build - tsconfig.json&quot;,
-  &quot;outFiles&quot;: [&quot;${workspaceFolder}/build/**/*.js&quot;]
-}
+<h2 id="the-challenge">the challenge<a class="anchor" href="#the-challenge">#</a></h2>
+<p>This is a error wrapper as described here: <a href="https://socket.io/docs/v4/listening-to-events/#error-handling">socket.io - error handling</a></p>
+<pre><code class="language-ts">const errorHandler = (handler) =&gt; {
+  const handleError = (err) =&gt; {
+    console.error(&quot;please handle me&quot;, err);
+  };
+
+  return (...args) =&gt; {
+    try {
+      const ret = handler.apply(this, args);
+      if (ret &amp;&amp; typeof ret.catch === &quot;function&quot;) {
+        // async handler
+        ret.catch(handleError);
+      }
+    } catch (e) {
+      // sync handler
+      handleError(e);
+    }
+  };
+};
+
+// server or client side
+socket.on(
+  &quot;hello&quot;,
+  errorHandler(() =&gt; {
+    throw new Error(&quot;let's panic&quot;);
+  })
+);
 </code></pre>
-<p>and add in <code>tsconfig.json</code>:</p>
-<pre><code class="language-json">{
-  ...
-  &quot;sourceMap&quot;: true,
-  ...
-}
-</code></pre>
-<p>This works, but brings one problem to the front: <strong>Exceptions</strong>. The exception thrown will refrence to the compiled <strong>javascript</strong> code. So we have to lookup the causing source file by our selfs.</p>
-<p>Luckily the famous <code>ts-node</code> package let us solve this problem with ease:</p>
-<pre><code class="language-json">{
-  &quot;name&quot;: &quot;Launch Server&quot;,
-  &quot;type&quot;: &quot;node&quot;,
-  &quot;request&quot;: &quot;launch&quot;,
-  &quot;runtimeArgs&quot;: [&quot;-r&quot;, &quot;ts-node/register&quot;],
-  &quot;args&quot;: [&quot;${workspaceFolder}/src/index.ts&quot;]
-}
-</code></pre>
-<h2 id="usefull-links">usefull links<a class="anchor" href="#usefull-links">#</a></h2>
-<ul>
-<li><a href="https://code.visualstudio.com/docs/typescript/typescript-debugging">visual studio code documentation</a></li>
-<li><a href="https://stackoverflow.com/a/51080377/10101463">oringal answer - debuging</a></li>
-</ul>
+<h2 id="preparation">preparation<a class="anchor" href="#preparation">#</a></h2>
+<p>We need fully typed events.</p>
+<h2 id="break-down-the-challenge">break down the challenge<a class="anchor" href="#break-down-the-challenge">#</a></h2>
+<h2 id="add-more-flexibility">add more flexibility<a class="anchor" href="#add-more-flexibility">#</a></h2>
 
 
               
@@ -174,17 +173,12 @@
 
  <div class="pagination">
   
-    <a class="pagination__item" href="https://mrmonk.dev/blog/mongo/mongo-array-cheatsheet-values/">
+    <a class="pagination__item" href="https://mrmonk.dev/blog/notes/typescript/generics/ts-generics/">
         <span class="pagination__label">Previous Post</span>
-        <span class="pagination__title">mongo snippets: array cheatsheet</span>
+        <span class="pagination__title">getting started with the Type&lt;Challenge[]&gt;</span>
     </a>
   
 
-  
-    <a class="pagination__item" href="https://mrmonk.dev/blog/notes/typescript/ts-eventhandler/">
-      <span class="pagination__label">Next Post</span>
-      <span class="pagination__title" >typing eventhandler in typescript</a>
-    </a>
   
 </div>
 

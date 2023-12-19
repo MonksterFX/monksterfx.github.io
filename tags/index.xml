@@ -7,7 +7,7 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>© {year}</copyright>
-    <lastBuildDate>Mon, 09 Jan 2023 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 29 Apr 2023 12:00:00 +0100</lastBuildDate>
     
 	<atom:link href="https://mrmonk.dev/tags/index.xml" rel="self" type="application/rss+xml" />
     
@@ -15,7 +15,7 @@
     <item>
       <title>notes</title>
       <link>https://mrmonk.dev/tags/notes/</link>
-      <pubDate>Mon, 09 Jan 2023 00:00:00 +0000</pubDate>
+      <pubDate>Sat, 29 Apr 2023 12:00:00 +0100</pubDate>
       
       <guid>https://mrmonk.dev/tags/notes/</guid>
       <description></description>
@@ -24,7 +24,7 @@
     <item>
       <title>ts</title>
       <link>https://mrmonk.dev/tags/ts/</link>
-      <pubDate>Mon, 09 Jan 2023 00:00:00 +0000</pubDate>
+      <pubDate>Sat, 29 Apr 2023 12:00:00 +0100</pubDate>
       
       <guid>https://mrmonk.dev/tags/ts/</guid>
       <description></description>
